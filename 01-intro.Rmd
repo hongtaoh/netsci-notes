@@ -1,0 +1,174 @@
+\mainmatter
+
+# Introduction to Network Science {#intro}
+
+We are going to dive into the field of network science. To learn a new subject, it's always beneficial to learn a little bit about it's history, definition, and significance. These will be the focus our this Chapter.
+
+## Intro to networks
+```{block2, type='rmdnote'}
+The following is not originally from me, but my notes from reading [*Network Science*](http://networksciencebook.com/) (Ch. 1.1-1.4) by [Albert-László Barabási](https://barabasi.com/). Notes are accompanied by my explanations. 
+```
+
+### Networks and complex systems
+A system is a **complex system** when we cannot know its collective behavior by simply understanding each individual component within it. To really understand complex systems, we need to gain a deeper understanding of **networks** behind these syetems. 
+
+Despite that networks are different in size, nature, function, etc., they are orgnized by a common set of rules. That's why we are able to study them. 
+
+### Driving forces behind network science's emerging as a discipline
+Networks are not new. They have been studied by scientists in other disciplines for centuries. But why did network science become a discipline in the 21st centuary? There are two driving forces behind it:
+
+1. **The emergence of network maps**
+
+Mapping interactions in networks requires we keep track of huge amounts of data. This was not readily available until the start of the 21st century. 
+
+2. **The universality of network characteristics**
+
+In the past, people knew different networks, but they didn't realize that as different as these networks are, they are indeed similar and share the same principles. 
+
+### Key characteristics of network science
+Network science has the following key characteristics:
+
+- **Interdisciplinary**
+
+Scientists in different disciplines working with networks have their own problems to solve and tasks to perform. However, some of their tasks share similarities, and a solution found in discipline A might turn out to be useful and important for discipline B as well. 
+
+- **Empirical, & data driven**
+
+Network science is empirical in nature. Every tool developed by network scientists should pass the test of data in real life and should offer people deeper insights about the network.
+
+- **Quantitative and mathematical** 
+
+Network science has been borrowing the fromalism from [graph theory](https://en.wikipedia.org/wiki/Graph_theory), the conceptual framework from statistical physics, and concepts from engineering. 
+
+- **Computational**
+
+Scientists of network science need to deal with a vast amount of data. They'll need to apply computational methods.
+
+## Definition and significance of networks 
+
+```{block2, type='rmdnote'}
+The following came from the online course of [INFO 606](https://github.com/yy/netsci-course) at Indiana University taught by Professor [Yong-Yoel ("YY") Ahn](https://yongyeol.com/).
+```
+
+### What is a network
+
+A network is **a system of elements that are connected**. Those elements are called **nodes** or **vertices**, and the connections are called **links** or **edges**. Network science is all about **connections**.
+
+There are two things that we care about in connections in a network: **structure**, and **dynamics**. Structure and dynamics might affect each other. Professor YY took Facebook activity as an example. Interpersonal interactions on and through facebook are governed by the structure of your friends you have on FB; On the other hand, if someone keeps posting things that iritate you, you might unfriend him or her, which will alter the structure of your online friends network. 
+
+I thought about international relationships. Relationships between countries vary: some are strong while others are weak. These structures definitely have an effect on the things going on between countries. Then, if a country does something that make another country, or other countries angry, for example, initiating a war, the original structure might witness drastic changes. 
+
+### Why should we care about networks?
+
+#### Understanding individual elements is far from enough. 
+
+Knowing about each neuron in a person's brain cannot gaurantee you can understand how a brain functions, or even rebuild a brain. To do these, we need to how elements interact. 
+
+#### Networks are everywhere. 
+
+Human body, Internet, electricity, food, forest, the universe, etc., all have networks in them. 
+
+Networks are omnipresent. Some networks are waiting for discovery and finding a new network itself can be a contribution. For example, professor YY and his colleagues found this [flavor network](https://www.nature.com/articles/srep00196).
+
+Also, the fact that networks are everything mean they have huge influence on our lives. A prime example would be pandemics. A contagious disease won't stay locally anymore, thanks to the advancing global air transportation. The Coronavirus Disease 2019 (COVID-19) was first found in China and in only several months, it became a nightmare for every country in the world. 
+
+#### Networks let us make fun analogies. 
+
+Network thinking: everything is a system consisting of many individual elements that are connected and interact. 
+
+This thought help scientists make analogies and new discoveries. For example, in the 19th centuary, it led to probabilistic and statistical thinking. 
+
+Professor YY gave an example of this own. He was studying how hastags spread on Twitter. The goal was to predic viral hastags. Later, some other scientists applied this finding to human brain and published [this paper](https://www.sciencedirect.com/science/article/pii/S0896627315004742). 
+
+### Think for yourself
+
+Can you give an example of a network in your life?
+
+## Python setup
+
+```{block2, type='rmdnote'}
+The following is based on Professor YY's [tutorial on Python setup](https://github.com/yy/netsci-course/blob/master/m01-getready/python-setup.md).
+```
+
+Throughout this tutorial, we'll use [Python](https://www.python.org/). Specifically, we'll use the package called [Networkx](https://networkx.github.io/documentation/stable/index.html). Networkx is useful and handy in terms of calculating properties of networks but isn't always helpful for creating visualizations. To visualize networks, we'll use [Gephi](https://gephi.org/).
+
+We'll be using [Anaconda](https://www.anaconda.com/products/individual) to manage python packages. [Jupyter Notebook](https://jupyter.org/install.html) will be where we write and run our python codes. 
+
+Don't worry if you don't know anything about any of them. I'll walk you through them now.  
+
+#### Anaconda 
+
+You can refer to [this video](https://www.youtube.com/watch?v=YJC6ldI3hWk) to get a better understanding of why and how to use Anaconda. 
+
+To install Anaconda, go [here](https://www.anaconda.com/products/individual#Downloads) and choose the version for you. For MacOs, choose the "Command Line Installer" **only if you want to feel like a hacker**. 
+
+##### If you don't have enough storage
+
+The full Anaconda takes more than 3G of your storage. If storage is a problem for you, you can install the lightweight version of it: [Miniconda](https://docs.conda.io/en/latest/miniconda.html). You can look [here](https://stackoverflow.com/questions/45421163/anaconda-vs-miniconda) to know more about the differences between the two. To put it simply, Anaconda comes with [a long list of packages](https://docs.anaconda.com/anaconda/packages/py3.8_osx-64/) pre-installed, so you don't have to install each of them separately by yourself. However, you'll have to do so for Miniconda. 
+
+If you decide to use Miniconda for whatever reason, after installing it, open your `Terminal` and do the following (If you are using Anaconda, you don't need to). I am assuming that you are using a Mac:
+
+```{bash eval=FALSE}
+conda --version # To check whether the installation was successful
+```
+
+If the installation was successful, then do the following:
+
+```{bash eval=FALSE}
+# To download jupyter notebook, and jupyterlab:
+conda install -c conda-forge vega notebook jupyterlab 
+# To download packages we'll need to use later:
+conda install numpy scipy networkx jupyter 
+conda install pandas matplotlib seaborn bokeh scikit-learn 
+```
+
+Even if you are using Anaconda, sometimes you might need to use some packages that are not already installed and you'll need to install them by yourself. Simply run `conda install your-package-name`. Most of the packages could be installed that way. Of course, you can still use `pip` to download packages even if you are using Anaconda (or Miniconda). Run `pip your-package-name`. 
+
+##### If you don't want to use either Anaconda or Miniconda
+
+If your computer is running on a MacOS or a Linux system, then you can also use `pip` to install python packages. First, you need to download Python [here](https://www.python.org/downloads/). Then, go to `Terminal` and run the following code, which came from [Professor YY's tutorial](https://github.com/yy/netsci-course/blob/master/m01-getready/python-setup.md).
+
+```{bash eval=FALSE}
+pip3 install numpy scipy networkx jupyter jupyterlab ipython 
+pip3 install pandas matplotlib seaborn bokeh scikit-learn
+```
+
+#### Jupyter Notebook
+
+As Professor YY suggests, to gain a deeper understanding of Jupyter Notebook, you can watch [this tutorial](https://www.youtube.com/watch?v=HW29067qVWk) and [this demonstration](https://www.youtube.com/watch?v=2eCHD6f_phE).
+
+As the above two videos showed, to open jupyter notebook, you simply need to type `jupyter notebook` in your `Terminal`. It's quite straightforward. One trick you might need to know is that you can first go to the directory of your file, for example, `cd Desktop/netsci` and then run `jupyter notebook`. This way, you can use jupyter notebook right in the folder you want. This might save some of your time. 
+
+##### Jupyter Notebook On the cloud
+
+If you don't want to use jupyter notebook on your computer, you can try [Google's Colab](https://colab.research.google.com/notebooks/intro.ipynb) which allows you to run python codes on the cloud. 
+
+#### Most importantly, Python
+
+I haven't talked about Python, the most important tool we are going to use in this tutorial yet. I don't recommend you to attend a detailed python course now, since it's not necessary for this tutorial. 
+
+To get started with Python, read these two instructions:
+
+1. [An Informal Introduction to Python](https://docs.python.org/3.7/tutorial/introduction.html)
+2. [More Control Flow Tools](https://docs.python.org/3.7/tutorial/controlflow.html)
+
+Do expect one, two, or even more days on these if you don't have any experience using Python before. Make sure that you understand most of the codes in the above two instructions before you begin. Open your `jupyter notebook` and try to implement the codes in the above two tutorials now. 
+
+## Homework
+```{block2, type='rmdnote'}
+The following is based on Professor YY's [Python Introduction Assignment](https://github.com/yy/netsci-course/blob/master/m01-getready/Python%20Introduction%20Assignment.ipynb).
+```
+
+Create a notebook, name it as `python-setup`, and run the following codes:
+
+```{python eval=FALSE}
+import numpy as np 
+import networks as nx
+import matplotlib as plt
+% matplotlib inline
+```
+
+If you have successfully downloaded Anaconda, you won't see any errors. If you do, go back and read the above instructions more carefully. Chances are that you might have missed some steps. Use Google or other search engines to look for answers to questions not convered here. 
+
+Thanks. 
+

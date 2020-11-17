@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.2 Chapter 3 Homework | Notes on Network Science</title>
+  <meta name="description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
+  <meta name="generator" content="bookdown 0.21.4 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.2 Chapter 3 Homework | Notes on Network Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.2 Chapter 3 Homework | Notes on Network Science" />
+  
+  <meta name="twitter:description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
+  
+
+<meta name="author" content="Hongtao Hao" />
+
+
+<meta name="date" content="2020-11-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basic-ideals.html"/>
+<link rel="next" href="weak-ties-and-watts-strogatz-model.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Notes on Network Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Network Science</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html"><i class="fa fa-check"></i><b>1.1</b> Intro to networks</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html#networks-and-complex-systems"><i class="fa fa-check"></i><b>1.1.1</b> Networks and complex systems</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro-to-networks.html"><a href="intro-to-networks.html#driving-forces-behind-network-sciences-emerging-as-a-discipline"><i class="fa fa-check"></i><b>1.1.2</b> Driving forces behind network science’s emerging as a discipline</a></li>
+<li class="chapter" data-level="1.1.3" data-path="intro-to-networks.html"><a href="intro-to-networks.html#key-characteristics-of-network-science"><i class="fa fa-check"></i><b>1.1.3</b> Key characteristics of network science</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html"><i class="fa fa-check"></i><b>1.2</b> Definition and significance of networks</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#what-is-a-network"><i class="fa fa-check"></i><b>1.2.1</b> What is a network</a></li>
+<li class="chapter" data-level="1.2.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#why-should-we-care-about-networks"><i class="fa fa-check"></i><b>1.2.2</b> Why should we care about networks?</a></li>
+<li class="chapter" data-level="1.2.3" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#think-for-yourself"><i class="fa fa-check"></i><b>1.2.3</b> Think for yourself</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="python-setup.html"><a href="python-setup.html"><i class="fa fa-check"></i><b>1.3</b> Python setup</a></li>
+<li class="chapter" data-level="1.4" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>1.4</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Graph.html"><a href="Graph.html"><i class="fa fa-check"></i><b>2</b> Graph Theory and Some Basic Concepts</a><ul>
+<li class="chapter" data-level="2.1" data-path="königsberg-bridge-problem-ch-2-1.html"><a href="königsberg-bridge-problem-ch-2-1.html"><i class="fa fa-check"></i><b>2.1</b> Königsberg bridge problem (Ch. 2.1)</a></li>
+<li class="chapter" data-level="2.2" data-path="networks-and-graphs-ch-2-2.html"><a href="networks-and-graphs-ch-2-2.html"><i class="fa fa-check"></i><b>2.2</b> Networks and graphs (Ch. 2.2)</a></li>
+<li class="chapter" data-level="2.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html"><i class="fa fa-check"></i><b>2.3</b> Degree, average degree, and degree distribution (Ch. 2.3)</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree"><i class="fa fa-check"></i><b>2.3.1</b> Degree</a></li>
+<li class="chapter" data-level="2.3.2" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#average-degree"><i class="fa fa-check"></i><b>2.3.2</b> Average degree</a></li>
+<li class="chapter" data-level="2.3.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Degree distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="adjacency-matrix.html"><a href="adjacency-matrix.html"><i class="fa fa-check"></i><b>2.4</b> Adjacency matrix</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html"><i class="fa fa-check"></i><b>2.5</b> Chapter 2 Homework</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-1-networkx-basics"><i class="fa fa-check"></i><b>2.5.1</b> Task 2-1: <code>Networkx</code> Basics</a></li>
+<li class="chapter" data-level="2.5.2" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-2-friendship-paradox-example"><i class="fa fa-check"></i><b>2.5.2</b> Task 2-2: Friendship paradox example</a></li>
+<li class="chapter" data-level="2.5.3" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-3-generating-random-and-scale-free-networks"><i class="fa fa-check"></i><b>2.5.3</b> Task 2-3: Generating random and scale-free networks</a></li>
+<li class="chapter" data-level="2.5.4" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-4-homework-by-professor-yy"><i class="fa fa-check"></i><b>2.5.4</b> Task 2-4: Homework by Professor YY</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="SmallWorld.html"><a href="SmallWorld.html"><i class="fa fa-check"></i><b>3</b> Small World Phenomenon</a><ul>
+<li class="chapter" data-level="3.1" data-path="basic-ideals.html"><a href="basic-ideals.html"><i class="fa fa-check"></i><b>3.1</b> Basic ideals</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="basic-ideals.html"><a href="basic-ideals.html#weighted-network"><i class="fa fa-check"></i><b>3.1.1</b> Weighted network</a></li>
+<li class="chapter" data-level="3.1.2" data-path="basic-ideals.html"><a href="basic-ideals.html#shortest-path-network-diameter-and-average-path-length"><i class="fa fa-check"></i><b>3.1.2</b> Shortest path, network diameter, and average path length</a></li>
+<li class="chapter" data-level="3.1.3" data-path="basic-ideals.html"><a href="basic-ideals.html#connectedness"><i class="fa fa-check"></i><b>3.1.3</b> Connectedness</a></li>
+<li class="chapter" data-level="3.1.4" data-path="basic-ideals.html"><a href="basic-ideals.html#clustering-coefficient"><i class="fa fa-check"></i><b>3.1.4</b> Clustering coefficient</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="chapter-3-homework.html"><a href="chapter-3-homework.html"><i class="fa fa-check"></i><b>3.2</b> Chapter 3 Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="weak-ties-and-watts-strogatz-model.html"><a href="weak-ties-and-watts-strogatz-model.html"><i class="fa fa-check"></i><b>4</b> Weak Ties and Watts-Strogatz model</a><ul>
+<li class="chapter" data-level="4.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html"><i class="fa fa-check"></i><b>4.1</b> Random networks (Barabási Ch.3)</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#generating-a-random-network"><i class="fa fa-check"></i><b>4.1.1</b> Generating a random network</a></li>
+<li class="chapter" data-level="4.1.2" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#average-degree-and-the-expected-number-of-links-in-a-random-network"><i class="fa fa-check"></i><b>4.1.2</b> Average degree, and the expected number of links in a random network</a></li>
+<li class="chapter" data-level="4.1.3" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#degree-distribution-1"><i class="fa fa-check"></i><b>4.1.3</b> Degree distribution</a></li>
+<li class="chapter" data-level="4.1.4" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#poisson-distribution-does-not-capture-reality"><i class="fa fa-check"></i><b>4.1.4</b> Poisson distribution does not capture reality</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html"><i class="fa fa-check"></i><b>4.2</b> Reading two seminal papers</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#the-strength-of-weak-ties-by-granovetter1973strength"><i class="fa fa-check"></i><b>4.2.1</b> <em>The Strength of Weak Ties</em> by <span class="citation">Granovetter (<span>1973</span>)</span></a></li>
+<li class="chapter" data-level="4.2.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#watts-strogatz-model-of-small-world"><i class="fa fa-check"></i><b>4.2.2</b> Watts-Strogatz model of small world</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="scale-free.html"><a href="scale-free.html"><i class="fa fa-check"></i><b>5</b> Scale-Free Networks</a><ul>
+<li class="chapter" data-level="5.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html"><i class="fa fa-check"></i><b>5.1</b> Power-Law Distributions</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html#differences-between-fb-study-and-the-milgram-study"><i class="fa fa-check"></i><b>5.1.1</b> Differences between FB study and the Milgram study</a></li>
+<li class="chapter" data-level="5.1.2" data-path="power-law-distributions.html"><a href="power-law-distributions.html#power-law"><i class="fa fa-check"></i><b>5.1.2</b> Power law</a></li>
+<li class="chapter" data-level="5.1.3" data-path="power-law-distributions.html"><a href="power-law-distributions.html#logarithmic-scale"><i class="fa fa-check"></i><b>5.1.3</b> Logarithmic scale</a></li>
+<li class="chapter" data-level="5.1.4" data-path="power-law-distributions.html"><a href="power-law-distributions.html#properties-of-power-law-distributions"><i class="fa fa-check"></i><b>5.1.4</b> Properties of power-law distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="scale-free-property.html"><a href="scale-free-property.html"><i class="fa fa-check"></i><b>5.2</b> Scale-free property</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="scale-free-property.html"><a href="scale-free-property.html#hubs"><i class="fa fa-check"></i><b>5.2.1</b> Hubs</a></li>
+<li class="chapter" data-level="5.2.2" data-path="scale-free-property.html"><a href="scale-free-property.html#universality"><i class="fa fa-check"></i><b>5.2.2</b> Universality</a></li>
+<li class="chapter" data-level="5.2.3" data-path="scale-free-property.html"><a href="scale-free-property.html#ultra-small-property-and-the-role-of-degree-exponent"><i class="fa fa-check"></i><b>5.2.3</b> Ultra-small property, and the role of degree exponent</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html"><i class="fa fa-check"></i><b>5.3</b> The Barabási-Albert Model</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html#improving-the-ba-model"><i class="fa fa-check"></i><b>5.3.1</b> Improving the BA model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes on Network Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-3-homework" class="section level2">
+<h2><span class="header-section-number">3.2</span> Chapter 3 Homework</h2>
+
+<div class="rmdnote">
+This part is based on Professor YY’s module 3 assignment of <a href="https://github.com/yy/netsci-course/blob/master/m03-smallworld/shortest_path_length_distribution.ipynb">shortest path length distribution</a>.
+</div>
+
+<p>You can find the homework <a href="https://github.com/yy/netsci-course/blob/master/m03-smallworld/shortest_path_length_distribution.ipynb">here</a>.</p>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-ideals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="weak-ties-and-watts-strogatz-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/03-smallworld.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["netsci.pdf", "netsci.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

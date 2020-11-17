@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.1 Random networks (Barabási Ch.3) | Notes on Network Science</title>
+  <meta name="description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
+  <meta name="generator" content="bookdown 0.21.4 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.1 Random networks (Barabási Ch.3) | Notes on Network Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.1 Random networks (Barabási Ch.3) | Notes on Network Science" />
+  
+  <meta name="twitter:description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
+  
+
+<meta name="author" content="Hongtao Hao" />
+
+
+<meta name="date" content="2020-11-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="weak-ties-and-watts-strogatz-model.html"/>
+<link rel="next" href="reading-two-seminal-papers.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Notes on Network Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Network Science</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html"><i class="fa fa-check"></i><b>1.1</b> Intro to networks</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html#networks-and-complex-systems"><i class="fa fa-check"></i><b>1.1.1</b> Networks and complex systems</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro-to-networks.html"><a href="intro-to-networks.html#driving-forces-behind-network-sciences-emerging-as-a-discipline"><i class="fa fa-check"></i><b>1.1.2</b> Driving forces behind network science’s emerging as a discipline</a></li>
+<li class="chapter" data-level="1.1.3" data-path="intro-to-networks.html"><a href="intro-to-networks.html#key-characteristics-of-network-science"><i class="fa fa-check"></i><b>1.1.3</b> Key characteristics of network science</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html"><i class="fa fa-check"></i><b>1.2</b> Definition and significance of networks</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#what-is-a-network"><i class="fa fa-check"></i><b>1.2.1</b> What is a network</a></li>
+<li class="chapter" data-level="1.2.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#why-should-we-care-about-networks"><i class="fa fa-check"></i><b>1.2.2</b> Why should we care about networks?</a></li>
+<li class="chapter" data-level="1.2.3" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#think-for-yourself"><i class="fa fa-check"></i><b>1.2.3</b> Think for yourself</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="python-setup.html"><a href="python-setup.html"><i class="fa fa-check"></i><b>1.3</b> Python setup</a></li>
+<li class="chapter" data-level="1.4" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>1.4</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Graph.html"><a href="Graph.html"><i class="fa fa-check"></i><b>2</b> Graph Theory and Some Basic Concepts</a><ul>
+<li class="chapter" data-level="2.1" data-path="königsberg-bridge-problem-ch-2-1.html"><a href="königsberg-bridge-problem-ch-2-1.html"><i class="fa fa-check"></i><b>2.1</b> Königsberg bridge problem (Ch. 2.1)</a></li>
+<li class="chapter" data-level="2.2" data-path="networks-and-graphs-ch-2-2.html"><a href="networks-and-graphs-ch-2-2.html"><i class="fa fa-check"></i><b>2.2</b> Networks and graphs (Ch. 2.2)</a></li>
+<li class="chapter" data-level="2.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html"><i class="fa fa-check"></i><b>2.3</b> Degree, average degree, and degree distribution (Ch. 2.3)</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree"><i class="fa fa-check"></i><b>2.3.1</b> Degree</a></li>
+<li class="chapter" data-level="2.3.2" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#average-degree"><i class="fa fa-check"></i><b>2.3.2</b> Average degree</a></li>
+<li class="chapter" data-level="2.3.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Degree distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="adjacency-matrix.html"><a href="adjacency-matrix.html"><i class="fa fa-check"></i><b>2.4</b> Adjacency matrix</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html"><i class="fa fa-check"></i><b>2.5</b> Chapter 2 Homework</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-1-networkx-basics"><i class="fa fa-check"></i><b>2.5.1</b> Task 2-1: <code>Networkx</code> Basics</a></li>
+<li class="chapter" data-level="2.5.2" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-2-friendship-paradox-example"><i class="fa fa-check"></i><b>2.5.2</b> Task 2-2: Friendship paradox example</a></li>
+<li class="chapter" data-level="2.5.3" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-3-generating-random-and-scale-free-networks"><i class="fa fa-check"></i><b>2.5.3</b> Task 2-3: Generating random and scale-free networks</a></li>
+<li class="chapter" data-level="2.5.4" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-4-homework-by-professor-yy"><i class="fa fa-check"></i><b>2.5.4</b> Task 2-4: Homework by Professor YY</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="SmallWorld.html"><a href="SmallWorld.html"><i class="fa fa-check"></i><b>3</b> Small World Phenomenon</a><ul>
+<li class="chapter" data-level="3.1" data-path="basic-ideals.html"><a href="basic-ideals.html"><i class="fa fa-check"></i><b>3.1</b> Basic ideals</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="basic-ideals.html"><a href="basic-ideals.html#weighted-network"><i class="fa fa-check"></i><b>3.1.1</b> Weighted network</a></li>
+<li class="chapter" data-level="3.1.2" data-path="basic-ideals.html"><a href="basic-ideals.html#shortest-path-network-diameter-and-average-path-length"><i class="fa fa-check"></i><b>3.1.2</b> Shortest path, network diameter, and average path length</a></li>
+<li class="chapter" data-level="3.1.3" data-path="basic-ideals.html"><a href="basic-ideals.html#connectedness"><i class="fa fa-check"></i><b>3.1.3</b> Connectedness</a></li>
+<li class="chapter" data-level="3.1.4" data-path="basic-ideals.html"><a href="basic-ideals.html#clustering-coefficient"><i class="fa fa-check"></i><b>3.1.4</b> Clustering coefficient</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="chapter-3-homework.html"><a href="chapter-3-homework.html"><i class="fa fa-check"></i><b>3.2</b> Chapter 3 Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="weak-ties-and-watts-strogatz-model.html"><a href="weak-ties-and-watts-strogatz-model.html"><i class="fa fa-check"></i><b>4</b> Weak Ties and Watts-Strogatz model</a><ul>
+<li class="chapter" data-level="4.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html"><i class="fa fa-check"></i><b>4.1</b> Random networks (Barabási Ch.3)</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#generating-a-random-network"><i class="fa fa-check"></i><b>4.1.1</b> Generating a random network</a></li>
+<li class="chapter" data-level="4.1.2" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#average-degree-and-the-expected-number-of-links-in-a-random-network"><i class="fa fa-check"></i><b>4.1.2</b> Average degree, and the expected number of links in a random network</a></li>
+<li class="chapter" data-level="4.1.3" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#degree-distribution-1"><i class="fa fa-check"></i><b>4.1.3</b> Degree distribution</a></li>
+<li class="chapter" data-level="4.1.4" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#poisson-distribution-does-not-capture-reality"><i class="fa fa-check"></i><b>4.1.4</b> Poisson distribution does not capture reality</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html"><i class="fa fa-check"></i><b>4.2</b> Reading two seminal papers</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#the-strength-of-weak-ties-by-granovetter1973strength"><i class="fa fa-check"></i><b>4.2.1</b> <em>The Strength of Weak Ties</em> by <span class="citation">Granovetter (<span>1973</span>)</span></a></li>
+<li class="chapter" data-level="4.2.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#watts-strogatz-model-of-small-world"><i class="fa fa-check"></i><b>4.2.2</b> Watts-Strogatz model of small world</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="scale-free.html"><a href="scale-free.html"><i class="fa fa-check"></i><b>5</b> Scale-Free Networks</a><ul>
+<li class="chapter" data-level="5.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html"><i class="fa fa-check"></i><b>5.1</b> Power-Law Distributions</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html#differences-between-fb-study-and-the-milgram-study"><i class="fa fa-check"></i><b>5.1.1</b> Differences between FB study and the Milgram study</a></li>
+<li class="chapter" data-level="5.1.2" data-path="power-law-distributions.html"><a href="power-law-distributions.html#power-law"><i class="fa fa-check"></i><b>5.1.2</b> Power law</a></li>
+<li class="chapter" data-level="5.1.3" data-path="power-law-distributions.html"><a href="power-law-distributions.html#logarithmic-scale"><i class="fa fa-check"></i><b>5.1.3</b> Logarithmic scale</a></li>
+<li class="chapter" data-level="5.1.4" data-path="power-law-distributions.html"><a href="power-law-distributions.html#properties-of-power-law-distributions"><i class="fa fa-check"></i><b>5.1.4</b> Properties of power-law distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="scale-free-property.html"><a href="scale-free-property.html"><i class="fa fa-check"></i><b>5.2</b> Scale-free property</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="scale-free-property.html"><a href="scale-free-property.html#hubs"><i class="fa fa-check"></i><b>5.2.1</b> Hubs</a></li>
+<li class="chapter" data-level="5.2.2" data-path="scale-free-property.html"><a href="scale-free-property.html#universality"><i class="fa fa-check"></i><b>5.2.2</b> Universality</a></li>
+<li class="chapter" data-level="5.2.3" data-path="scale-free-property.html"><a href="scale-free-property.html#ultra-small-property-and-the-role-of-degree-exponent"><i class="fa fa-check"></i><b>5.2.3</b> Ultra-small property, and the role of degree exponent</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html"><i class="fa fa-check"></i><b>5.3</b> The Barabási-Albert Model</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html#improving-the-ba-model"><i class="fa fa-check"></i><b>5.3.1</b> Improving the BA model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes on Network Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="random-networks-barabási-ch.3" class="section level2">
+<h2><span class="header-section-number">4.1</span> Random networks (Barabási Ch.3)</h2>
+
+<div class="rmdnote">
+The following is not originally from me, but my notes from reading <a href="http://networksciencebook.com/"><em>Network Science</em></a> (Ch. 3) by <a href="https://barabasi.com/">Albert-László Barabási</a>. Notes are accompanied by my explanations.
+</div>
+
+<div id="generating-a-random-network" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Generating a random network</h3>
+<p>Most of networks in real life look like randomly constructed. Then, how can we, as humans, produce random networks that we see in nature?</p>
+<p>Simply by putting links randomly between nodes.</p>
+<p>But how can we make sure that we are putting links <strong>randomly</strong>?</p>
+<p>Think about it for a minute before reading on.</p>
+<p>If you have studied statistics, you would know that <strong>randomness</strong> is all about <strong>probability</strong>. If we say that we are going to <strong>randomly</strong> pick a person from a group, then we’ll need to make sure that <strong>each</strong> person in the group has an <strong>equal</strong> chance to be picked. Otherwise, the choice is not <strong>random</strong>.</p>
+<p>Now, let’s go back to our original problem: how can we <strong>randomly</strong> put links between nodes?</p>
+<p>For example, we now have 100 isolated nodes, which are called <strong>singletons</strong>, as shown below. What to do next?</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="random-networks-barabási-ch-3.html#cb23-1"></a>g4_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">graph</span>( <span class="dt">edges=</span><span class="ot">NULL</span>, <span class="dt">n=</span><span class="dv">100</span>)</span>
+<span id="cb23-2"><a href="random-networks-barabási-ch-3.html#cb23-2"></a><span class="kw">plot</span>(g4_<span class="dv">1</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:g4-1"></span>
+<img src="netsci_files/figure-html/g4-1-1.png" alt="100 isolated nodes" width="100%" />
+<p class="caption">
+FIGURE 4.1: 100 isolated nodes
+</p>
+</div>
+<p>Frist, we’ll set up a value <em>p</em> (<span class="math inline">\(0 \leq p \leq 1\)</span>), called <strong>link probability</strong>. Then, we’ll pick a pair of nodes (STEP 1), for example, <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, and generate a ramdom number <span class="math inline">\(r\)</span> for this pair (STEP 2). If <span class="math inline">\(r &lt; p\)</span>, then we connect <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. Otherwise, we keep them disconnected. We’ll repeat step 1 and step 2 for all node pairs, the total number of which should be <span class="math inline">\(\frac{N(N-1)}{2}\)</span>. This way, we will make sure that the probability of each pair being connected is exactly <span class="math inline">\(p\)</span>. Why so?</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="random-networks-barabási-ch-3.html#cb24-1"></a><span class="kw">plot</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), </span>
+<span id="cb24-2"><a href="random-networks-barabási-ch-3.html#cb24-2"></a>     <span class="dt">type=</span> <span class="st">&quot;n&quot;</span>, </span>
+<span id="cb24-3"><a href="random-networks-barabási-ch-3.html#cb24-3"></a>     <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb24-4"><a href="random-networks-barabási-ch-3.html#cb24-4"></a>     <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb24-5"><a href="random-networks-barabási-ch-3.html#cb24-5"></a>     <span class="dt">yaxt=</span><span class="st">&quot;none&quot;</span>)</span>
+<span id="cb24-6"><a href="random-networks-barabási-ch-3.html#cb24-6"></a><span class="co"># Solution: https://rstudio-pubs-static.s3.amazonaws.com/</span></span>
+<span id="cb24-7"><a href="random-networks-barabási-ch-3.html#cb24-7"></a><span class="co"># 297778_5fce298898d64c81a4127cf811a9d486.html</span></span>
+<span id="cb24-8"><a href="random-networks-barabási-ch-3.html#cb24-8"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="fl">0.1</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb24-9"><a href="random-networks-barabási-ch-3.html#cb24-9"></a><span class="kw">rect</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.1</span>,<span class="fl">0.2</span>,<span class="dt">col=</span><span class="st">&quot;lightgreen&quot;</span>)</span>
+<span id="cb24-10"><a href="random-networks-barabási-ch-3.html#cb24-10"></a><span class="kw">rect</span>(<span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:1-9"></span>
+<img src="netsci_files/figure-html/1-9-1.png" alt="Illustrating why the probability of each pair being connected is equal to the link probability" width="672" />
+<p class="caption">
+FIGURE 4.2: Illustrating why the probability of each pair being connected is equal to the link probability
+</p>
+</div>
+<p>The reason can be shown in Figure <a href="random-networks-barabási-ch-3.html#fig:1-9">4.2</a>. If we set <span class="math inline">\(p = 0.1\)</span>, then only <span class="math inline">\(10\%\)</span> of random numbers will fall in the range of <span class="math inline">\([0,0.1)\)</span> (the area shown in light green), the remaining <span class="math inline">\(90\%\)</span> will fall in <span class="math inline">\([0.1,1]\)</span><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>Okay, let’s set <span class="math inline">\(p=0.1\)</span> and see what will happen:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="random-networks-barabási-ch-3.html#cb25-1"></a><span class="co"># Solution from: https://rpubs.com/lgadar/generate-graphs</span></span>
+<span id="cb25-2"><a href="random-networks-barabási-ch-3.html#cb25-2"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb25-3"><a href="random-networks-barabási-ch-3.html#cb25-3"></a>erdosRenyi &lt;-<span class="st"> </span><span class="kw">erdos.renyi.game</span>(<span class="dv">100</span>, <span class="fl">0.1</span>, <span class="dt">type =</span> <span class="st">&quot;gnp&quot;</span>)</span>
+<span id="cb25-4"><a href="random-networks-barabási-ch-3.html#cb25-4"></a><span class="kw">plot</span>(erdosRenyi)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:erdosRenyi"></span>
+<img src="netsci_files/figure-html/erdosRenyi-1.png" alt="An Erdős-Rényi network" width="100%" />
+<p class="caption">
+FIGURE 4.3: An Erdős-Rényi network
+</p>
+</div>
+<p>The method described above is used in a model called <strong><span class="math inline">\(G(N,p)\)</span> model</strong>, which was introduced independently by Edgar Nelson Gilbert. In this model, the number of nodes (<span class="math inline">\(N\)</span>), and link probability (<span class="math inline">\(p\)</span>) are fixed.</p>
+<p>There is a similar model called <strong><span class="math inline">\(G(N,L)\)</span> model</strong> where the number of nodes and the number of links are fixed. This model was introduced by Pál Erdős and Alfréd Rényi.</p>
+<p>In practice, we use <strong><span class="math inline">\(G(N,p)\)</span> model</strong> more. But since Pál Erdős and Alfréd Rényi played such an important rold in advancing our understanding of random networks, we still name networks generated by the <strong><span class="math inline">\(G(N,p)\)</span> model</strong> as an <strong>Erdős-Rényi network</strong>.</p>
+
+<div class="rmdcaution">
+In <a href="http://networksciencebook.com/chapter/3#random-network">Chapter 3.2</a> of <a href="http://networksciencebook.com/"><em>Network Science</em></a> , there is a mistake: the second step of generating a random network said that “if the number exceeds <span class="math inline">\(p\)</span>, connect the selected node pair with a link”. However, it should be “if the number is smaller than p, connect the selected node pair with a link.”
+</div>
+
+</div>
+<div id="average-degree-and-the-expected-number-of-links-in-a-random-network" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Average degree, and the expected number of links in a random network</h3>
+<p>We can think of the process of first generating a random number for a pair of nodes, then comparing it with <span class="math inline">\(p\)</span>, and finally deciding whether to link the pair or not as tossing a coin <span class="citation">(Menczer, Fortunato, and Davis <a href="#ref-menczer2020first" role="doc-biblioref">2020</a>)</span>.</p>
+<p>Imagine we have a biased coin which gives us heads with probability <span class="math inline">\(p\)</span>, which is equal to the <strong>link probability</strong> we talked about before. Take <span class="math inline">\(p=0.1\)</span> as an example. If we toss the coin for ten times, then we are expecting <span class="math inline">\(10*0.1=1\)</span> head, right? For the same token, when we have <span class="math inline">\(100\)</span> tosses, we will be expecting <span class="math inline">\(10\)</span> heads.</p>
+<p>In the procudure of random network generation discussed above, we concluded that a pair of nodes being connected has a probability of <span class="math inline">\(p\)</span>, which is the same as the probability of us having a head when we toss a coin. Since we are expecting <span class="math inline">\(10\)</span> heads out of <span class="math inline">\(100\)</span> tosses, then how many connected pairs of nodes are expected, or, how many links are expected, if we examine <span class="math inline">\(100\)</span> pairs? <span class="math inline">\(10\)</span>, right?</p>
+<p>How do we get this number? We simply multiply the total number of tosses in the case of flipping coins (or the total number of pairs of nodes we have in the case of random network generation) by <span class="math inline">\(p\)</span>.
+Now, in the <span class="math inline">\(G(N,p)\)</span> model, we have <span class="math inline">\(N\)</span> nodes. It’s easy to understand that we will have <span class="math inline">\({N \choose 2} = \frac{N(N-1)}{2}\)</span> pairs of nodes to examine. So, <strong>the number of links we are expecting in this random network</strong> is:</p>
+<p><span class="math display" id="eq:average-L">\[\begin{equation}
+  \langle K \rangle = \frac{N(N-1)}{2}p \tag{4.1}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(\langle L \rangle\)</span> here stands for the <strong>expected value</strong>. A given random network generated by <span class="math inline">\(G(N,p)\)</span> does not necessarily have exactly <span class="math inline">\(\frac{N(N-1)}{2}p\)</span> links. But as we generate more and more random networks using the <span class="math inline">\(G(N,p)\)</span> model, the average number of links will be <span class="math inline">\(\frac{N(N-1)}{2}p\)</span>. That’s what we mean by <strong>expected value</strong>. You can look at <strong>Image 3.3</strong> in <a href="http://networksciencebook.com/"><em>Network Science</em></a> for examples and illustrations.</p>
+<p>Then, in this random network, what is the <strong>average degree</strong>?</p>
+<p>Recall Eq. <a href="degree-average-degree-and-degree-distribution-ch-2-3.html#eq:AverageDegree">(2.2)</a>. Replacing <span class="math inline">\(L\)</span> with <span class="math inline">\(\langle L \rangle\)</span> from Eq. <a href="random-networks-barabási-ch-3.html#eq:average-L">(4.1)</a>, we have:</p>
+<p><span class="math display" id="eq:average-D">\[\begin{equation}
+  \langle k \rangle = \frac{2\langle L \rangle}{N} = p(N-1) \tag{4.2}
+\end{equation}\]</span></p>
+
+<div class="rmdtip">
+<p>How to remember Eq. <a href="random-networks-barabási-ch-3.html#eq:average-D">(4.2)</a>:</p>
+The average degree of a random network is the product of <span class="math inline">\(p\)</span>, the <strong>link probability</strong>, and <span class="math inline">\((N-1)\)</span>, the maximum number of links (or neighbors) a node can have.
+</div>
+
+<p>You can read <a href="http://networksciencebook.com/chapter/3#number-of-links">Ch. 3.3</a> of <a href="http://networksciencebook.com/"><em>Network Science</em></a> for more detailed mathematical reasoning.</p>
+</div>
+<div id="degree-distribution-1" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Degree distribution</h3>
+<div id="binomial-distribution" class="section level4">
+<h4><span class="header-section-number">4.1.3.1</span> Binomial distribution</h4>
+<p>First of all, if you are not familiar with combinations and permutations, or that you have forgotten what you learnt in your high school, you are encouraged to go through <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">this amazing tutorial</a> on <a href="https://www.mathsisfun.com/">mathsisfun.com</a>.</p>
+<p>Then, carefully read throught <a href="https://www.mathsisfun.com/data/binomial-distribution.html">this tutorial on binomial distribution</a>.</p>
+<p>If you are able to understand the tutorials above, then you should know that if we have a biased coin which produces heads with probability <span class="math inline">\(p\)</span>, the probability of having <span class="math inline">\(k\)</span> heads out of <span class="math inline">\(n\)</span> tosses is:</p>
+<p><span class="math display" id="eq:coin-tossing-binomial">\[\begin{equation}
+  {n \choose k}p^k(1-p)^{n-k} \tag{4.3}
+\end{equation}\]</span></p>
+<p>How to understand it?</p>
+<p>We can look at it this way: tossing a coin <span class="math inline">\(n\)</span> times, we have <span class="math inline">\(2^n\)</span> different outcomes (i.e., combinations of heads and tails), and the number of outcomes (or combinations, if you want) that have <span class="math inline">\(k\)</span> heads is <span class="math inline">\(n\choose k\)</span> outcomes. However, we cannot simply use <span class="math inline">\({n\choose k}\div{2^n}\)</span> to calculate the probability of having <span class="math inline">\(k\)</span> heads. Why? Because this is a <strong>biased</strong> coin, so each outcome (or combination) has different probabilities.</p>
+<p>What should we do then?</p>
+<p>Now we know the number of outcomes that will produce <span class="math inline">\(k\)</span> heads out of <span class="math inline">\(n\)</span> tosses. It will be great if we know the probability of each of these outcomes and sum them up. Bingo!</p>
+<p>When we think more deeply, we will know that each of these <span class="math inline">\(n\choose k\)</span> outcomes has exactly the same probability: <span class="math inline">\(p^k(1-p)^{n-k}\)</span>. But why? Read <a href="https://www.mathsisfun.com/data/binomial-distribution.html">this tutorial on binomial distribution</a> again, especially the tree diagram. Also, you’ll find <a href="https://www.mathsisfun.com/data/probability-events-independent.html">this tutorial</a> on the probability of independent events helpful.</p>
+<p>Now, let’s go back to random networks.</p>
+<table>
+<caption><span id="tab:network-and-coin">TABLE 4.1: </span> Comparing random network generation and flipping coins</caption>
+<colgroup>
+<col width="23%" />
+<col width="35%" />
+<col width="15%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(p\)</span></th>
+<th><span class="math inline">\(N\)</span></th>
+<th><span class="math inline">\(k\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>random network generation</td>
+<td>link probability</td>
+<td>number of nodes</td>
+<td>number of node pairs successfully connected</td>
+</tr>
+<tr class="even">
+<td>tossing coins</td>
+<td>probability of having a head in one toss</td>
+<td>number of tosses</td>
+<td>number of heads</td>
+</tr>
+</tbody>
+</table>
+<p>For a given node <span class="math inline">\(i\)</span>, the maximum number of links it can have is <span class="math inline">\(N-1\)</span>. Let’s denote the probability of node <span class="math inline">\(i\)</span> having <span class="math inline">\(k\)</span> links as <span class="math inline">\(p^k\)</span>. Eq. <a href="random-networks-barabási-ch-3.html#eq:coin-tossing-binomial">(4.3)</a>, we know that:</p>
+<p><span class="math display" id="eq:random-network-binomial">\[\begin{equation}
+  p^k = {N-1 \choose k}p^k(1-p)^{N-1-k} \tag{4.4}
+\end{equation}\]</span></p>
+<p>In this binomial distribution, the mean is:</p>
+<p><span class="math display" id="eq:binomial-mean">\[\begin{equation}
+  E(x) = Np \tag{4.5}
+\end{equation}\]</span></p>
+<p>Its standard deviation is:</p>
+<p><span class="math display" id="eq:binomial-sd">\[\begin{equation}
+  \sigma_i = [p(1-p)N]^\frac{1}{2} \tag{4.6}
+\end{equation}\]</span></p>
+<p>And its second moment is:</p>
+<p><span class="math display" id="eq:binomial-2nd-moment">\[\begin{equation}
+  E(x^2) = p(1-p)N + p^2N^2 \tag{4.7}
+\end{equation}\]</span></p>
+<p>Sorry that I am currently not capable of proving Eq. <a href="random-networks-barabási-ch-3.html#eq:binomial-mean">(4.5)</a> to Eq. <a href="random-networks-barabási-ch-3.html#eq:binomial-2nd-moment">(4.7)</a>. For now, just memorize them.</p>
+</div>
+<div id="poisson-distribution" class="section level4">
+<h4><span class="header-section-number">4.1.3.2</span> Poisson distribution</h4>
+<p>Most real networks are sparce, so its average degree <span class="math inline">\(\langle k \rangle\)</span> is much smaller than the size of the network, <span class="math inline">\(N\)</span>. Considering this limit, we usually use Poisson distribution to describe a random network’s degree distribution because of simplicity:</p>
+<p><span class="math display" id="eq:poisson">\[\begin{equation}
+  p_k = e^{-\langle k \rangle}\frac{\langle k \rangle^k}{k!} \tag{4.8}
+\end{equation}\]</span></p>
+<p>Eq. <a href="random-networks-barabási-ch-3.html#eq:random-network-binomial">(4.4)</a> and Eq. <a href="random-networks-barabási-ch-3.html#eq:poisson">(4.8)</a> are collectively called <strong>degree dostribution of a random network</strong>.</p>
+<p>Something needs remembering:</p>
+<ol style="list-style-type: decimal">
+<li><p>Binomial form is the exact version; Poisson distribution is only an approximation;</p></li>
+<li><p>We’d better use Binomial distribution to describe a small network, for example, <span class="math inline">\(N = 10^2\)</span>, but use Poisson distribution for large networks, for example, <span class="math inline">\(N = 10^3\)</span> or <span class="math inline">\(10^4\)</span>;</p></li>
+<li><p>In Poisson distribution, the standard deviation is <span class="math inline">\(\sqrt {\langle k \rangle}\)</span>;</p></li>
+<li><p>The Poisson distribution tells us that for two networks, as long as they have the same <span class="math inline">\(\langle k \rangle\)</span>, their degree distribution is almost exactly the same despite different sizes, i.e., <span class="math inline">\(N\)</span>.</p></li>
+</ol>
+
+<div class="rmdreminder">
+I did not quite understand the lecture on the Poisson distribution by Professor YY.
+</div>
+
+</div>
+</div>
+<div id="poisson-distribution-does-not-capture-reality" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> Poisson distribution does not capture reality</h3>
+<p>Poisson distribution undoutedly accurately describes the degree distribution of random networks, but we need to ask, do random netwoks reflect reality?</p>
+<p>Reading <a href="http://networksciencebook.com/chapter/3#not-poisson">Ch. 3.5</a>, will let us know that if random networks can describe social networks in our daily lives, we would expect that:</p>
+<ol style="list-style-type: decimal">
+<li><p>Most people will have <span class="math inline">\(\langle k \rangle \pm \sqrt {\langle k \rangle}\)</span> friends;</p></li>
+<li><p>The highest number of friends a person can have is not that different than the smallest possible number.</p></li>
+</ol>
+<p>However, we know that this is not the case in real life. Many people have over 5,000 contacts on Facebook and WeChat.</p>
+<p>From the figure shown in <a href="http://networksciencebook.com/chapter/3#not-poisson">Ch. 3.5</a>, we will know that in real networks, both <strong>the number of high degree nodes</strong>, and <strong>the standard deviation of the distribution</strong>, are much larger than what is expected from random networks.</p>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-menczer2020first">
+<p>Menczer, Filippo, Santo Fortunato, and Clayton A Davis. 2020. <em>A First Course in Network Science</em>. Cambridge University Press.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>I am a little bit uncertain here because I don’t know where to put 0.1.<a href="random-networks-barabási-ch-3.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="weak-ties-and-watts-strogatz-model.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reading-two-seminal-papers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/04-weakties.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["netsci.pdf", "netsci.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

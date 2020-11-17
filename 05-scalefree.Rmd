@@ -1,0 +1,417 @@
+# Scale-Free Networks{#scale-free}
+Networks in real life are rarely random. Most of them are "scale-free". What does "scale-free" mean? What are the defining features of scale-free networks? And how do we generate these networks? These are the topics we are going to cover in this Chapter 5. 
+
+## Power-Law Distributions
+```{block2, type='rmdnote'}
+The following came from the online course of [INFO I606](https://github.com/yy/netsci-course) at Indiana University by Professor [Yong-Yoel ("YY") Ahn](https://yongyeol.com/).
+```
+
+### Differences between FB study and the Milgram study
+The differences between the [Facebook study](https://research.fb.com/blog/2016/02/three-and-a-half-degrees-of-separation/) and the Milgram study:
+
+1. In FB study, researchers knew the whole graph. They would have this in mind when calculating the shortest paths. However, participants in the Milgram study did not know the whole graph;
+
+2. There wasn't any lost "packages" in FB study. 
+
+One thing we need to be cautious with the FB study is that there were quite a number of people having 500-5,000friends, as can be seen in the [study PDF](https://arxiv.org/pdf/1111.4503.pdf). But is it possible in real life? [Dunbar's number](https://www.newyorker.com/science/maria-konnikova/social-media-affect-math-dunbar-number-friendships) suggests that we as humans can maintain at most 150 friends. Therefore, the FB study might have overestimated the distance between people. 
+
+### Power law 
+```{block2, type='rmdreminder'}
+Before discussing power-law distributions, Professor YY talked about the connection between binomial, Poisson, and normal distributions. It is beyond my scope of knowledge. However, you are encouraged to read [this](http://www.johndcook.com/blog/normal_approx_to_poisson/) article on this topic. 
+```
+
+The above picture of the bird came from [here](http://gdut_yy.gitee.io/doc-csstdg4/ch8.html#_8-2-padding).
+
+Check out [this video](https://www.youtube.com/watch?v=fCn8zs912OE) to understand **Zipf's law**. Also, [here](https://www.hpl.hp.com/research/idl/papers/ranking/ranking.html) is an amazing tutorial^[I haven't throughly read and understood it yet...] on the connection between **Zipf's law** and **power laws**.
+
+The most frequently used word in English is **the**. Let's denote its frequency as $1$. Then the frequency of the second most frequently used word is $\frac{1}{2}$. The number is $\frac{1}{3}$ for the third most frequently used word, and will be $\frac{1}{4}$ for the fourth most frequently used word. That's a **power law distribution**. 
+
+### Logarithmic scale
+To really understand **scale free networks** and **power law distribution**, we need to get an idea of **logarithmic scale** first. Professor YY provided several very helpful Youtube videos that illustrate log scale. 
+
+Inspired by [the conversation between Vi and Sal](https://www.youtube.com/watch?v=4xfOq00BzJA), I am asking you this question. In the following number line, from $1$ to 1 million, where is $1,000$?
+
+```{r echo=FALSE, fig.height = 1}
+# Idea from https://stackoverflow.com/a/5963299/13716814
+par(mar = c(1, 1, 1, 1)) # Set the margin on all sides to 1
+xlim=c(1,1000000)
+ylim=c(0,0.0001)
+plot(NA,xlim=xlim,ylim=ylim, axes=F,ann=F)
+# marks <- c(0,1000000)
+axis(1,at=c(0,1000000),
+     labels=format(c(0,1000000),
+                   scientific = FALSE), 
+     col = "orange", lwd = 2
+     )
+```
+
+Okay, let's label both $1,000$ and $100,000$ in the above number line:
+
+```{r echo=FALSE, fig.height = 1}
+# Idea from https://stackoverflow.com/a/5963299/13716814
+# and from https://stackoverflow.com/a/32052557
+xlim=c(1,1000000)
+ylim=c(0,0.0001)
+px <- c(0, 1000, 100000, 1000000);
+py <- c(0,0, 0, 0);
+par(mar = c(1, 1, 1, 1)) # Set the margin on all sides to 1
+plot(NA,xlim=c(1,1000000),ylim=c(0,0.0001), axes=F,ann=F)
+# marks <- c(0,1000000)
+axis(1,at=c(0,1000,100000,1000000),
+     labels=format(c(0,1000,100000,1000000),scientific = FALSE),
+     col = "blue", lwd = 2)
+points(px,py,pch=16,xpd=NA);
+```
+
+I plotted four points: 0, 1000, 100000, and 1000000, but can only see three. Why? It's because 0 and 1000 are almost at the same place. But I guess you've probably thought $1,000$ was in the place of $100,000$, right?
+
+You can learn some basics of **log scale** by watching [this video](https://www.youtube.com/watch?v=sBhEi4L91Sg) by Khan Academy. 
+
+One of the reasons why people need log scale is that it allows us to include a much wider range of numbers in limited space. For example, it is useful [when we measure earthquakes](https://www.youtube.com/watch?v=RFn-IGlayAg).
+
+### Properties of power-law distributions
+#### Porperty 1: A fat tail allowing for many outliers 
+```{block2, type='rmdnote'}
+The following came from the online course of [INFO 606](https://github.com/yy/netsci-course) at Indiana University taught by Professor [Yong-Yoel ("YY") Ahn](https://yongyeol.com/).
+```
+
+A power-law distribution can be expressed as
+
+\begin{equation} 
+  p(x) = Cx^{-\lambda} (\#eq:power-law)
+\end{equation} 
+
+where $\lambda$ > 1 ^[Read here for why: http://tuvalu.santafe.edu/~aaronc/courses/7000/csci7000-001_2011_L2.pdf.].
+
+If we take a logarithm of Eq. \@ref(eq:power-law), we'll have
+
+\begin{align} 
+  \ln p(x) & =  \ln (Cx^{-\lambda}) \\
+  & = \ln C -\lambda \ln x (\#eq:power-law-simplified)
+\end{align} 
+
+If you are not familiar with $\ln$ or how the above calculations are done, do read [this tutorial](https://www.math10.com/en/algebra/logarithm-log-ln-lg.html) on logarithm. 
+
+```{block2, type='rmdtip'}
+If $a^b=c$, then, $\log_a c =b$, where $c>0$, $a>0$, and $a \neq 1$. In this example, $a$ is called **base** of the logarithm. 
+
+- If the **base** is $10$: $\log_{10} a$ will be denoted as *$\lg a$*
+- If the **base** is $e$: $\log_e a$ will be denoted as *$\ln a$*
+
+Some logarithmic identities:
+
+1. $log_a b^c = c \cdot log_a b$;
+2. $log_a {b \cdot c} = log_a b + log_a c$;
+3. $log_a \frac{b}{c} = log_a b - log_a c$;
+4. $log_a^c b = \frac{1}{n} \cdot log_a b$
+  
+```
+
+Since $\ln C$ is a constant, what we get is basically **a linear function**. 
+To better understand it, let's plot it.
+
+Before we take the log:
+
+```{r}
+x <- 1:100
+y <- 5*x^(-2)
+plot (x, y, pch=19, cex=0.5, col="orange",
+      xlab="X", ylab="5*x^(-2)",
+      main="Before taking a log")
+```
+
+I learned a lot about how to style the points from reading [Dr.Katya Ognyanova's blog post](https://kateto.net/networks-r-igraph).
+
+After we take a log:
+
+```{r}
+x <- 1:100
+y <- 5*x^(-2)
+plot (x, y, pch=19, cex=0.5, col="orange",
+      xlab="log(X)", ylab="log(Y)",
+      main="After taking a log",
+      log="xy"
+      )
+```
+
+A very important property of power-law distribution on a log-log scale is it has a **heavy tail** or a so-called **fat tail**. Lots of other distributions, like binomial, Poisson, or normal distributions, simply do not have this fat tail, which is super useful when we have lots of outliers in the tail of the distribution. 
+
+As we can clearly see below, except for the power-law distribution on a log-log scale, in all the three other distributions, $y$ quickly reaches zero:
+
+```{r echo=TRUE, warning=FALSE, message=FALSE, fig.cap="Comparing Four Different Distributions", out.width = '100%', fig.align='center'}
+par(mfrow=c(2,2))
+# The idea of the following codes comes from
+# https://www.statology.org/plot-normal-distribution-r/
+x_dnorm <- seq(-6, 6, length=100)
+y_dnorm <- dnorm(x_dnorm)
+plot(x_dnorm, y_dnorm, pch=19, cex=0.5, col="skyblue",
+     main="Normal Distribution")
+# The following codes are from 
+# https://www.tutorialspoint.com/r/r_binomial_distribution.htm
+x_dbinom <- seq(0,50,by = 1)
+y_dbinom <- dbinom(x_dbinom,50,0.5)
+plot(x_dbinom, y_dbinom, pch=19, cex=0.5, col="red",
+     main = "Binomail Distribution")
+# The following codes are from https://statisticsglobe.com/poisson-
+# distribution-in-r-dpois-ppois-qpois-rpois
+x_dpois <- seq(-5, 50, by = 1)
+y_dpois <- dpois(x_dpois, lambda = 10)
+plot(x_dpois, y_dpois, pch=19, cex=0.5, col="purple",
+     main = "Poisson Distribution")
+x <- 1:100
+y <- 5*x^(-2)
+plot (x, y, pch=19, cex=0.5, col="orange",
+      xlab="log(X)", ylab="log(Y)",
+      main="Power-law Distribution (Log-Log Scale)",
+      log="xy")
+```
+
+If we have many outliers in the tail, for example, in the household income distribution shown below by @donovan2016us, which of the four distributions shown above will you choose to fit the income distribution? Definitely we'll use the power-law distribution which has a fat tail. 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="US Household Income Distribution in 2015, Visualization by @donovan2016us", out.width = '90%', fig.align='center'}
+library(here)
+knitr::include_graphics(here("images", "income_distribution.png"))
+```
+
+We can also compare a normal distribution and a power-law distribution side by side:
+
+```{r echo=TRUE, warning=FALSE, message=FALSE, fig.cap="Comparing Normal Distribution and Power-law Distribution Side by Side", out.width = '100%', fig.align='center'}
+par(mfrow=c(2,1))
+x_dnorm_2 <- seq (0, 10000, by = 1)
+y_dnorm_2 <-dnorm(x_dnorm_2)
+plot (x_dnorm_2, y_dnorm_2, pch=19, cex=0.1, col="blue",
+      xlab="x_dnorm", ylab="y_dnorm",
+      main="Normal Distribution")
+x <- 0:10000
+y <- 5*x^(-2)
+plot (x, y, pch=19, cex=0.1, col="orange",
+      xlab="log(X)", ylab="log(Y)",
+      main="Power-law Distribution (Log-Log Scale)",
+      log="xy")
+```
+
+In power-law distribution plotted on a log-log scale, we do expect a lot of outliers. 
+
+```{block2, type='rmdreminder'}
+One thing I still did not understand is the range of $x$. Should it always be $\ge 1$, or $\ge 0$? Why or why not?
+```
+
+##### Property 2: scale-freeness
+To deeply understand what the term "scale-free" means, you can read [Chapter 4.4](http://networksciencebook.com/chapter/4#scale-free) in [Network Science](http://networksciencebook.com/).
+
+I'll explain in my own words here. To understand "scale-free", we must first understand "scale". Mark @newman2005power defines it this way: A scale is "a typical value around which individual elements are centered (p.1). Therefore, **scale-free** means that we don't know around **which** value individual elements in the distribution are centered. A normal distribution is **not** scale-free because we expect that more than 99% of the data falls within three standard deviations from the mean. 
+
+You can read[*Power laws, Pareto distributions and Zipf's law*](https://arxiv.org/pdf/cond-mat/0412004.pdf) by Mark @newman2005power for details. This paper is also a must read if you want to gain a deeper understanding about power law.)
+
+In a power-law distribution, it's totally different. For example, if we have $y = 5*x^{-2}$. Let's imagine that human height follows this distribution. Suppose your height is $x$, and $n$ people have the same height as you. Then you'll see $\frac{1}{4} \cdot n$ people twice as tall as you^[Just input $2x$ in the above formula.], and $4 \cdot n$ people half of your size. The thing is, **you don't know where you are located in the distribution!** You can be as tiny as $10$ inches or as tall as $100$ feet. Wherever you stand, you will always find $\frac{1}{4} \cdot n$ people twice as tall as you, and $4 \cdot n$ people half of your size. **Think about it!** What a crazy world! That's why we call it **scale-free**: no inherent scale in the distribution. 
+
+## Scale-free property
+```{block2, type='rmdnote'}
+The following is not originally from me, but my notes from reading [*Network Science*](http://networksciencebook.com/) (Ch. 4.1-4.2) by [Albert-László Barabási](https://barabasi.com/). Notes are accompanied by my explanations. 
+```
+
+- In real networks, there are hubs that are forbidden in random networks. 
+
+- No matter what properties of a network we are studying, we need to base our understanding on the network's **degree distribution**. 
+
+The book compares the Poisson distribution and power-law distribution by drawing the degree distribution of the WWW. I wanted to understand these two distributions better so I decided to try drawing them by myself.
+
+The data I used is called ["Internet"](http://www-personal.umich.edu/~mejn/netdata/as-22july06.zip) from [http://www-personal.umich.edu/~mejn/netdata/](http://www-personal.umich.edu/~mejn/netdata/). I'll use R to plot it. See the result in \@ref(fig:powerLaw-poisson)
+
+```{r powerLaw-poisson, error=FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.cap="Poisson distribution does not explain degree distribution in real networks"}
+library(here)
+internet <- read_graph(here("data","as-22july06.gml"), 
+                       format = "gml")
+# vcount(internet) # Getting an idea of its size // 22963
+deg_internet <- degree(internet)
+# mean(deg_internet) # Calculating average degree // 4.218613
+x <- 0:max(deg_internet) # Setting X-axis
+deg.dist_internet <- degree_distribution(internet, 
+                                         cumulative = TRUE, 
+                                         mode = "all")
+# This will be the degree distribution of our dataset:
+y1 <- deg.dist_internet 
+y2 <- dpois(x, lambda = mean(deg_internet))
+# This is to prevent scientific notation on the axes:
+options(scipen = 5) 
+plot( x, y1, pch=19, cex=0.5, 
+      col="orange",
+      xlab="Degree(log)", 
+      ylab="Probability(log)",
+      log = "xy"
+      )
+# par(new=TRUE) 
+points(x, y2, pch=19,
+     cex=0.5,
+     # log = "xy", # We can, in fact, do without this line 
+     # because the above plot is already on a log-log scale.
+     col="blue",
+     xlab = "", 
+     ylab = ""
+     )
+```
+
+```{r echo=FALSE, eval=FALSE, error=FALSE, warning=FALSE, message=FALSE}
+# Note that the following codes will generate the wrong results. Why? 
+# Because the second plot will be ploted on a different scale!!! 
+plot( x, y1, pch=19, cex=0.5, col="orange",
+      xlab="Degree(log)", ylab="Probability(log)",
+      log = "xy")
+par(new=TRUE)
+plot(x, y2, pch=19,
+     cex=0.5,
+     log = "xy",
+     col="blue",
+     axes = FALSE, xlab = "", ylab = ""
+     )
+```
+
+The above code is based on [this post](https://stackoverflow.com/questions/6853204/plotting-multiple-curves-same-graph-and-same-scale).
+
+We can see that the degree distribution of the real network is different from Poisson distribution but rather roughly follows a power law. We call networks like this as **scale-free networks**. 
+
+A quick note: in the above codes, `y2 <- dpois(x, lambda = mean(deg_internet))` ensures that both networks share the same $\langle k \rangle$. Therefore, the result in the figure tells us that the degree distribution of this real network cannot be approximated by Poisson distribution. 
+
+### Hubs
+```{block2, type='rmdnote'}
+The following is not originally from me, but my notes from reading [*Network Science*](http://networksciencebook.com/) (Ch. 4.3 - 4.7) by [Albert-László Barabási](https://barabasi.com/). Notes may be accompanied by my explanation. 
+```
+
+```{r echo=FALSE, eval=FALSE}
+random_g <- sample_gnp( n = 10000, p = 0.001, directed = FALSE)
+scale_free_g <- sample_pa( n = 10000, power = 1, m = 2, directed = FALSE)
+deg_scale_free <- degree( scale_free_g )
+deg_scale_free
+deg_random <- degree( random_g ) 
+x <- 0:max(deg_scale_free)
+deg.dist_scale_free <- degree_distribution( scale_free_g, 
+                                            cumulative = FALSE)
+y1 <- deg.dist_scale_free
+y2 <- dpois( x, lambda = mean(deg_random))
+plot(x, y1,
+     log = "xy",
+     pch = 19, 
+     col = "orange")
+points(x, y2,
+      pch = 19,
+      col = "skyblue")
+```
+
+Hubs are nodes with high degrees. To understand that there are more hubs in scale-free networks than in random networks, we can refer to Figure \@ref(fig:powerLaw-poisson). The two distributions have exactly the same average degree, $4.22$.
+
+We will find that compared to random networks, scale-free networks have more low-degree nodes and high-degree nodes, but fewer nodes with degrees near the average degree. This tells us that in random networks, most nodes have comparable degrees (around the average degree of the network) whereas in scale-free networks, there are so many nodes with extremely low and extremely high degrees. 
+
+Another difference lies in how the maximum degree (denoted as $k_{max}$ ) changes as the size of networks increases. For both types of networks, $k_{max}$ grows as $N$ becomes larger. The difference is that $k_{max}$ grows faster ([polynomially](https://en.wikipedia.org/wiki/Polynomial)) with $N$ in scale-free networks but it grows slower ([logarithmatically](https://en.wikipedia.org/wiki/Logarithmic_growth)) in random networks. Also, if a random network and a scale-free network has the same average degree $\langle k \rangle$, the $k_{max}$ in the scale-free network is almost always larger than that in the random network. 
+
+Read the section of *The Largest Hub* in [Chapter 4.3](http://networksciencebook.com/chapter/4#hubs) for formula derivation. I am currently not capable of doing it. 
+
+### Universality
+
+Both World Wide Web (WWW) and the Internet are networks. WWW is a network of information. Its nodes are documents and its links are URLs. In contrast, the Internet is a network of infrastructure. Its nodes are computers and its links are cables and wireless connections. Although they are different, their degree distribution can be both approximated with a power law, meaning that there are a large amount of high degree nodes ("hubs") and low degree nodes. In other words, both reveal scale-free properties. 
+
+Since scale-free properties are so prevalent, we call scale-free property a universal characteristic for networks.
+
+As ubiquitous as it is, the scale-free property isn't for every networks. Many networks do not share this property, for example, power grid and material networks. Scale-freeness requires that the number of links a node can have is arbitrary, and not systematically constrained. If this requirement is not fulfilled, then hubs are restricted and the network won't show a scale-free property. 
+
+```{block2, type='rmdimportant'}
+Not all scholars agree on the universality of scale-free networks in real life. For example, *[Scale-free networks are rare](https://www.nature.com/articles/s41467-019-08746-5)* by Broido and Caluset (2019). And [here](https://www.barabasilab.com/post/love-is-all-you-need) is the response to this paper from Barabási.
+```
+
+### Ultra-small property, and the role of degree exponent
+
+Small-world property is the only characteristic in real networks that is well explained by random network models, more specifically, by the Watts-Strogatz model. 
+
+
+```{block2, type='rmdreminder'}
+I still need to work on these two sections. For now, I will just skip them. 
+```
+
+```{block2, type='rmdreminder'}
+Barabási Ch: 4.3-4.7 Reading Quiz needs to be done again! 
+```
+
+## The Barabási-Albert Model 
+The Barabási-Albert model, or BA model for short, addresses this question: how does a network's degree distribution form a power law?
+
+Two hidden assumptions of the random network model do not hold water in real networks:
+
+1. The random network model assumes that the number of nodes is fixed. In real networks, however, this number continues to grow as new nodes join the network. That is to say, the size of a real network keeps growing. 
+
+2. The random network model assumes that a link is generated randomly. However, in real networks, new nodes prefer to link to high-degree nodes. This phenomenon is called **preferential attachment**. 
+
+The BA model recognized the coexistence of **network growth** and **preferential attachment** in real networks and proposed a method of generating networks with scale-free properties, i.e., hubs, and a degree distribution that follows a power law. 
+
+```{block2, type='rmdreminder'}
+I am wondering: does a power law distribution already implies that there are hubs in the network?
+```
+
+We begin with $m_0$ nodes. Each node's degree is no less than 1. Links between these $m_0$ nodes are arbitrary. 
+
+1. At each timestep, a new node $i$ with a degree of $m$ ($m \le m_0$) is added to the network. 
+
+2. The probability that node $i$ connects to an old node, denoted as node $j$, is **proportional** to the old node's degree $k_j$ [@menczer2020first]:
+
+\begin{equation}
+  \Pi(i, j) = \frac{k_j}{\sum\limits_l k_l} (\#eq:ba-model)
+\end{equation}
+
+The denominator in Eq. \@ref(eq:ba-model) is the sum of all degrees in the old network, so the sum of all these probabilities is equal to one [@menczer2020first]. 
+
+```{block2, type='rmdtip'}
+I am not sure whether I can explain why the sum of all these probabilities is equal to one this way: Let us say the probability that node $i$ will connect to node $1$ is $P_1$, to node $2$, $P_2$, to node $3$, $P_3$ ..., if we add these probabilities up, it will (and has to) be equal to one. 
+```
+
+```{block2, type='rmdreminder'}
+In @menczer2020first, in Box 5.4, it says that $m$ here is the average degree of the network. I did not quite understand why. 
+```
+
+```{r echo = FALSE, eval = FALSE}
+The above code comes from https://meta.stackexchange.com/questions/329318/how-do-you-do-summation-notation-in-mathjax
+```
+
+```{block2, type='rmdreminder'}
+The image 5.4 made me wonder whether my computation of \@ref(fig:powerLaw-poisson) was wrong. I will check it later. 
+
+Update: Yeah, i was wrong. Originally, when calculating `deg.dist_internet`, I set `cumulative` to be `FALSE`. This is due to the fact that I did not quite understand power law distribution at that time. I need to set it to be `TRUE`. 
+```
+
+### Improving the BA model
+
+```{block2, type='rmdnote'}
+The following is largely from the online course of [INFO 606](https://github.com/yy/netsci-course) at Indiana University taught by Professor [Yong-Yoel ("YY") Ahn](https://yongyeol.com/). My notes are accompanied. 
+```
+
+Suppose you are an incoming node and are about to attach yourself to other nodes. According to Eq. \@ref(eq:ba-model), you first should calculate all the degree nodes in the existing network and then calculate the proportion of a specific node's degree against the sum of all the degrees. This proportion will be the probability that you will connect to this node. 
+
+There is a problem in the first step. You need to know all the nodes before you can get the sum of all degrees. However, this is very difficult. For instance, when you enter a university, and are about to develop a friendship with other people, is it realistic for you to first know how many friends **EVERY** person at this university has? Probably not. 
+
+Is it possible for us to achieve preferential attachment without requiring knowledge about each and every node in the existing network?
+
+Yes. Try this: The incoming node randomly chooses a link from the existing network, then connect to either end of this link. Hubs have more links connecting to it, so it is more likely for this incoming node to connect to a hub. If you have difficulty understanding why so, consider the extreme example of a star graph.
+
+```{r starG, fig.align='center', fig.cap="A star graph", out.width="100%"}
+starG <- make_star(n = 12, mode = "undirected", center = 1 )
+plot (starG)
+```
+
+In Fig. \@ref(fig:starG), no matter which link you pick, it is always connected to the hub. 
+
+If you have followed the understood the logic so far, you should be able to know that if $k_i = 2 \cdot k_j$ (meaning node $i$ has twice as many links as node $j$), then the incoming node is twice as likely to connect to node $i$. This means that the probability of connecting to node $i$ is linearly **proportional** to $k_i$, which is how the BA model defines preferential attachment.
+
+```{block2, type='rmdreminder'}
+Professor YY said at the end of the video that this process can also result in a high clustering coeffient of the network. I need to brush up on clustering coeffient a little bit to understand explain why. 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
