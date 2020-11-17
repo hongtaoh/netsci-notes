@@ -42,10 +42,11 @@ This is a tip, which helps you to understand a concept or memorize a formula.
 This is a caution, to inform you, for example, an error in publications. 
 ```
 
+The full source of this project is available at [https://github.com/hongtaoh/netsci-notes](https://github.com/hongtaoh/netsci-notes).
 
-</br>
+This website is built with [Bookdown](https://bookdown.org/) and deployed by [Netlify](https://www.netlify.com/).
 
-![license](images/by-nc-sa.png)
+![License](images/by-nc-sa.png)
 
 This online book is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
