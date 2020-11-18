@@ -314,7 +314,7 @@ Since scale-free properties are so prevalent, we call scale-free property a univ
 As ubiquitous as it is, the scale-free property isn't for every networks. Many networks do not share this property, for example, power grid and material networks. Scale-freeness requires that the number of links a node can have is arbitrary, and not systematically constrained. If this requirement is not fulfilled, then hubs are restricted and the network won't show a scale-free property. 
 
 ```{block2, type='rmdimportant'}
-Not all scholars agree on the universality of scale-free networks in real life. For example, *[Scale-free networks are rare](https://www.nature.com/articles/s41467-019-08746-5)* by Broido and Caluset (2019). And [here](https://www.barabasilab.com/post/love-is-all-you-need) is the response to this paper from Barabási.
+Not all scholars agree on the universality of scale-free networks in real life, for example, *[Scale-free networks are rare](https://www.nature.com/articles/s41467-019-08746-5)* by Broido and Caluset (2019). And [here](https://www.barabasilab.com/post/love-is-all-you-need) is the response to this paper from Barabási.
 ```
 
 ### Ultra-small property, and the role of degree exponent

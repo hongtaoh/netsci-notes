@@ -251,8 +251,9 @@ The following task prompts are based on the above homework. You can use them to 
 
 - 2-2-3. Do the same thing using [numpy's mean function](https://numpy.org/doc/stable/reference/generated/numpy.mean.html) which takes in a list and returns the mean of this list. 
 
-  - **Note**: I didn't understand Professor YY's note here: "so if you print a numpy float it will display differently than if you printed a python float, which is why we get the intentional truncation of the value when displayed".
-
+```{block2, type='rmdreminder'}
+I do not understand Professor YY's note here: "so if you print a numpy float it will display differently than if you printed a python float, which is why we get the intentional truncation of the value when displayed". 
+```
 
 - 2-2-4. Get `star_graph`'s average degree using networkx's `info()` function. 
 

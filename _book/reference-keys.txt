@@ -35,9 +35,9 @@ eq:poisson
 fig:tried
 eq:power-law
 eq:power-law-simplified
-fig:unnamed-chunk-44
 fig:unnamed-chunk-45
 fig:unnamed-chunk-46
+fig:unnamed-chunk-47
 fig:powerLaw-poisson
 eq:ba-model
 fig:starG

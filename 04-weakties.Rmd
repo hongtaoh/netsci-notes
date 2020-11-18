@@ -193,7 +193,7 @@ From the figure shown in [Ch. 3.5](http://networksciencebook.com/chapter/3#not-p
 
 ### *The Strength of Weak Ties* by @granovetter1973strength
 
-Please read the following article carefully by yourself before reading my notes.
+Please read the following articles carefully by yourself before reading my notes.
 
 Granovetter, M. S. (1973). [The strength of weak ties](https://www.cs.cmu.edu/~jure/pub/papers/granovetter73ties.pdf). *American journal of sociology, 78*(6), 1360-1380.
 
@@ -219,7 +219,7 @@ knitr::include_graphics('images/tried.png')
 
 - No strong tie is a local bridge. 
 
-- Whatever is is to be diffused can reach a larger number of people if passed through weak rather than strong ties^[@centola2007complex advanced this idea by distinguishing between complex contagions and simple contagions like an epidemic. They argued that the strength of weak ties should not be simply generalized to complex contagions, which requires affirmation from multiple sources. Therefore, not only the length, but also, and maybe more importantly, the width of the ties influences complex contagions.]. 
+- Whatever is is to be diffused can reach a larger number of people if passed through weak rather than strong ties^[@centola2007complex advanced this idea by distinguishing between complex contagions and simple contagions like an epidemic. They argued that the strength of weak ties should not be simply generalized to complex contagions, which require affirmation from multiple sources. Therefore, not only the length, but also, and maybe more importantly, the width of the ties influences complex contagions.]. 
 
 - People are more likely to find jobs through weak ties rather than strong.
 

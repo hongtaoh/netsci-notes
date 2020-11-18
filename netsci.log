@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.11.14)  17 NOV 2020 17:31
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.11.14)  18 NOV 2020 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1273,14 +1273,16 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 7.99915pt on input line 226.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.99936pt on input line 226.
-File: images/edit.png Graphic file (type bmp)
-<images/edit.png>
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 File: images/tip.png Graphic file (type bmp)
 <images/tip.png>
+File: images/caution.png Graphic file (type bmp)
+<images/caution.png>
+File: images/license.png Graphic file (type bmp)
+<images/license.png>
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
@@ -1290,8 +1292,8 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
-File: images/caution.png Graphic file (type bmp)
-<images/caution.png>
+File: images/edit.png Graphic file (type bmp)
+<images/edit.png>
 [12]
 Underfull \vbox (badness 10000) detected at line 259
  []
@@ -1542,12 +1544,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 769--769
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 816--816
-[][][][][]$[][][][][] [] [] [] [][][][][][][][] [] [][][][][][] [] [][] [] [][]
-[][][][][][][][][][][] [] [][][][][][] [] [][][][][][][][][] [] [][][][][][][][
-][] []
- []
-
+File: images/reminder.png Graphic file (type bmp)
+<images/reminder.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 818--818
 [][][][][]$[][][][][] [] [] [] [][][][][][][][] [] [][][][][][] [] [][] [] [][]
@@ -1556,18 +1554,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 818--818
  []
 
 
-Underfull \hbox (badness 7203) in paragraph at lines 818--819
+Underfull \hbox (badness 10000) in paragraph at lines 820--820
+[][][][][]$[][][][][] [] [] [] [][][][][][][][] [] [][][][][][] [] [][] [] [][]
+[][][][][][][][][][][] [] [][][][][][] [] [][][][][][][][][] [] [][][][][][][][
+][] []
+ []
+
+
+Underfull \hbox (badness 7203) in paragraph at lines 820--821
 []\TU/lmr/m/n/10 2-3-2. Generate a scale-free network with 20 nodes with each
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 818--819
+Underfull \hbox (badness 2253) in paragraph at lines 820--821
 \TU/lmr/m/n/10 new node having three edges to attach to existing nodes. \TU/lmr
 /m/it/10 Hint \TU/lmr/m/n/10 :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 824--824
+Underfull \hbox (badness 10000) in paragraph at lines 826--826
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][][][
 ][] [] [][][][][][][][][][] []
@@ -1613,38 +1618,38 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [20
 
 ]
-Underfull \vbox (badness 10000) detected at line 827
+Underfull \vbox (badness 10000) detected at line 829
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 827
+Overfull \hbox (336.25pt too wide) detected at line 829
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 827
+Underfull \vbox (badness 10000) detected at line 829
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 827
+Overfull \hbox (336.25pt too wide) detected at line 829
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 827
+Underfull \vbox (badness 10000) detected at line 829
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 827
+Overfull \hbox (336.25pt too wide) detected at line 829
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 827
+Underfull \vbox (badness 10000) detected at line 829
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 827
+Overfull \hbox (336.25pt too wide) detected at line 829
 []
  []
 
@@ -1659,25 +1664,25 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [21
 
 ]
-File: netsci_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-26-1.pdf>
+File: netsci_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-27-1.pdf>
 
-Underfull \hbox (badness 10000) detected at line 869
+Underfull \hbox (badness 10000) detected at line 871
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 869
+Underfull \hbox (badness 10000) detected at line 871
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 871
+Underfull \hbox (badness 10000) detected at line 873
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 871
+Underfull \hbox (badness 10000) detected at line 873
 [][][]
  []
 
@@ -1697,22 +1702,22 @@ File: images/bfs03.png Graphic file (type bmp)
 File: images/bfs04.png Graphic file (type bmp)
 <images/bfs04.png>
 [25]
-Underfull \hbox (badness 10000) detected at line 1002
+Underfull \hbox (badness 10000) detected at line 1004
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1002
+Underfull \hbox (badness 10000) detected at line 1004
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1004
+Underfull \hbox (badness 10000) detected at line 1006
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1004
+Underfull \hbox (badness 10000) detected at line 1006
 [][][]
  []
 
@@ -1733,14 +1738,14 @@ File: images/bfsD3.png Graphic file (type bmp)
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1141--1141
+Underfull \hbox (badness 10000) in paragraph at lines 1143--1143
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][][][
 ] [] [][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1144--1144
+Underfull \hbox (badness 10000) in paragraph at lines 1146--1146
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][][][
 ] [] [][][][][][][][] []
@@ -1786,38 +1791,38 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [32
 
 ]
-Underfull \vbox (badness 10000) detected at line 1147
+Underfull \vbox (badness 10000) detected at line 1149
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1147
+Overfull \hbox (336.25pt too wide) detected at line 1149
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1147
+Underfull \vbox (badness 10000) detected at line 1149
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1147
+Overfull \hbox (336.25pt too wide) detected at line 1149
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1147
+Underfull \vbox (badness 10000) detected at line 1149
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1147
+Overfull \hbox (336.25pt too wide) detected at line 1149
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1147
+Underfull \vbox (badness 10000) detected at line 1149
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1147
+Overfull \hbox (336.25pt too wide) detected at line 1149
 []
  []
 
@@ -1846,31 +1851,21 @@ File: images/caution.png Graphic file (type bmp)
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1259.
+(amsmath)                 on input line 1261.
 
 File: images/tip.png Graphic file (type bmp)
 <images/tip.png>
 [37] [38]
-Underfull \hbox (badness 10000) detected at line 1400
+Underfull \hbox (badness 10000) detected at line 1402
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1400
+Underfull \hbox (badness 10000) detected at line 1402
 [][][]
  []
 
 [39]
-Underfull \hbox (badness 10000) detected at line 1402
- [][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 1402
-[][][]
- []
-
-
 Underfull \hbox (badness 10000) detected at line 1404
  [][]
  []
@@ -1887,47 +1882,47 @@ Underfull \hbox (badness 10000) detected at line 1406
 
 
 Underfull \hbox (badness 10000) detected at line 1406
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1408
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1408
 [][][]
  []
 
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1410--1411
+Underfull \hbox (badness 10000) in paragraph at lines 1412--1413
 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1423
+Underfull \hbox (badness 10000) detected at line 1425
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1423
+Underfull \hbox (badness 10000) detected at line 1425
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1425
+Underfull \hbox (badness 10000) detected at line 1427
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1425
+Underfull \hbox (badness 10000) detected at line 1427
 [][][]
  []
 
 [40]
-Underfull \hbox (badness 10000) detected at line 1454
- [][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 1454
-[][][]
- []
-
-
 Underfull \hbox (badness 10000) detected at line 1456
  [][]
  []
@@ -1944,6 +1939,16 @@ Underfull \hbox (badness 10000) detected at line 1458
 
 
 Underfull \hbox (badness 10000) detected at line 1458
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1460
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1460
 [][][]
  []
 
@@ -1953,45 +1958,45 @@ File: images/tried.png Graphic file (type bmp)
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1496--1496
+Underfull \hbox (badness 10000) in paragraph at lines 1498--1498
 [][][][][]$[][][][] [] [] [] [][][][][][][][] [] [][] [] [][][] [] [][] [] [][]
 [][][][][][][][] [] [][][][][] [] [][][][] [] [][] [] [][][][][] [][] [][][][][
 ][][][][][] []
  []
 
 [42]
-Underfull \vbox (badness 10000) detected at line 1503
+Underfull \vbox (badness 10000) detected at line 1505
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1503
+Overfull \hbox (336.25pt too wide) detected at line 1505
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1503
+Underfull \vbox (badness 10000) detected at line 1505
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1503
+Overfull \hbox (336.25pt too wide) detected at line 1505
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1503
+Underfull \vbox (badness 10000) detected at line 1505
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1503
+Overfull \hbox (336.25pt too wide) detected at line 1505
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1503
+Underfull \vbox (badness 10000) detected at line 1505
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1503
+Overfull \hbox (336.25pt too wide) detected at line 1505
 []
  []
 
@@ -1999,23 +2004,13 @@ Chapter 5.
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1517--1517
+Underfull \hbox (badness 10000) in paragraph at lines 1519--1519
 [][][][][]$[][][][][] [] [] [] [][][][][][][][] [] [][] [] [][][] [] [][][][] [
 ] [][][][] [] [][] [] [][][][][] [][] [][][] [][] [] [][] [][][][] [][] [][][][
 ][][][] [][] [][] [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1522
- [][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 1522
-[][][]
- []
-
-
 Underfull \hbox (badness 10000) detected at line 1524
  [][]
  []
@@ -2026,7 +2021,17 @@ Underfull \hbox (badness 10000) detected at line 1524
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1527--1527
+Underfull \hbox (badness 10000) detected at line 1526
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1526
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1529--1529
 [][][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][] [] [][][] [] [][][]
 [][][][] [] [][][][][] [][] [][][][][][][][][] [] [][][][][][] [][] [][][][][] 
 [][] [][][][][][] [][] [][][][] [][]
@@ -2043,26 +2048,16 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 ]
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
-File: netsci_files/figure-latex/unnamed-chunk-38-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-38-1.pdf>
 File: netsci_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/unnamed-chunk-39-1.pdf>
+File: netsci_files/figure-latex/unnamed-chunk-40-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-40-1.pdf>
 [44]
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 File: images/tip.png Graphic file (type bmp)
 <images/tip.png>
 
-Underfull \hbox (badness 10000) detected at line 1605
- [][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 1605
-[][][]
- []
-
-
 Underfull \hbox (badness 10000) detected at line 1607
  [][]
  []
@@ -2089,24 +2084,34 @@ Underfull \hbox (badness 10000) detected at line 1611
 
 
 Underfull \hbox (badness 10000) detected at line 1611
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1613
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1613
 [][][]
  []
 
 [45]
-File: netsci_files/figure-latex/unnamed-chunk-42-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-42-1.pdf>
-[46]
 File: netsci_files/figure-latex/unnamed-chunk-43-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/unnamed-chunk-43-1.pdf>
-[47]
+[46]
 File: netsci_files/figure-latex/unnamed-chunk-44-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/unnamed-chunk-44-1.pdf>
+[47]
+File: netsci_files/figure-latex/unnamed-chunk-45-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-45-1.pdf>
 File: /Users/Tal/Desktop/netsci-notes/images/income_distribution.png Graphic fi
 le (type bmp)
 </Users/Tal/Desktop/netsci-notes/images/income_distribution.png>
 [48] [49]
-File: netsci_files/figure-latex/unnamed-chunk-46-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-46-1.pdf>
+File: netsci_files/figure-latex/unnamed-chunk-47-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-47-1.pdf>
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 [50]
@@ -2116,14 +2121,14 @@ File: images/note.png Graphic file (type bmp)
 File: netsci_files/figure-latex/powerLaw-poisson-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/powerLaw-poisson-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1811--1811
+Underfull \hbox (badness 10000) in paragraph at lines 1813--1813
 [][][][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][]
 [][][][][] [] [][][][][][][] [] [][][][][][][][] [][] [][][][][][][][] [][] [][
 ][][][][] [][] [][][][] [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1815--1816
+Underfull \hbox (badness 10000) in paragraph at lines 1817--1818
 []\TU/lmr/m/n/10 A quick note: in the above codes, \TU/lmtt/m/n/10 y2 <- dpois(
 x, lambda =
  []
@@ -2140,44 +2145,44 @@ File: images/reminder.png Graphic file (type bmp)
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) detected at line 1868
+Underfull \hbox (badness 10000) detected at line 1870
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1868
+Underfull \hbox (badness 10000) detected at line 1870
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1870
+Underfull \hbox (badness 10000) detected at line 1872
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1870
+Underfull \hbox (badness 10000) detected at line 1872
 [][][]
  []
 
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) detected at line 1884
+Underfull \hbox (badness 10000) detected at line 1886
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1884
+Underfull \hbox (badness 10000) detected at line 1886
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1886
+Underfull \hbox (badness 10000) detected at line 1888
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1886
+Underfull \hbox (badness 10000) detected at line 1888
 [][][]
  []
 
@@ -2189,12 +2194,12 @@ File: images/reminder.png Graphic file (type bmp)
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1906--1907
+Underfull \hbox (badness 10000) in paragraph at lines 1908--1909
 []\TU/lmr/m/n/10 Update: Yeah, i was wrong. Originally, when calculating
  []
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 1906--1907
+Underfull \hbox (badness 1019) in paragraph at lines 1908--1909
 \TU/lmtt/m/n/10 deg.dist_internet\TU/lmr/m/n/10 , I set \TU/lmtt/m/n/10 cumulat
 ive \TU/lmr/m/n/10 to be \TU/lmtt/m/n/10 FALSE\TU/lmr/m/n/10 . This is due to
  []
@@ -2300,10 +2305,10 @@ Package rerunfilecheck Info: File `netsci.out' has not changed.
 (rerunfilecheck)             Checksum: 43A015A8C0DAEAD4D98AC7B86D9730C4;11301.
  ) 
 Here is how much of TeX's memory you used:
- 20614 strings out of 479426
- 367037 string characters out of 5880339
+ 20620 strings out of 479426
+ 367150 string characters out of 5880339
  862464 words of memory out of 5000000
- 39618 multiletter control sequences out of 15000+600000
+ 39623 multiletter control sequences out of 15000+600000
  540650 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  94i,15n,118p,858b,667s stack positions out of 5000i,500n,10000p,200000b,80000s

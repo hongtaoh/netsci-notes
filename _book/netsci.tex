@@ -207,7 +207,7 @@
 
 \title{Notes on Network Science}
 \author{Hongtao Hao}
-\date{2020-11-17}
+\date{2020-11-18}
 
 \begin{document}
 \maketitle
@@ -225,10 +225,6 @@
 
 This online book is largely inspired by Professor \href{https://yongyeol.com/}{Yong-Yeol (``YY'') Ahn}'s online class of \href{http://yongyeol.com/teaching/2020SP_netsci_syllabus.pdf}{INFO I606 \emph{Network Science}} at Indiana University Bloomington, and the \href{http://networksciencebook.com/}{\emph{Network Science}} book by \href{https://barabasi.com/}{Albert-László Barabási}. I am deeply grateful for Professor YY Ahn for allowing me to attend the online course and for Professor Barabási for generously making his book available to everyone online. Wihtout their help, this project is impossible.
 
-If you notice any errors, including typos and mistakes in math formulas, you are welcome to contribute to the project by clicking the ``Editing'' button on the upper-left of this online book (shown below). You will be directed to fork this project on GitHub before you and suggest changes.
-
-\begin{center}\includegraphics[width=0.45\linewidth]{images/edit} \end{center}
-
 This book has several custom blocks:
 
 \begin{rmdnote}
@@ -236,7 +232,7 @@ This is a note, a general notice.
 \end{rmdnote}
 
 \begin{rmdreminder}
-This is a reminder, usually just to remind myself something I don't understand yet.
+This is a reminder, usually just to remind myself of something I do not understand yet.
 \end{rmdreminder}
 
 \begin{rmdtip}
@@ -247,11 +243,15 @@ This is a tip, which helps you to understand a concept or memorize a formula.
 This is a caution, to inform you, for example, an error in publications.
 \end{rmdcaution}
 
-The full source of this project is available at \url{https://github.com/hongtaoh/netsci-notes}.
+This website is built with \href{https://bookdown.org/}{Bookdown} and deployed by \href{https://www.netlify.com/}{Netlify}. You can find the full source of this project is available at \url{https://github.com/hongtaoh/netsci-notes}.
 
-This website is built with \href{https://bookdown.org/}{Bookdown} and deployed by \href{https://www.netlify.com/}{Netlify}.
+\includegraphics{images/license.png}
 
 This online book is licensed under the \href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License}.
+
+If you notice any errors, including typos and mistakes in math formulas, you are welcome to contribute to the project by clicking the ``Editing'' button on the upper-left of this online book (shown below). You will be directed to fork this project on GitHub before you and suggest changes.
+
+\begin{center}\includegraphics[width=0.45\linewidth]{images/edit} \end{center}
 
 \mainmatter
 
@@ -798,12 +798,14 @@ The following task prompts are based on the above homework. You can use them to 
   \end{itemize}
 \item
   2-2-3. Do the same thing using \href{https://numpy.org/doc/stable/reference/generated/numpy.mean.html}{numpy's mean function} which takes in a list and returns the mean of this list.
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    \textbf{Note}: I didn't understand Professor YY's note here: ``so if you print a numpy float it will display differently than if you printed a python float, which is why we get the intentional truncation of the value when displayed''.
-  \end{itemize}
+\begin{rmdreminder}
+I do not understand Professor YY's note here: ``so if you print a numpy float it will display differently than if you printed a python float, which is why we get the intentional truncation of the value when displayed''.
+\end{rmdreminder}
+
+\begin{itemize}
+\tightlist
 \item
   2-2-4. Get \texttt{star\_graph}'s average degree using networkx's \texttt{info()} function.
 \end{itemize}
@@ -857,7 +859,7 @@ For example, in \texttt{g1}, the path length between node \(1\) and node \(4\) c
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-26-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-27-1.pdf}
 
 Obviously, the path length of \(2\) is smaller than \(3\). In this case, \(1 \to 3 \to 4\) is the \textbf{shortest path} (denoted as \(d_{i,j}\)), which is defined as the path with the fewest number of links. In the above example, \(d_{1,4}\) = 2.
 
@@ -947,7 +949,7 @@ We are not even sure whether the two nodes are connected or not, let alone knowi
 \begin{verbatim}
 ## $vpath
 ## $vpath[[1]]
-## + 4/100 vertices, from fcc3d0f:
+## + 4/100 vertices, from 574a920:
 ## [1]  3  8 28 90
 ## 
 ## 
@@ -1435,7 +1437,7 @@ From the figure shown in \href{http://networksciencebook.com/chapter/3\#not-pois
 \hypertarget{the-strength-of-weak-ties-by-granovetter1973strength}{%
 \subsection{\texorpdfstring{\emph{The Strength of Weak Ties} by \citet{granovetter1973strength}}{The Strength of Weak Ties by @granovetter1973strength}}\label{the-strength-of-weak-ties-by-granovetter1973strength}}
 
-Please read the following article carefully by yourself before reading my notes.
+Please read the following articles carefully by yourself before reading my notes.
 
 Granovetter, M. S. (1973). \href{https://www.cs.cmu.edu/~jure/pub/papers/granovetter73ties.pdf}{The strength of weak ties}. \emph{American journal of sociology, 78}(6), 1360-1380.
 
@@ -1478,7 +1480,7 @@ Therefore, this tried in Figure \ref{fig:tried} is very unlikely to occur:
 \item
   No strong tie is a local bridge.
 \item
-  Whatever is is to be diffused can reach a larger number of people if passed through weak rather than strong ties\footnote{\citet{centola2007complex} advanced this idea by distinguishing between complex contagions and simple contagions like an epidemic. They argued that the strength of weak ties should not be simply generalized to complex contagions, which requires affirmation from multiple sources. Therefore, not only the length, but also, and maybe more importantly, the width of the ties influences complex contagions.}.
+  Whatever is is to be diffused can reach a larger number of people if passed through weak rather than strong ties\footnote{\citet{centola2007complex} advanced this idea by distinguishing between complex contagions and simple contagions like an epidemic. They argued that the strength of weak ties should not be simply generalized to complex contagions, which require affirmation from multiple sources. Therefore, not only the length, but also, and maybe more importantly, the width of the ties influences complex contagions.}.
 \item
   People are more likely to find jobs through weak ties rather than strong.
 \end{itemize}
@@ -1546,11 +1548,11 @@ To really understand \textbf{scale free networks} and \textbf{power law distribu
 
 Inspired by \href{https://www.youtube.com/watch?v=4xfOq00BzJA}{the conversation between Vi and Sal}, I am asking you this question. In the following number line, from \(1\) to 1 million, where is \(1,000\)?
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-38-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-39-1.pdf}
 
 Okay, let's label both \(1,000\) and \(100,000\) in the above number line:
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-39-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-40-1.pdf}
 
 I plotted four points: 0, 1000, 100000, and 1000000, but can only see three. Why? It's because 0 and 1000 are almost at the same place. But I guess you've probably thought \(1,000\) was in the place of \(100,000\), right?
 
@@ -1627,7 +1629,7 @@ Before we take the log:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-42-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-43-1.pdf}
 
 I learned a lot about how to style the points from reading \href{https://kateto.net/networks-r-igraph}{Dr.Katya Ognyanova's blog post}.
 
@@ -1645,7 +1647,7 @@ After we take a log:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-43-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-44-1.pdf}
 
 A very important property of power-law distribution on a log-log scale is it has a \textbf{heavy tail} or a so-called \textbf{fat tail}. Lots of other distributions, like binomial, Poisson, or normal distributions, simply do not have this fat tail, which is super useful when we have lots of outliers in the tail of the distribution.
 
@@ -1683,11 +1685,11 @@ As we can clearly see below, except for the power-law distribution on a log-log 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{netsci_files/figure-latex/unnamed-chunk-44-1} 
+{\centering \includegraphics[width=1\linewidth]{netsci_files/figure-latex/unnamed-chunk-45-1} 
 
 }
 
-\caption{Comparing Four Different Distributions}\label{fig:unnamed-chunk-44}
+\caption{Comparing Four Different Distributions}\label{fig:unnamed-chunk-45}
 \end{figure}
 
 If we have many outliers in the tail, for example, in the household income distribution shown below by \citet{donovan2016us}, which of the four distributions shown above will you choose to fit the income distribution? Definitely we'll use the power-law distribution which has a fat tail.
@@ -1698,7 +1700,7 @@ If we have many outliers in the tail, for example, in the household income distr
 
 }
 
-\caption{US Household Income Distribution in 2015, Visualization by @donovan2016us}\label{fig:unnamed-chunk-45}
+\caption{US Household Income Distribution in 2015, Visualization by @donovan2016us}\label{fig:unnamed-chunk-46}
 \end{figure}
 
 We can also compare a normal distribution and a power-law distribution side by side:
@@ -1722,11 +1724,11 @@ We can also compare a normal distribution and a power-law distribution side by s
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{netsci_files/figure-latex/unnamed-chunk-46-1} 
+{\centering \includegraphics[width=1\linewidth]{netsci_files/figure-latex/unnamed-chunk-47-1} 
 
 }
 
-\caption{Comparing Normal Distribution and Power-law Distribution Side by Side}\label{fig:unnamed-chunk-46}
+\caption{Comparing Normal Distribution and Power-law Distribution Side by Side}\label{fig:unnamed-chunk-47}
 \end{figure}
 
 In power-law distribution plotted on a log-log scale, we do expect a lot of outliers.
@@ -1839,7 +1841,7 @@ Since scale-free properties are so prevalent, we call scale-free property a univ
 As ubiquitous as it is, the scale-free property isn't for every networks. Many networks do not share this property, for example, power grid and material networks. Scale-freeness requires that the number of links a node can have is arbitrary, and not systematically constrained. If this requirement is not fulfilled, then hubs are restricted and the network won't show a scale-free property.
 
 \begin{rmdimportant}
-Not all scholars agree on the universality of scale-free networks in real life. For example, \emph{\href{https://www.nature.com/articles/s41467-019-08746-5}{Scale-free networks are rare}} by Broido and Caluset (2019). And \href{https://www.barabasilab.com/post/love-is-all-you-need}{here} is the response to this paper from Barabási.
+Not all scholars agree on the universality of scale-free networks in real life, for example, \emph{\href{https://www.nature.com/articles/s41467-019-08746-5}{Scale-free networks are rare}} by Broido and Caluset (2019). And \href{https://www.barabasilab.com/post/love-is-all-you-need}{here} is the response to this paper from Barabási.
 \end{rmdimportant}
 
 \hypertarget{ultra-small-property-and-the-role-of-degree-exponent}{%

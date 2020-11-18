@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta name="github-repo" content="hongtaoh/netsci-notes" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="3.1 Basic ideals | Notes on Network Science" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Hongtao Hao" />
 
 
-<meta name="date" content="2020-11-17" />
+<meta name="date" content="2020-11-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>For example, in <code>g1</code>, the path length between node <span class="math inline">\(1\)</span> and node <span class="math inline">\(4\)</span> can either be 2 (<span class="math inline">\(1 \to 3 \to 4\)</span>) or 3 (<span class="math inline">\(1 \to 2 \to 3 \to 4\)</span>):</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="basic-ideals.html#cb13-1"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
 <span id="cb13-2"><a href="basic-ideals.html#cb13-2"></a><span class="kw">plot</span>(g1)</span></code></pre></div>
-<p><img src="netsci_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="netsci_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <p>Obviously, the path length of <span class="math inline">\(2\)</span> is smaller than <span class="math inline">\(3\)</span>. In this case, <span class="math inline">\(1 \to 3 \to 4\)</span> is the <strong>shortest path</strong> (denoted as <span class="math inline">\(d_{i,j}\)</span>), which is defined as the path with the fewest number of links. In the above example, <span class="math inline">\(d_{1,4}\)</span> = 2.</p>
 <p>In an undirected network, <span class="math inline">\(d_{i,j} = d_{j,k}\)</span>. This often does not hold true in a directed network because:</p>
 <ol style="list-style-type: decimal">
@@ -285,7 +285,7 @@ FIGURE 3.2: A random network to explain Breath-first search (BFS) algorithm
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="basic-ideals.html#cb18-1"></a><span class="kw">shortest_paths</span>(random3, <span class="dt">from =</span> <span class="dv">3</span>, <span class="dt">to =</span> <span class="dv">90</span>)</span></code></pre></div>
 <pre><code>## $vpath
 ## $vpath[[1]]
-## + 4/100 vertices, from 42c002b:
+## + 4/100 vertices, from 67ce6ce:
 ## [1]  3  8 28 90
 ## 
 ## 
@@ -445,7 +445,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/03-smallworld.Rmd",
+"link": "https://github.com/hongtaoh/netsci-notes/edit/master/03-smallworld.Rmd",
 "text": "Edit"
 },
 "history": {

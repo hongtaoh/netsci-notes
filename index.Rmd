@@ -11,18 +11,12 @@ link-citations: yes
 colorlinks: yes
 lot: no
 lof: no
-github-repo: rstudio/bookdown-demo
+github-repo: hongtaoh/netsci-notes
 description: "This is Hongtao Hao's notes when learning Professor YY Ahn's online course of *Network Science*"
 ---
 # Welcome{-}
 
 This online book is largely inspired by Professor [Yong-Yeol ("YY") Ahn](https://yongyeol.com/)'s online class of [INFO I606 *Network Science*](http://yongyeol.com/teaching/2020SP_netsci_syllabus.pdf) at Indiana University Bloomington, and the [*Network Science*](http://networksciencebook.com/) book by [Albert-László Barabási](https://barabasi.com/). I am deeply grateful for Professor YY Ahn for allowing me to attend the online course and for Professor Barabási for generously making his book available to everyone online. Wihtout their help, this project is impossible. 
-
-If you notice any errors, including typos and mistakes in math formulas, you are welcome to contribute to the project by clicking the "Editing" button on the upper-left of this online book (shown below). You will be directed to fork this project on GitHub before you and suggest changes. 
-
-```{r edit, echo=FALSE, fig.align='center', out.width="45%"}
-knitr::include_graphics('images/edit.png')
-```
 
 This book has several custom blocks:
 
@@ -31,7 +25,7 @@ This is a note, a general notice.
 ```
 
 ```{block2, type='rmdreminder'}
-This is a reminder, usually just to remind myself something I don't understand yet. 
+This is a reminder, usually just to remind myself of something I do not understand yet. 
 ```
 
 ```{block2, type='rmdtip'}
@@ -42,12 +36,15 @@ This is a tip, which helps you to understand a concept or memorize a formula.
 This is a caution, to inform you, for example, an error in publications. 
 ```
 
-The full source of this project is available at [https://github.com/hongtaoh/netsci-notes](https://github.com/hongtaoh/netsci-notes).
+This website is built with [Bookdown](https://bookdown.org/) and deployed by [Netlify](https://www.netlify.com/). You can find the full source of this project is available at [https://github.com/hongtaoh/netsci-notes](https://github.com/hongtaoh/netsci-notes).
 
-This website is built with [Bookdown](https://bookdown.org/) and deployed by [Netlify](https://www.netlify.com/).
-
-![License](images/by-nc-sa.png)
+![](images/license.png)
 
 This online book is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
+If you notice any errors, including typos and mistakes in math formulas, you are welcome to contribute to the project by clicking the "Editing" button on the upper-left of this online book (shown below). You will be directed to fork this project on GitHub before you and suggest changes. 
+
+```{r edit, echo=FALSE, fig.align='center', out.width="45%"}
+knitr::include_graphics('images/edit.png')
+```
 
