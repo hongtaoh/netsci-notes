@@ -16,7 +16,7 @@ description: "This is Hongtao Hao's notes when learning Professor YY Ahn's onlin
 ---
 # Welcome{-}
 
-This online book is largely inspired by Professor [Yong-Yeol ("YY") Ahn](https://yongyeol.com/)'s online class of [INFO I606 *Network Science*](http://yongyeol.com/teaching/2020SP_netsci_syllabus.pdf) at Indiana University Bloomington, and the [*Network Science*](http://networksciencebook.com/) book by [Albert-László Barabási](https://barabasi.com/). I am deeply grateful for Professor YY Ahn for allowing me to attend the online course and for Professor Barabási for generously making his book available to everyone online. Wihtout their help, this project is impossible. 
+This online book is largely inspired by Professor [Yong-Yeol ("YY") Ahn](https://yongyeol.com/)'s online class of [INFO I606 *Network Science*](http://yongyeol.com/teaching/2020SP_netsci_syllabus.pdf) at Indiana University Bloomington, and the [*Network Science*](http://networksciencebook.com/) book by [Albert-László Barabási](https://barabasi.com/). I am deeply grateful to Professor YY Ahn for allowing me to attend the online course and for Professor Barabási for generously making his book available to everyone online. Wihtout their help, this project is impossible. 
 
 This book has several custom blocks:
 
@@ -34,6 +34,10 @@ This is a tip, which helps you to understand a concept or memorize a formula.
 
 ```{block2, type='rmdcaution'}
 This is a caution, to inform you, for example, an error in publications. 
+```
+
+```{block2, type='rmdimportant'}
+This is an importance note. It tells you something you should consider when understanding a concept, for example, when scholars disagree. 
 ```
 
 This website is built with [Bookdown](https://bookdown.org/) and deployed by [Netlify](https://www.netlify.com/). You can find the full source of this project at [https://github.com/hongtaoh/netsci-notes](https://github.com/hongtaoh/netsci-notes).

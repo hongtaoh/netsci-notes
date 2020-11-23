@@ -6,12 +6,13 @@
 \documentclass[
 ]{krantz}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -87,6 +88,7 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -95,7 +97,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -202,12 +204,15 @@
 \makeatother
 
 \frontmatter
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Notes on Network Science}
 \author{Hongtao Hao}
-\date{2020-11-19}
+\date{2020-11-21}
 
 \begin{document}
 \maketitle
@@ -223,7 +228,7 @@
 \chapter*{Welcome}\label{welcome}}
 
 
-This online book is largely inspired by Professor \href{https://yongyeol.com/}{Yong-Yeol (``YY'') Ahn}'s online class of \href{http://yongyeol.com/teaching/2020SP_netsci_syllabus.pdf}{INFO I606 \emph{Network Science}} at Indiana University Bloomington, and the \href{http://networksciencebook.com/}{\emph{Network Science}} book by \href{https://barabasi.com/}{Albert-László Barabási}. I am deeply grateful for Professor YY Ahn for allowing me to attend the online course and for Professor Barabási for generously making his book available to everyone online. Wihtout their help, this project is impossible.
+This online book is largely inspired by Professor \href{https://yongyeol.com/}{Yong-Yeol (``YY'') Ahn}'s online class of \href{http://yongyeol.com/teaching/2020SP_netsci_syllabus.pdf}{INFO I606 \emph{Network Science}} at Indiana University Bloomington, and the \href{http://networksciencebook.com/}{\emph{Network Science}} book by \href{https://barabasi.com/}{Albert-László Barabási}. I am deeply grateful to Professor YY Ahn for allowing me to attend the online course and for Professor Barabási for generously making his book available to everyone online. Wihtout their help, this project is impossible.
 
 This book has several custom blocks:
 
@@ -242,6 +247,10 @@ This is a tip, which helps you to understand a concept or memorize a formula.
 \begin{rmdcaution}
 This is a caution, to inform you, for example, an error in publications.
 \end{rmdcaution}
+
+\begin{rmdimportant}
+This is an importance note. It tells you something you should consider when understanding a concept, for example, when scholars disagree.
+\end{rmdimportant}
 
 This website is built with \href{https://bookdown.org/}{Bookdown} and deployed by \href{https://www.netlify.com/}{Netlify}. You can find the full source of this project at \url{https://github.com/hongtaoh/netsci-notes}.
 
@@ -411,7 +420,7 @@ If you decide to use Miniconda for whatever reason, after installing it, open yo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{conda}\NormalTok{ --version }\CommentTok{# To check whether the installation was successful}
+\ExtensionTok{conda}\NormalTok{ {-}{-}version \# To check whether the installation was successful}
 \end{Highlighting}
 \end{Shaded}
 
@@ -419,11 +428,11 @@ If the installation was successful, then do the following:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# To download jupyter notebook, and jupyterlab:}
-\ExtensionTok{conda}\NormalTok{ install -c conda-forge vega notebook jupyterlab }
-\CommentTok{# To download packages we'll need to use later:}
+\CommentTok{\# To download jupyter notebook, and jupyterlab:}
+\ExtensionTok{conda}\NormalTok{ install {-}c conda{-}forge vega notebook jupyterlab }
+\CommentTok{\# To download packages we\textquotesingle{}ll need to use later:}
 \ExtensionTok{conda}\NormalTok{ install numpy scipy networkx jupyter }
-\ExtensionTok{conda}\NormalTok{ install pandas matplotlib seaborn bokeh scikit-learn }
+\ExtensionTok{conda}\NormalTok{ install pandas matplotlib seaborn bokeh scikit{-}learn }
 \end{Highlighting}
 \end{Shaded}
 
@@ -437,7 +446,7 @@ If your computer is running on a MacOS or a Linux system, then you can also use 
 \begin{Shaded}
 \begin{Highlighting}[]
 \ExtensionTok{pip3}\NormalTok{ install numpy scipy networkx jupyter jupyterlab ipython }
-\ExtensionTok{pip3}\NormalTok{ install pandas matplotlib seaborn bokeh scikit-learn}
+\ExtensionTok{pip3}\NormalTok{ install pandas matplotlib seaborn bokeh scikit{-}learn}
 \end{Highlighting}
 \end{Shaded}
 
@@ -485,7 +494,7 @@ Create a notebook, name it as \texttt{python-setup}, and run the following codes
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }
 \ImportTok{import}\NormalTok{ networks }\ImportTok{as}\NormalTok{ nx}
 \ImportTok{import}\NormalTok{ matplotlib }\ImportTok{as}\NormalTok{ plt}
-\OperatorTok{%}\NormalTok{ matplotlib inline}
+\OperatorTok{\%}\NormalTok{ matplotlib inline}
 \end{Highlighting}
 \end{Shaded}
 
@@ -511,7 +520,7 @@ What is a network composed of? How is a network different from another one? In t
 
 }
 
-\caption{Leonhard Euler's drawing of the seven bridges in Königsberg, Image credit: beanz Magazine}\label{fig:unnamed-chunk-14}
+\caption{Leonhard Euler's drawing of the seven bridges in Königsberg, Image credit: beanz Magazine}\label{fig:unnamed-chunk-15}
 \end{figure}
 
 The above image is from \href{https://www.kidscodecs.com/7-bridges-konigsberg/}{\emph{beanz Magazine}}.
@@ -551,10 +560,10 @@ The \textbf{degree} of a node is simply the number of links connecting it to oth
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(igraph)}
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\NormalTok{g1 <-}\StringTok{ }\KeywordTok{graph}\NormalTok{( }\DataTypeTok{edges=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{), }\DataTypeTok{n=}\DecValTok{4}\NormalTok{, }\DataTypeTok{directed=}\OtherTok{FALSE}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{(g1)}
+\FunctionTok{library}\NormalTok{(igraph)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\NormalTok{g1 }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{( }\AttributeTok{edges=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{), }\AttributeTok{n=}\DecValTok{4}\NormalTok{, }\AttributeTok{directed=}\ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(g1)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -598,9 +607,9 @@ The above equation Eq. \eqref{eq:AverageDegree} is for undirected networks. What
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g2 <-}\StringTok{ }\KeywordTok{graph}\NormalTok{( }\DataTypeTok{edges=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{), }\DataTypeTok{n=}\DecValTok{4}\NormalTok{, }\DataTypeTok{directed=}\OtherTok{TRUE}\NormalTok{)}
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(g2)}
+\NormalTok{g2 }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{( }\AttributeTok{edges=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{), }\AttributeTok{n=}\DecValTok{4}\NormalTok{, }\AttributeTok{directed=}\ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(g2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -668,7 +677,7 @@ We also know that since \(p_k\) is a probability, it should add up to 1:
 
 Take the network in Figure \ref{fig:nunit2-nodes} as an example, its degree distribution is as follows:
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-19-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-20-1.pdf}
 
 \hypertarget{adjacency-matrix}{%
 \section{Adjacency matrix}\label{adjacency-matrix}}
@@ -683,16 +692,16 @@ For \texttt{g1}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(g1)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(g1)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-20-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-21-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{as_adjacency_matrix}\NormalTok{(g1)}
+\FunctionTok{as\_adjacency\_matrix}\NormalTok{(g1)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -709,16 +718,16 @@ For \texttt{g2}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(g2)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(g2)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-22-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-23-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{as_adjacency_matrix}\NormalTok{(g2)}
+\FunctionTok{as\_adjacency\_matrix}\NormalTok{(g2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -834,8 +843,8 @@ The following is not originally from me, but my notes from reading \href{http://
 
 Before we can understand the small world phenomenon, we need to have more basic knowledge about a network: shortest path, average path length, Breath-first search algorithm, components, and local and average clustering coefficient.
 
-\hypertarget{basic-ideals}{%
-\section{Basic ideals}\label{basic-ideals}}
+\hypertarget{weight-paths-connectedness-and-clustering}{%
+\section{Weight, paths, connectedness, and clustering}\label{weight-paths-connectedness-and-clustering}}
 
 \hypertarget{weighted-network}{%
 \subsection{Weighted network}\label{weighted-network}}
@@ -854,12 +863,12 @@ For example, in \texttt{g1}, the path length between node \(1\) and node \(4\) c
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(g1)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(g1)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-27-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-28-1.pdf}
 
 Obviously, the path length of \(2\) is smaller than \(3\). In this case, \(1 \to 3 \to 4\) is the \textbf{shortest path} (denoted as \(d_{i,j}\)), which is defined as the path with the fewest number of links. In the above example, \(d_{1,4}\) = 2.
 
@@ -877,9 +886,9 @@ For example,
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g3 <-}\StringTok{ }\KeywordTok{graph}\NormalTok{( }\DataTypeTok{edges=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DataTypeTok{n=}\DecValTok{4}\NormalTok{, }\DataTypeTok{directed=}\OtherTok{TRUE}\NormalTok{)}
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(g3)}
+\NormalTok{g3 }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{( }\AttributeTok{edges=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{n=}\DecValTok{4}\NormalTok{, }\AttributeTok{directed=}\ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(g3)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -894,6 +903,10 @@ For example,
 
 There are paths (\(1 \to 2\), and \(1 \to 3 \to 4 \to 2\)) from node \(1\) to node \(2\) but we don't have on any from node \(2\) to node \(1\). Furthermore, \(d_{2, 4} = 2\) whereas \(d_{4,2} = 1\).
 
+\begin{rmdimportant}
+Please note that all the above discussions on shortest path lenghts are based on the assumption that it is a simple contagion. In a complex contagion, things are very different because multiple reinforcements are necessary. Read \citet{centola2007complex} for more detailed explanations.
+\end{rmdimportant}
+
 \hypertarget{network-diameter}{%
 \subsubsection{Network diameter}\label{network-diameter}}
 
@@ -906,7 +919,7 @@ Average path length is defined as the average length of shortest paths between a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{average.path.length}\NormalTok{(g3)}
+\FunctionTok{average.path.length}\NormalTok{(g3)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -923,9 +936,9 @@ For example, in the network @ref9fig:random3-10 below, what is the shortest path
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{)}
-\NormalTok{random3 <-}\StringTok{ }\KeywordTok{erdos.renyi.game}\NormalTok{(}\DecValTok{100}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\DataTypeTok{type =} \StringTok{"gnp"}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{(random3)}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{)}
+\NormalTok{random3 }\OtherTok{\textless{}{-}} \FunctionTok{erdos.renyi.game}\NormalTok{(}\DecValTok{100}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\AttributeTok{type =} \StringTok{"gnp"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(random3)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -942,14 +955,14 @@ We are not even sure whether the two nodes are connected or not, let alone knowi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{shortest_paths}\NormalTok{(random3, }\DataTypeTok{from =} \DecValTok{3}\NormalTok{, }\DataTypeTok{to =} \DecValTok{90}\NormalTok{)}
+\FunctionTok{shortest\_paths}\NormalTok{(random3, }\AttributeTok{from =} \DecValTok{3}\NormalTok{, }\AttributeTok{to =} \DecValTok{90}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ## $vpath
 ## $vpath[[1]]
-## + 4/100 vertices, from c20c88f:
+## + 4/100 vertices, from ea4e2ba:
 ## [1]  3  8 28 90
 ## 
 ## 
@@ -1010,11 +1023,11 @@ For example, in Figure \ref{fig:disconnected}, the network contains two componen
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{disconnectedG <-}\StringTok{ }\KeywordTok{graph}\NormalTok{( }\DataTypeTok{edges=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{), }
-                        \DataTypeTok{n=}\DecValTok{6}\NormalTok{, }
-                        \DataTypeTok{directed=}\OtherTok{FALSE}\NormalTok{)}
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(disconnectedG)}
+\NormalTok{disconnectedG }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{( }\AttributeTok{edges=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{), }
+                        \AttributeTok{n=}\DecValTok{6}\NormalTok{, }
+                        \AttributeTok{directed=}\ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(disconnectedG)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1027,7 +1040,7 @@ For example, in Figure \ref{fig:disconnected}, the network contains two componen
 \caption{An example of disconnected network}\label{fig:disconnected}
 \end{figure}
 
-I its adjacency matrix, nonzero elements are contained in square blocks along the diagonal and all the remaining elements are zeros:
+In its adjacency matrix, nonzero elements are contained in square blocks along the diagonal and all the remaining elements are zeros:
 
 \begin{figure}
 
@@ -1042,10 +1055,10 @@ If the components are bridged:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{connectedG <-}\StringTok{ }\KeywordTok{graph}\NormalTok{( }\DataTypeTok{edges=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{), }\DataTypeTok{n=}\DecValTok{6}\NormalTok{, }
-                     \DataTypeTok{directed=}\OtherTok{FALSE}\NormalTok{)}
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(connectedG)}
+\NormalTok{connectedG }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{( }\AttributeTok{edges=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{), }\AttributeTok{n=}\DecValTok{6}\NormalTok{, }
+                     \AttributeTok{directed=}\ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(connectedG)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1176,8 +1189,8 @@ For example, we now have 100 isolated nodes, which are called \textbf{singletons
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{g4_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\KeywordTok{graph}\NormalTok{( }\DataTypeTok{edges=}\OtherTok{NULL}\NormalTok{, }\DataTypeTok{n=}\DecValTok{100}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{(g4_}\DecValTok{1}\NormalTok{)}
+\NormalTok{g4\_1 }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{( }\AttributeTok{edges=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{n=}\DecValTok{100}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(g4\_1)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1194,16 +1207,16 @@ Frist, we'll set up a value \emph{p} (\(0 \leq p \leq 1\)), called \textbf{link 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.2}\NormalTok{), }
-     \DataTypeTok{type=} \StringTok{"n"}\NormalTok{, }
-     \DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }
-     \DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }
-     \DataTypeTok{yaxt=}\StringTok{"none"}\NormalTok{)}
-\CommentTok{# Solution: https://rstudio-pubs-static.s3.amazonaws.com/}
-\CommentTok{# 297778_5fce298898d64c81a4127cf811a9d486.html}
-\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v=}\FloatTok{0.1}\NormalTok{, }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
-\KeywordTok{rect}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"lightgreen"}\NormalTok{)}
-\KeywordTok{rect}\NormalTok{(}\FloatTok{0.1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.2}\NormalTok{), }
+     \AttributeTok{type=} \StringTok{"n"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{""}\NormalTok{, }
+     \AttributeTok{ylab =} \StringTok{""}\NormalTok{, }
+     \AttributeTok{yaxt=}\StringTok{"none"}\NormalTok{)}
+\CommentTok{\# Solution: https://rstudio{-}pubs{-}static.s3.amazonaws.com/}
+\CommentTok{\# 297778\_5fce298898d64c81a4127cf811a9d486.html}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\FunctionTok{rect}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\AttributeTok{col=}\StringTok{"lightgreen"}\NormalTok{)}
+\FunctionTok{rect}\NormalTok{(}\FloatTok{0.1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1222,10 +1235,10 @@ Okay, let's set \(p=0.1\) and see what will happen:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Solution from: https://rpubs.com/lgadar/generate-graphs}
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{)}
-\NormalTok{erdosRenyi <-}\StringTok{ }\KeywordTok{erdos.renyi.game}\NormalTok{(}\DecValTok{100}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\DataTypeTok{type =} \StringTok{"gnp"}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{(erdosRenyi)}
+\CommentTok{\# Solution from: https://rpubs.com/lgadar/generate{-}graphs}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{)}
+\NormalTok{erdosRenyi }\OtherTok{\textless{}{-}} \FunctionTok{erdos.renyi.game}\NormalTok{(}\DecValTok{100}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\AttributeTok{type =} \StringTok{"gnp"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(erdosRenyi)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1313,45 +1326,45 @@ Now, let's go back to random networks.
 \begin{longtable}[]{@{}llll@{}}
 \caption{\label{tab:network-and-coin} Comparing random network generation and flipping coins}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\raggedright
+\begin{minipage}[b]{(\columnwidth - 3\tabcolsep) * \real{0.23}}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{(\columnwidth - 3\tabcolsep) * \real{0.36}}\raggedright
 \(p\)\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{(\columnwidth - 3\tabcolsep) * \real{0.15}}\raggedright
 \(N\)\strut
-\end{minipage} & \begin{minipage}[b]{0.23\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{(\columnwidth - 3\tabcolsep) * \real{0.26}}\raggedright
 \(k\)\strut
 \end{minipage}\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\raggedright
+\begin{minipage}[b]{(\columnwidth - 3\tabcolsep) * \real{0.23}}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{(\columnwidth - 3\tabcolsep) * \real{0.36}}\raggedright
 \(p\)\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{(\columnwidth - 3\tabcolsep) * \real{0.15}}\raggedright
 \(N\)\strut
-\end{minipage} & \begin{minipage}[b]{0.23\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{(\columnwidth - 3\tabcolsep) * \real{0.26}}\raggedright
 \(k\)\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.20\columnwidth}\raggedright
+\begin{minipage}[t]{(\columnwidth - 3\tabcolsep) * \real{0.23}}\raggedright
 random network generation\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{(\columnwidth - 3\tabcolsep) * \real{0.36}}\raggedright
 link probability\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{(\columnwidth - 3\tabcolsep) * \real{0.15}}\raggedright
 number of nodes\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{(\columnwidth - 3\tabcolsep) * \real{0.26}}\raggedright
 number of node pairs successfully connected\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright
+\begin{minipage}[t]{(\columnwidth - 3\tabcolsep) * \real{0.23}}\raggedright
 tossing coins\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{(\columnwidth - 3\tabcolsep) * \real{0.36}}\raggedright
 probability of having a head in one toss\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{(\columnwidth - 3\tabcolsep) * \real{0.15}}\raggedright
 number of tosses\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{(\columnwidth - 3\tabcolsep) * \real{0.26}}\raggedright
 number of heads\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -1548,11 +1561,11 @@ To really understand \textbf{scale free networks} and \textbf{power law distribu
 
 Inspired by \href{https://www.youtube.com/watch?v=4xfOq00BzJA}{the conversation between Vi and Sal}, I am asking you this question. In the following number line, from \(1\) to 1 million, where is \(1,000\)?
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-39-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-41-1.pdf}
 
 Okay, let's label both \(1,000\) and \(100,000\) in the above number line:
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-40-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-42-1.pdf}
 
 I plotted four points: 0, 1000, 100000, and 1000000, but can only see three. Why? It's because 0 and 1000 are almost at the same place. But I guess you've probably thought \(1,000\) was in the place of \(100,000\), right?
 
@@ -1621,15 +1634,15 @@ Before we take the log:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{100}
-\NormalTok{y <-}\StringTok{ }\DecValTok{5}\OperatorTok{*}\NormalTok{x}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{ (x, y, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{, }\DataTypeTok{col=}\StringTok{"orange"}\NormalTok{,}
-      \DataTypeTok{xlab=}\StringTok{"X"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"5*x^(-2)"}\NormalTok{,}
-      \DataTypeTok{main=}\StringTok{"Before taking a log"}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{100}
+\NormalTok{y }\OtherTok{\textless{}{-}} \DecValTok{5}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{\^{}}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{ (x, y, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{col=}\StringTok{"orange"}\NormalTok{,}
+      \AttributeTok{xlab=}\StringTok{"X"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"5*x\^{}({-}2)"}\NormalTok{,}
+      \AttributeTok{main=}\StringTok{"Before taking a log"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-43-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-45-1.pdf}
 
 I learned a lot about how to style the points from reading \href{https://kateto.net/networks-r-igraph}{Dr.Katya Ognyanova's blog post}.
 
@@ -1637,17 +1650,17 @@ After we take a log:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{100}
-\NormalTok{y <-}\StringTok{ }\DecValTok{5}\OperatorTok{*}\NormalTok{x}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{ (x, y, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{, }\DataTypeTok{col=}\StringTok{"orange"}\NormalTok{,}
-      \DataTypeTok{xlab=}\StringTok{"log(X)"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"log(Y)"}\NormalTok{,}
-      \DataTypeTok{main=}\StringTok{"After taking a log"}\NormalTok{,}
-      \DataTypeTok{log=}\StringTok{"xy"}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{100}
+\NormalTok{y }\OtherTok{\textless{}{-}} \DecValTok{5}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{\^{}}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{ (x, y, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{col=}\StringTok{"orange"}\NormalTok{,}
+      \AttributeTok{xlab=}\StringTok{"log(X)"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"log(Y)"}\NormalTok{,}
+      \AttributeTok{main=}\StringTok{"After taking a log"}\NormalTok{,}
+      \AttributeTok{log=}\StringTok{"xy"}
 \NormalTok{      )}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{netsci_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{netsci_files/figure-latex/unnamed-chunk-46-1.pdf}
 
 A very important property of power-law distribution on a log-log scale is it has a \textbf{heavy tail} or a so-called \textbf{fat tail}. Lots of other distributions, like binomial, Poisson, or normal distributions, simply do not have this fat tail, which is super useful when we have lots of outliers in the tail of the distribution.
 
@@ -1655,41 +1668,41 @@ As we can clearly see below, except for the power-law distribution on a log-log 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
-\CommentTok{# The idea of the following codes comes from}
-\CommentTok{# https://www.statology.org/plot-normal-distribution-r/}
-\NormalTok{x_dnorm <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\DecValTok{6}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DataTypeTok{length=}\DecValTok{100}\NormalTok{)}
-\NormalTok{y_dnorm <-}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(x_dnorm)}
-\KeywordTok{plot}\NormalTok{(x_dnorm, y_dnorm, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{, }\DataTypeTok{col=}\StringTok{"skyblue"}\NormalTok{,}
-     \DataTypeTok{main=}\StringTok{"Normal Distribution"}\NormalTok{)}
-\CommentTok{# The following codes are from }
-\CommentTok{# https://www.tutorialspoint.com/r/r_binomial_distribution.htm}
-\NormalTok{x_dbinom <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DataTypeTok{by =} \DecValTok{1}\NormalTok{)}
-\NormalTok{y_dbinom <-}\StringTok{ }\KeywordTok{dbinom}\NormalTok{(x_dbinom,}\DecValTok{50}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{(x_dbinom, y_dbinom, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{, }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{,}
-     \DataTypeTok{main =} \StringTok{"Binomail Distribution"}\NormalTok{)}
-\CommentTok{# The following codes are from https://statisticsglobe.com/poisson-}
-\CommentTok{# distribution-in-r-dpois-ppois-qpois-rpois}
-\NormalTok{x_dpois <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\DecValTok{5}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DataTypeTok{by =} \DecValTok{1}\NormalTok{)}
-\NormalTok{y_dpois <-}\StringTok{ }\KeywordTok{dpois}\NormalTok{(x_dpois, }\DataTypeTok{lambda =} \DecValTok{10}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{(x_dpois, y_dpois, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{, }\DataTypeTok{col=}\StringTok{"purple"}\NormalTok{,}
-     \DataTypeTok{main =} \StringTok{"Poisson Distribution"}\NormalTok{)}
-\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{100}
-\NormalTok{y <-}\StringTok{ }\DecValTok{5}\OperatorTok{*}\NormalTok{x}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{ (x, y, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{, }\DataTypeTok{col=}\StringTok{"orange"}\NormalTok{,}
-      \DataTypeTok{xlab=}\StringTok{"log(X)"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"log(Y)"}\NormalTok{,}
-      \DataTypeTok{main=}\StringTok{"Power-law Distribution (Log-Log Scale)"}\NormalTok{,}
-      \DataTypeTok{log=}\StringTok{"xy"}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\CommentTok{\# The idea of the following codes comes from}
+\CommentTok{\# https://www.statology.org/plot{-}normal{-}distribution{-}r/}
+\NormalTok{x\_dnorm }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{6}\NormalTok{, }\DecValTok{6}\NormalTok{, }\AttributeTok{length=}\DecValTok{100}\NormalTok{)}
+\NormalTok{y\_dnorm }\OtherTok{\textless{}{-}} \FunctionTok{dnorm}\NormalTok{(x\_dnorm)}
+\FunctionTok{plot}\NormalTok{(x\_dnorm, y\_dnorm, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{col=}\StringTok{"skyblue"}\NormalTok{,}
+     \AttributeTok{main=}\StringTok{"Normal Distribution"}\NormalTok{)}
+\CommentTok{\# The following codes are from }
+\CommentTok{\# https://www.tutorialspoint.com/r/r\_binomial\_distribution.htm}
+\NormalTok{x\_dbinom }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{50}\NormalTok{,}\AttributeTok{by =} \DecValTok{1}\NormalTok{)}
+\NormalTok{y\_dbinom }\OtherTok{\textless{}{-}} \FunctionTok{dbinom}\NormalTok{(x\_dbinom,}\DecValTok{50}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(x\_dbinom, y\_dbinom, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{"Binomail Distribution"}\NormalTok{)}
+\CommentTok{\# The following codes are from https://statisticsglobe.com/poisson{-}}
+\CommentTok{\# distribution{-}in{-}r{-}dpois{-}ppois{-}qpois{-}rpois}
+\NormalTok{x\_dpois }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{5}\NormalTok{, }\DecValTok{50}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{)}
+\NormalTok{y\_dpois }\OtherTok{\textless{}{-}} \FunctionTok{dpois}\NormalTok{(x\_dpois, }\AttributeTok{lambda =} \DecValTok{10}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(x\_dpois, y\_dpois, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{col=}\StringTok{"purple"}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{"Poisson Distribution"}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{100}
+\NormalTok{y }\OtherTok{\textless{}{-}} \DecValTok{5}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{\^{}}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{ (x, y, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{col=}\StringTok{"orange"}\NormalTok{,}
+      \AttributeTok{xlab=}\StringTok{"log(X)"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"log(Y)"}\NormalTok{,}
+      \AttributeTok{main=}\StringTok{"Power{-}law Distribution (Log{-}Log Scale)"}\NormalTok{,}
+      \AttributeTok{log=}\StringTok{"xy"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{netsci_files/figure-latex/unnamed-chunk-45-1} 
+{\centering \includegraphics[width=1\linewidth]{netsci_files/figure-latex/unnamed-chunk-47-1} 
 
 }
 
-\caption{Comparing Four Different Distributions}\label{fig:unnamed-chunk-45}
+\caption{Comparing Four Different Distributions}\label{fig:unnamed-chunk-47}
 \end{figure}
 
 If we have many outliers in the tail, for example, in the household income distribution shown below by \citet{donovan2016us}, which of the four distributions shown above will you choose to fit the income distribution? Definitely we'll use the power-law distribution which has a fat tail.
@@ -1700,35 +1713,35 @@ If we have many outliers in the tail, for example, in the household income distr
 
 }
 
-\caption{US Household Income Distribution in 2015, Visualization by @donovan2016us}\label{fig:unnamed-chunk-46}
+\caption{US Household Income Distribution in 2015, Visualization by @donovan2016us}\label{fig:unnamed-chunk-48}
 \end{figure}
 
 We can also compare a normal distribution and a power-law distribution side by side:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\NormalTok{x_dnorm_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{seq}\NormalTok{ (}\DecValTok{0}\NormalTok{, }\DecValTok{10000}\NormalTok{, }\DataTypeTok{by =} \DecValTok{1}\NormalTok{)}
-\NormalTok{y_dnorm_}\DecValTok{2}\NormalTok{ <-}\KeywordTok{dnorm}\NormalTok{(x_dnorm_}\DecValTok{2}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{ (x_dnorm_}\DecValTok{2}\NormalTok{, y_dnorm_}\DecValTok{2}\NormalTok{, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.1}\NormalTok{, }\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}
-      \DataTypeTok{xlab=}\StringTok{"x_dnorm"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"y_dnorm"}\NormalTok{,}
-      \DataTypeTok{main=}\StringTok{"Normal Distribution"}\NormalTok{)}
-\NormalTok{x <-}\StringTok{ }\DecValTok{0}\OperatorTok{:}\DecValTok{10000}
-\NormalTok{y <-}\StringTok{ }\DecValTok{5}\OperatorTok{*}\NormalTok{x}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{ (x, y, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.1}\NormalTok{, }\DataTypeTok{col=}\StringTok{"orange"}\NormalTok{,}
-      \DataTypeTok{xlab=}\StringTok{"log(X)"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"log(Y)"}\NormalTok{,}
-      \DataTypeTok{main=}\StringTok{"Power-law Distribution (Log-Log Scale)"}\NormalTok{,}
-      \DataTypeTok{log=}\StringTok{"xy"}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\NormalTok{x\_dnorm\_2 }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{ (}\DecValTok{0}\NormalTok{, }\DecValTok{10000}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{)}
+\NormalTok{y\_dnorm\_2 }\OtherTok{\textless{}{-}}\FunctionTok{dnorm}\NormalTok{(x\_dnorm\_2)}
+\FunctionTok{plot}\NormalTok{ (x\_dnorm\_2, y\_dnorm\_2, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{,}
+      \AttributeTok{xlab=}\StringTok{"x\_dnorm"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"y\_dnorm"}\NormalTok{,}
+      \AttributeTok{main=}\StringTok{"Normal Distribution"}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{10000}
+\NormalTok{y }\OtherTok{\textless{}{-}} \DecValTok{5}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{\^{}}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{ (x, y, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{col=}\StringTok{"orange"}\NormalTok{,}
+      \AttributeTok{xlab=}\StringTok{"log(X)"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"log(Y)"}\NormalTok{,}
+      \AttributeTok{main=}\StringTok{"Power{-}law Distribution (Log{-}Log Scale)"}\NormalTok{,}
+      \AttributeTok{log=}\StringTok{"xy"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{netsci_files/figure-latex/unnamed-chunk-47-1} 
+{\centering \includegraphics[width=1\linewidth]{netsci_files/figure-latex/unnamed-chunk-49-1} 
 
 }
 
-\caption{Comparing Normal Distribution and Power-law Distribution Side by Side}\label{fig:unnamed-chunk-47}
+\caption{Comparing Normal Distribution and Power-law Distribution Side by Side}\label{fig:unnamed-chunk-49}
 \end{figure}
 
 In power-law distribution plotted on a log-log scale, we do expect a lot of outliers.
@@ -1768,35 +1781,35 @@ The data I used is called \href{http://www-personal.umich.edu/~mejn/netdata/as-2
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(here)}
-\NormalTok{internet <-}\StringTok{ }\KeywordTok{read_graph}\NormalTok{(}\KeywordTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{,}\StringTok{"as-22july06.gml"}\NormalTok{), }
-                       \DataTypeTok{format =} \StringTok{"gml"}\NormalTok{)}
-\CommentTok{# vcount(internet) # Getting an idea of its size // 22963}
-\NormalTok{deg_internet <-}\StringTok{ }\KeywordTok{degree}\NormalTok{(internet)}
-\CommentTok{# mean(deg_internet) # Calculating average degree // 4.218613}
-\NormalTok{x <-}\StringTok{ }\DecValTok{0}\OperatorTok{:}\KeywordTok{max}\NormalTok{(deg_internet) }\CommentTok{# Setting X-axis}
-\NormalTok{deg.dist_internet <-}\StringTok{ }\KeywordTok{degree_distribution}\NormalTok{(internet, }
-                                         \DataTypeTok{cumulative =} \OtherTok{TRUE}\NormalTok{, }
-                                         \DataTypeTok{mode =} \StringTok{"all"}\NormalTok{)}
-\CommentTok{# This will be the degree distribution of our dataset:}
-\NormalTok{y1 <-}\StringTok{ }\NormalTok{deg.dist_internet }
-\NormalTok{y2 <-}\StringTok{ }\KeywordTok{dpois}\NormalTok{(x, }\DataTypeTok{lambda =} \KeywordTok{mean}\NormalTok{(deg_internet))}
-\CommentTok{# This is to prevent scientific notation on the axes:}
-\KeywordTok{options}\NormalTok{(}\DataTypeTok{scipen =} \DecValTok{5}\NormalTok{) }
-\KeywordTok{plot}\NormalTok{( x, y1, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{, }
-      \DataTypeTok{col=}\StringTok{"orange"}\NormalTok{,}
-      \DataTypeTok{xlab=}\StringTok{"Degree(log)"}\NormalTok{, }
-      \DataTypeTok{ylab=}\StringTok{"Probability(log)"}\NormalTok{,}
-      \DataTypeTok{log =} \StringTok{"xy"}
+\FunctionTok{library}\NormalTok{(here)}
+\NormalTok{internet }\OtherTok{\textless{}{-}} \FunctionTok{read\_graph}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{,}\StringTok{"as{-}22july06.gml"}\NormalTok{), }
+                       \AttributeTok{format =} \StringTok{"gml"}\NormalTok{)}
+\CommentTok{\# vcount(internet) \# Getting an idea of its size // 22963}
+\NormalTok{deg\_internet }\OtherTok{\textless{}{-}} \FunctionTok{degree}\NormalTok{(internet)}
+\CommentTok{\# mean(deg\_internet) \# Calculating average degree // 4.218613}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\FunctionTok{max}\NormalTok{(deg\_internet) }\CommentTok{\# Setting X{-}axis}
+\NormalTok{deg.dist\_internet }\OtherTok{\textless{}{-}} \FunctionTok{degree\_distribution}\NormalTok{(internet, }
+                                         \AttributeTok{cumulative =} \ConstantTok{TRUE}\NormalTok{, }
+                                         \AttributeTok{mode =} \StringTok{"all"}\NormalTok{)}
+\CommentTok{\# This will be the degree distribution of our dataset:}
+\NormalTok{y1 }\OtherTok{\textless{}{-}}\NormalTok{ deg.dist\_internet }
+\NormalTok{y2 }\OtherTok{\textless{}{-}} \FunctionTok{dpois}\NormalTok{(x, }\AttributeTok{lambda =} \FunctionTok{mean}\NormalTok{(deg\_internet))}
+\CommentTok{\# This is to prevent scientific notation on the axes:}
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{5}\NormalTok{) }
+\FunctionTok{plot}\NormalTok{( x, y1, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{cex=}\FloatTok{0.5}\NormalTok{, }
+      \AttributeTok{col=}\StringTok{"orange"}\NormalTok{,}
+      \AttributeTok{xlab=}\StringTok{"Degree(log)"}\NormalTok{, }
+      \AttributeTok{ylab=}\StringTok{"Probability(log)"}\NormalTok{,}
+      \AttributeTok{log =} \StringTok{"xy"}
 \NormalTok{      )}
-\CommentTok{# par(new=TRUE) }
-\KeywordTok{points}\NormalTok{(x, y2, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{,}
-     \DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{,}
-     \CommentTok{# log = "xy", # We can, in fact, do without this line }
-     \CommentTok{# because the above plot is already on a log-log scale.}
-     \DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}
-     \DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }
-     \DataTypeTok{ylab =} \StringTok{""}
+\CommentTok{\# par(new=TRUE) }
+\FunctionTok{points}\NormalTok{(x, y2, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}
+     \AttributeTok{cex=}\FloatTok{0.5}\NormalTok{,}
+     \CommentTok{\# log = "xy", \# We can, in fact, do without this line }
+     \CommentTok{\# because the above plot is already on a log{-}log scale.}
+     \AttributeTok{col=}\StringTok{"blue"}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{""}\NormalTok{, }
+     \AttributeTok{ylab =} \StringTok{""}
 \NormalTok{     )}
 \end{Highlighting}
 \end{Shaded}
@@ -1925,8 +1938,8 @@ Yes. Try this: The incoming node randomly chooses a link from the existing netwo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{starG <-}\StringTok{ }\KeywordTok{make_star}\NormalTok{(}\DataTypeTok{n =} \DecValTok{12}\NormalTok{, }\DataTypeTok{mode =} \StringTok{"undirected"}\NormalTok{, }\DataTypeTok{center =} \DecValTok{1}\NormalTok{ )}
-\KeywordTok{plot}\NormalTok{ (starG)}
+\NormalTok{starG }\OtherTok{\textless{}{-}} \FunctionTok{make\_star}\NormalTok{(}\AttributeTok{n =} \DecValTok{12}\NormalTok{, }\AttributeTok{mode =} \StringTok{"undirected"}\NormalTok{, }\AttributeTok{center =} \DecValTok{1}\NormalTok{ )}
+\FunctionTok{plot}\NormalTok{ (starG)}
 \end{Highlighting}
 \end{Shaded}
 

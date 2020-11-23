@@ -1,4 +1,4 @@
-fig:unnamed-chunk-14
+fig:unnamed-chunk-15
 fig:nunit2-nodes
 eq:TotalLink
 eq:AverageDegree
@@ -35,9 +35,9 @@ eq:poisson
 fig:tried
 eq:power-law
 eq:power-law-simplified
-fig:unnamed-chunk-45
-fig:unnamed-chunk-46
 fig:unnamed-chunk-47
+fig:unnamed-chunk-48
+fig:unnamed-chunk-49
 fig:powerLaw-poisson
 eq:ba-model
 fig:starG
@@ -75,7 +75,7 @@ task-2-2-friendship-paradox-example
 task-2-3-generating-random-and-scale-free-networks
 task-2-4-homework-by-professor-yy
 SmallWorld
-basic-ideals
+weight-paths-connectedness-and-clustering
 weighted-network
 shortest-path-network-diameter-and-average-path-length
 shortest-path

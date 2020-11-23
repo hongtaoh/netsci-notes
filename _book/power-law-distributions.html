@@ -24,7 +24,7 @@
 <meta name="author" content="Hongtao Hao" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2020-11-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="scale-free.html"/>
 <link rel="next" href="scale-free-property.html"/>
+<script src="libs/header-attrs-2.5.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,13 +136,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Network Science</a><ul>
-<li class="chapter" data-level="1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html"><i class="fa fa-check"></i><b>1.1</b> Intro to networks</a><ul>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Network Science</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html"><i class="fa fa-check"></i><b>1.1</b> Intro to networks</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html#networks-and-complex-systems"><i class="fa fa-check"></i><b>1.1.1</b> Networks and complex systems</a></li>
 <li class="chapter" data-level="1.1.2" data-path="intro-to-networks.html"><a href="intro-to-networks.html#driving-forces-behind-network-sciences-emerging-as-a-discipline"><i class="fa fa-check"></i><b>1.1.2</b> Driving forces behind network science’s emerging as a discipline</a></li>
 <li class="chapter" data-level="1.1.3" data-path="intro-to-networks.html"><a href="intro-to-networks.html#key-characteristics-of-network-science"><i class="fa fa-check"></i><b>1.1.3</b> Key characteristics of network science</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html"><i class="fa fa-check"></i><b>1.2</b> Definition and significance of networks</a><ul>
+<li class="chapter" data-level="1.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html"><i class="fa fa-check"></i><b>1.2</b> Definition and significance of networks</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#what-is-a-network"><i class="fa fa-check"></i><b>1.2.1</b> What is a network</a></li>
 <li class="chapter" data-level="1.2.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#why-should-we-care-about-networks"><i class="fa fa-check"></i><b>1.2.2</b> Why should we care about networks?</a></li>
 <li class="chapter" data-level="1.2.3" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#think-for-yourself"><i class="fa fa-check"></i><b>1.2.3</b> Think for yourself</a></li>
@@ -151,56 +153,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="python-setup.html"><a href="python-setup.html"><i class="fa fa-check"></i><b>1.3</b> Python setup</a></li>
 <li class="chapter" data-level="1.4" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>1.4</b> Homework</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="Graph.html"><a href="Graph.html"><i class="fa fa-check"></i><b>2</b> Graph Theory and Some Basic Concepts</a><ul>
+<li class="chapter" data-level="2" data-path="Graph.html"><a href="Graph.html"><i class="fa fa-check"></i><b>2</b> Graph Theory and Some Basic Concepts</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="königsberg-bridge-problem-ch-2-1.html"><a href="königsberg-bridge-problem-ch-2-1.html"><i class="fa fa-check"></i><b>2.1</b> Königsberg bridge problem (Ch. 2.1)</a></li>
 <li class="chapter" data-level="2.2" data-path="networks-and-graphs-ch-2-2.html"><a href="networks-and-graphs-ch-2-2.html"><i class="fa fa-check"></i><b>2.2</b> Networks and graphs (Ch. 2.2)</a></li>
-<li class="chapter" data-level="2.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html"><i class="fa fa-check"></i><b>2.3</b> Degree, average degree, and degree distribution (Ch. 2.3)</a><ul>
+<li class="chapter" data-level="2.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html"><i class="fa fa-check"></i><b>2.3</b> Degree, average degree, and degree distribution (Ch. 2.3)</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree"><i class="fa fa-check"></i><b>2.3.1</b> Degree</a></li>
 <li class="chapter" data-level="2.3.2" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#average-degree"><i class="fa fa-check"></i><b>2.3.2</b> Average degree</a></li>
 <li class="chapter" data-level="2.3.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Degree distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="adjacency-matrix.html"><a href="adjacency-matrix.html"><i class="fa fa-check"></i><b>2.4</b> Adjacency matrix</a></li>
-<li class="chapter" data-level="2.5" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html"><i class="fa fa-check"></i><b>2.5</b> Chapter 2 Homework</a><ul>
+<li class="chapter" data-level="2.5" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html"><i class="fa fa-check"></i><b>2.5</b> Chapter 2 Homework</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-1-networkx-basics"><i class="fa fa-check"></i><b>2.5.1</b> Task 2-1: <code>Networkx</code> Basics</a></li>
 <li class="chapter" data-level="2.5.2" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-2-friendship-paradox-example"><i class="fa fa-check"></i><b>2.5.2</b> Task 2-2: Friendship paradox example</a></li>
 <li class="chapter" data-level="2.5.3" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-3-generating-random-and-scale-free-networks"><i class="fa fa-check"></i><b>2.5.3</b> Task 2-3: Generating random and scale-free networks</a></li>
 <li class="chapter" data-level="2.5.4" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-4-homework-by-professor-yy"><i class="fa fa-check"></i><b>2.5.4</b> Task 2-4: Homework by Professor YY</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="SmallWorld.html"><a href="SmallWorld.html"><i class="fa fa-check"></i><b>3</b> Small World Phenomenon</a><ul>
-<li class="chapter" data-level="3.1" data-path="basic-ideals.html"><a href="basic-ideals.html"><i class="fa fa-check"></i><b>3.1</b> Basic ideals</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="basic-ideals.html"><a href="basic-ideals.html#weighted-network"><i class="fa fa-check"></i><b>3.1.1</b> Weighted network</a></li>
-<li class="chapter" data-level="3.1.2" data-path="basic-ideals.html"><a href="basic-ideals.html#shortest-path-network-diameter-and-average-path-length"><i class="fa fa-check"></i><b>3.1.2</b> Shortest path, network diameter, and average path length</a></li>
-<li class="chapter" data-level="3.1.3" data-path="basic-ideals.html"><a href="basic-ideals.html#connectedness"><i class="fa fa-check"></i><b>3.1.3</b> Connectedness</a></li>
-<li class="chapter" data-level="3.1.4" data-path="basic-ideals.html"><a href="basic-ideals.html#clustering-coefficient"><i class="fa fa-check"></i><b>3.1.4</b> Clustering coefficient</a></li>
+<li class="chapter" data-level="3" data-path="SmallWorld.html"><a href="SmallWorld.html"><i class="fa fa-check"></i><b>3</b> Small World Phenomenon</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html"><i class="fa fa-check"></i><b>3.1</b> Weight, paths, connectedness, and clustering</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html#weighted-network"><i class="fa fa-check"></i><b>3.1.1</b> Weighted network</a></li>
+<li class="chapter" data-level="3.1.2" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html#shortest-path-network-diameter-and-average-path-length"><i class="fa fa-check"></i><b>3.1.2</b> Shortest path, network diameter, and average path length</a></li>
+<li class="chapter" data-level="3.1.3" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html#connectedness"><i class="fa fa-check"></i><b>3.1.3</b> Connectedness</a></li>
+<li class="chapter" data-level="3.1.4" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html#clustering-coefficient"><i class="fa fa-check"></i><b>3.1.4</b> Clustering coefficient</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="chapter-3-homework.html"><a href="chapter-3-homework.html"><i class="fa fa-check"></i><b>3.2</b> Chapter 3 Homework</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="weak-ties-and-watts-strogatz-model.html"><a href="weak-ties-and-watts-strogatz-model.html"><i class="fa fa-check"></i><b>4</b> Weak Ties and Watts-Strogatz model</a><ul>
-<li class="chapter" data-level="4.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html"><i class="fa fa-check"></i><b>4.1</b> Random networks (Barabási Ch.3)</a><ul>
+<li class="chapter" data-level="4" data-path="weak-ties-and-watts-strogatz-model.html"><a href="weak-ties-and-watts-strogatz-model.html"><i class="fa fa-check"></i><b>4</b> Weak Ties and Watts-Strogatz model</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html"><i class="fa fa-check"></i><b>4.1</b> Random networks (Barabási Ch.3)</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#generating-a-random-network"><i class="fa fa-check"></i><b>4.1.1</b> Generating a random network</a></li>
 <li class="chapter" data-level="4.1.2" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#average-degree-and-the-expected-number-of-links-in-a-random-network"><i class="fa fa-check"></i><b>4.1.2</b> Average degree, and the expected number of links in a random network</a></li>
 <li class="chapter" data-level="4.1.3" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#degree-distribution-1"><i class="fa fa-check"></i><b>4.1.3</b> Degree distribution</a></li>
 <li class="chapter" data-level="4.1.4" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#poisson-distribution-does-not-capture-reality"><i class="fa fa-check"></i><b>4.1.4</b> Poisson distribution does not capture reality</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html"><i class="fa fa-check"></i><b>4.2</b> Reading two seminal papers</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#the-strength-of-weak-ties-by-granovetter1973strength"><i class="fa fa-check"></i><b>4.2.1</b> <em>The Strength of Weak Ties</em> by <span class="citation">Granovetter (<span>1973</span>)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html"><i class="fa fa-check"></i><b>4.2</b> Reading two seminal papers</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#the-strength-of-weak-ties-by-granovetter1973strength"><i class="fa fa-check"></i><b>4.2.1</b> <em>The Strength of Weak Ties</em> by <span class="citation"><span>Granovetter</span> (<span>1973</span>)</span></a></li>
 <li class="chapter" data-level="4.2.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#watts-strogatz-model-of-small-world"><i class="fa fa-check"></i><b>4.2.2</b> Watts-Strogatz model of small world</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="scale-free.html"><a href="scale-free.html"><i class="fa fa-check"></i><b>5</b> Scale-Free Networks</a><ul>
-<li class="chapter" data-level="5.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html"><i class="fa fa-check"></i><b>5.1</b> Power-Law Distributions</a><ul>
+<li class="chapter" data-level="5" data-path="scale-free.html"><a href="scale-free.html"><i class="fa fa-check"></i><b>5</b> Scale-Free Networks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html"><i class="fa fa-check"></i><b>5.1</b> Power-Law Distributions</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html#differences-between-fb-study-and-the-milgram-study"><i class="fa fa-check"></i><b>5.1.1</b> Differences between FB study and the Milgram study</a></li>
 <li class="chapter" data-level="5.1.2" data-path="power-law-distributions.html"><a href="power-law-distributions.html#power-law"><i class="fa fa-check"></i><b>5.1.2</b> Power law</a></li>
 <li class="chapter" data-level="5.1.3" data-path="power-law-distributions.html"><a href="power-law-distributions.html#logarithmic-scale"><i class="fa fa-check"></i><b>5.1.3</b> Logarithmic scale</a></li>
 <li class="chapter" data-level="5.1.4" data-path="power-law-distributions.html"><a href="power-law-distributions.html#properties-of-power-law-distributions"><i class="fa fa-check"></i><b>5.1.4</b> Properties of power-law distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="scale-free-property.html"><a href="scale-free-property.html"><i class="fa fa-check"></i><b>5.2</b> Scale-free property</a><ul>
+<li class="chapter" data-level="5.2" data-path="scale-free-property.html"><a href="scale-free-property.html"><i class="fa fa-check"></i><b>5.2</b> Scale-free property</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="scale-free-property.html"><a href="scale-free-property.html#hubs"><i class="fa fa-check"></i><b>5.2.1</b> Hubs</a></li>
 <li class="chapter" data-level="5.2.2" data-path="scale-free-property.html"><a href="scale-free-property.html#universality"><i class="fa fa-check"></i><b>5.2.2</b> Universality</a></li>
 <li class="chapter" data-level="5.2.3" data-path="scale-free-property.html"><a href="scale-free-property.html#ultra-small-property-and-the-role-of-degree-exponent"><i class="fa fa-check"></i><b>5.2.3</b> Ultra-small property, and the role of degree exponent</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html"><i class="fa fa-check"></i><b>5.3</b> The Barabási-Albert Model</a><ul>
+<li class="chapter" data-level="5.3" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html"><i class="fa fa-check"></i><b>5.3</b> The Barabási-Albert Model</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html#improving-the-ba-model"><i class="fa fa-check"></i><b>5.3.1</b> Improving the BA model</a></li>
 </ul></li>
 </ul></li>
@@ -225,14 +239,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="power-law-distributions" class="section level2">
+<div id="power-law-distributions" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Power-Law Distributions</h2>
 
 <div class="rmdnote">
 The following came from the online course of <a href="https://github.com/yy/netsci-course">INFO I606</a> at Indiana University by Professor <a href="https://yongyeol.com/">Yong-Yoel (“YY”) Ahn</a>.
 </div>
-
-<div id="differences-between-fb-study-and-the-milgram-study" class="section level3">
+<div id="differences-between-fb-study-and-the-milgram-study" class="section level3" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Differences between FB study and the Milgram study</h3>
 <p>The differences between the <a href="https://research.fb.com/blog/2016/02/three-and-a-half-degrees-of-separation/">Facebook study</a> and the Milgram study:</p>
 <ol style="list-style-type: decimal">
@@ -241,37 +254,35 @@ The following came from the online course of <a href="https://github.com/yy/nets
 </ol>
 <p>One thing we need to be cautious with the FB study is that there were quite a number of people having 500-5,000friends, as can be seen in the <a href="https://arxiv.org/pdf/1111.4503.pdf">study PDF</a>. But is it possible in real life? <a href="https://www.newyorker.com/science/maria-konnikova/social-media-affect-math-dunbar-number-friendships">Dunbar’s number</a> suggests that we as humans can maintain at most 150 friends. Therefore, the FB study might have overestimated the distance between people.</p>
 </div>
-<div id="power-law" class="section level3">
+<div id="power-law" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> Power law</h3>
 
 <div class="rmdreminder">
 Before discussing power-law distributions, Professor YY talked about the connection between binomial, Poisson, and normal distributions. It is beyond my scope of knowledge. However, you are encouraged to read <a href="http://www.johndcook.com/blog/normal_approx_to_poisson/">this</a> article on this topic.
 </div>
-
 <p>The above picture of the bird came from <a href="http://gdut_yy.gitee.io/doc-csstdg4/ch8.html#_8-2-padding">here</a>.</p>
 <p>Check out <a href="https://www.youtube.com/watch?v=fCn8zs912OE">this video</a> to understand <strong>Zipf’s law</strong>. Also, <a href="https://www.hpl.hp.com/research/idl/papers/ranking/ranking.html">here</a> is an amazing tutorial<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> on the connection between <strong>Zipf’s law</strong> and <strong>power laws</strong>.</p>
 <p>The most frequently used word in English is <strong>the</strong>. Let’s denote its frequency as <span class="math inline">\(1\)</span>. Then the frequency of the second most frequently used word is <span class="math inline">\(\frac{1}{2}\)</span>. The number is <span class="math inline">\(\frac{1}{3}\)</span> for the third most frequently used word, and will be <span class="math inline">\(\frac{1}{4}\)</span> for the fourth most frequently used word. That’s a <strong>power law distribution</strong>.</p>
 </div>
-<div id="logarithmic-scale" class="section level3">
+<div id="logarithmic-scale" class="section level3" number="5.1.3">
 <h3><span class="header-section-number">5.1.3</span> Logarithmic scale</h3>
 <p>To really understand <strong>scale free networks</strong> and <strong>power law distribution</strong>, we need to get an idea of <strong>logarithmic scale</strong> first. Professor YY provided several very helpful Youtube videos that illustrate log scale.</p>
 <p>Inspired by <a href="https://www.youtube.com/watch?v=4xfOq00BzJA">the conversation between Vi and Sal</a>, I am asking you this question. In the following number line, from <span class="math inline">\(1\)</span> to 1 million, where is <span class="math inline">\(1,000\)</span>?</p>
-<p><img src="netsci_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="netsci_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 <p>Okay, let’s label both <span class="math inline">\(1,000\)</span> and <span class="math inline">\(100,000\)</span> in the above number line:</p>
-<p><img src="netsci_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><img src="netsci_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 <p>I plotted four points: 0, 1000, 100000, and 1000000, but can only see three. Why? It’s because 0 and 1000 are almost at the same place. But I guess you’ve probably thought <span class="math inline">\(1,000\)</span> was in the place of <span class="math inline">\(100,000\)</span>, right?</p>
 <p>You can learn some basics of <strong>log scale</strong> by watching <a href="https://www.youtube.com/watch?v=sBhEi4L91Sg">this video</a> by Khan Academy.</p>
 <p>One of the reasons why people need log scale is that it allows us to include a much wider range of numbers in limited space. For example, it is useful <a href="https://www.youtube.com/watch?v=RFn-IGlayAg">when we measure earthquakes</a>.</p>
 </div>
-<div id="properties-of-power-law-distributions" class="section level3">
+<div id="properties-of-power-law-distributions" class="section level3" number="5.1.4">
 <h3><span class="header-section-number">5.1.4</span> Properties of power-law distributions</h3>
-<div id="porperty-1-a-fat-tail-allowing-for-many-outliers" class="section level4">
+<div id="porperty-1-a-fat-tail-allowing-for-many-outliers" class="section level4" number="5.1.4.1">
 <h4><span class="header-section-number">5.1.4.1</span> Porperty 1: A fat tail allowing for many outliers</h4>
 
 <div class="rmdnote">
 The following came from the online course of <a href="https://github.com/yy/netsci-course">INFO 606</a> at Indiana University taught by Professor <a href="https://yongyeol.com/">Yong-Yoel (“YY”) Ahn</a>.
 </div>
-
 <p>A power-law distribution can be expressed as</p>
 <p><span class="math display" id="eq:power-law">\[\begin{equation} 
   p(x) = Cx^{-\lambda} \tag{5.1}
@@ -301,77 +312,77 @@ The following came from the online course of <a href="https://github.com/yy/nets
 <p>Since <span class="math inline">\(\ln C\)</span> is a constant, what we get is basically <strong>a linear function</strong>.
 To better understand it, let’s plot it.</p>
 <p>Before we take the log:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="power-law-distributions.html#cb26-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span></span>
-<span id="cb26-2"><a href="power-law-distributions.html#cb26-2"></a>y &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">*</span>x<span class="op">^</span>(<span class="op">-</span><span class="dv">2</span>)</span>
-<span id="cb26-3"><a href="power-law-distributions.html#cb26-3"></a><span class="kw">plot</span> (x, y, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.5</span>, <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb26-4"><a href="power-law-distributions.html#cb26-4"></a>      <span class="dt">xlab=</span><span class="st">&quot;X&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;5*x^(-2)&quot;</span>,</span>
-<span id="cb26-5"><a href="power-law-distributions.html#cb26-5"></a>      <span class="dt">main=</span><span class="st">&quot;Before taking a log&quot;</span>)</span></code></pre></div>
-<p><img src="netsci_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="power-law-distributions.html#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb26-2"><a href="power-law-distributions.html#cb26-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">*</span>x<span class="sc">^</span>(<span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb26-3"><a href="power-law-distributions.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (x, y, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb26-4"><a href="power-law-distributions.html#cb26-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab=</span><span class="st">&quot;X&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;5*x^(-2)&quot;</span>,</span>
+<span id="cb26-5"><a href="power-law-distributions.html#cb26-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">main=</span><span class="st">&quot;Before taking a log&quot;</span>)</span></code></pre></div>
+<p><img src="netsci_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <p>I learned a lot about how to style the points from reading <a href="https://kateto.net/networks-r-igraph">Dr.Katya Ognyanova’s blog post</a>.</p>
 <p>After we take a log:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="power-law-distributions.html#cb27-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span></span>
-<span id="cb27-2"><a href="power-law-distributions.html#cb27-2"></a>y &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">*</span>x<span class="op">^</span>(<span class="op">-</span><span class="dv">2</span>)</span>
-<span id="cb27-3"><a href="power-law-distributions.html#cb27-3"></a><span class="kw">plot</span> (x, y, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.5</span>, <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb27-4"><a href="power-law-distributions.html#cb27-4"></a>      <span class="dt">xlab=</span><span class="st">&quot;log(X)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;log(Y)&quot;</span>,</span>
-<span id="cb27-5"><a href="power-law-distributions.html#cb27-5"></a>      <span class="dt">main=</span><span class="st">&quot;After taking a log&quot;</span>,</span>
-<span id="cb27-6"><a href="power-law-distributions.html#cb27-6"></a>      <span class="dt">log=</span><span class="st">&quot;xy&quot;</span></span>
-<span id="cb27-7"><a href="power-law-distributions.html#cb27-7"></a>      )</span></code></pre></div>
-<p><img src="netsci_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="power-law-distributions.html#cb27-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb27-2"><a href="power-law-distributions.html#cb27-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">*</span>x<span class="sc">^</span>(<span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb27-3"><a href="power-law-distributions.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (x, y, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb27-4"><a href="power-law-distributions.html#cb27-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab=</span><span class="st">&quot;log(X)&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;log(Y)&quot;</span>,</span>
+<span id="cb27-5"><a href="power-law-distributions.html#cb27-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">main=</span><span class="st">&quot;After taking a log&quot;</span>,</span>
+<span id="cb27-6"><a href="power-law-distributions.html#cb27-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">log=</span><span class="st">&quot;xy&quot;</span></span>
+<span id="cb27-7"><a href="power-law-distributions.html#cb27-7" aria-hidden="true" tabindex="-1"></a>      )</span></code></pre></div>
+<p><img src="netsci_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 <p>A very important property of power-law distribution on a log-log scale is it has a <strong>heavy tail</strong> or a so-called <strong>fat tail</strong>. Lots of other distributions, like binomial, Poisson, or normal distributions, simply do not have this fat tail, which is super useful when we have lots of outliers in the tail of the distribution.</p>
 <p>As we can clearly see below, except for the power-law distribution on a log-log scale, in all the three other distributions, <span class="math inline">\(y\)</span> quickly reaches zero:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="power-law-distributions.html#cb28-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb28-2"><a href="power-law-distributions.html#cb28-2"></a><span class="co"># The idea of the following codes comes from</span></span>
-<span id="cb28-3"><a href="power-law-distributions.html#cb28-3"></a><span class="co"># https://www.statology.org/plot-normal-distribution-r/</span></span>
-<span id="cb28-4"><a href="power-law-distributions.html#cb28-4"></a>x_dnorm &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">6</span>, <span class="dv">6</span>, <span class="dt">length=</span><span class="dv">100</span>)</span>
-<span id="cb28-5"><a href="power-law-distributions.html#cb28-5"></a>y_dnorm &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x_dnorm)</span>
-<span id="cb28-6"><a href="power-law-distributions.html#cb28-6"></a><span class="kw">plot</span>(x_dnorm, y_dnorm, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.5</span>, <span class="dt">col=</span><span class="st">&quot;skyblue&quot;</span>,</span>
-<span id="cb28-7"><a href="power-law-distributions.html#cb28-7"></a>     <span class="dt">main=</span><span class="st">&quot;Normal Distribution&quot;</span>)</span>
-<span id="cb28-8"><a href="power-law-distributions.html#cb28-8"></a><span class="co"># The following codes are from </span></span>
-<span id="cb28-9"><a href="power-law-distributions.html#cb28-9"></a><span class="co"># https://www.tutorialspoint.com/r/r_binomial_distribution.htm</span></span>
-<span id="cb28-10"><a href="power-law-distributions.html#cb28-10"></a>x_dbinom &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dt">by =</span> <span class="dv">1</span>)</span>
-<span id="cb28-11"><a href="power-law-distributions.html#cb28-11"></a>y_dbinom &lt;-<span class="st"> </span><span class="kw">dbinom</span>(x_dbinom,<span class="dv">50</span>,<span class="fl">0.5</span>)</span>
-<span id="cb28-12"><a href="power-law-distributions.html#cb28-12"></a><span class="kw">plot</span>(x_dbinom, y_dbinom, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.5</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>,</span>
-<span id="cb28-13"><a href="power-law-distributions.html#cb28-13"></a>     <span class="dt">main =</span> <span class="st">&quot;Binomail Distribution&quot;</span>)</span>
-<span id="cb28-14"><a href="power-law-distributions.html#cb28-14"></a><span class="co"># The following codes are from https://statisticsglobe.com/poisson-</span></span>
-<span id="cb28-15"><a href="power-law-distributions.html#cb28-15"></a><span class="co"># distribution-in-r-dpois-ppois-qpois-rpois</span></span>
-<span id="cb28-16"><a href="power-law-distributions.html#cb28-16"></a>x_dpois &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">50</span>, <span class="dt">by =</span> <span class="dv">1</span>)</span>
-<span id="cb28-17"><a href="power-law-distributions.html#cb28-17"></a>y_dpois &lt;-<span class="st"> </span><span class="kw">dpois</span>(x_dpois, <span class="dt">lambda =</span> <span class="dv">10</span>)</span>
-<span id="cb28-18"><a href="power-law-distributions.html#cb28-18"></a><span class="kw">plot</span>(x_dpois, y_dpois, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.5</span>, <span class="dt">col=</span><span class="st">&quot;purple&quot;</span>,</span>
-<span id="cb28-19"><a href="power-law-distributions.html#cb28-19"></a>     <span class="dt">main =</span> <span class="st">&quot;Poisson Distribution&quot;</span>)</span>
-<span id="cb28-20"><a href="power-law-distributions.html#cb28-20"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span></span>
-<span id="cb28-21"><a href="power-law-distributions.html#cb28-21"></a>y &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">*</span>x<span class="op">^</span>(<span class="op">-</span><span class="dv">2</span>)</span>
-<span id="cb28-22"><a href="power-law-distributions.html#cb28-22"></a><span class="kw">plot</span> (x, y, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.5</span>, <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb28-23"><a href="power-law-distributions.html#cb28-23"></a>      <span class="dt">xlab=</span><span class="st">&quot;log(X)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;log(Y)&quot;</span>,</span>
-<span id="cb28-24"><a href="power-law-distributions.html#cb28-24"></a>      <span class="dt">main=</span><span class="st">&quot;Power-law Distribution (Log-Log Scale)&quot;</span>,</span>
-<span id="cb28-25"><a href="power-law-distributions.html#cb28-25"></a>      <span class="dt">log=</span><span class="st">&quot;xy&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-45"></span>
-<img src="netsci_files/figure-html/unnamed-chunk-45-1.png" alt="Comparing Four Different Distributions" width="100%" />
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="power-law-distributions.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb28-2"><a href="power-law-distributions.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The idea of the following codes comes from</span></span>
+<span id="cb28-3"><a href="power-law-distributions.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.statology.org/plot-normal-distribution-r/</span></span>
+<span id="cb28-4"><a href="power-law-distributions.html#cb28-4" aria-hidden="true" tabindex="-1"></a>x_dnorm <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">6</span>, <span class="dv">6</span>, <span class="at">length=</span><span class="dv">100</span>)</span>
+<span id="cb28-5"><a href="power-law-distributions.html#cb28-5" aria-hidden="true" tabindex="-1"></a>y_dnorm <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x_dnorm)</span>
+<span id="cb28-6"><a href="power-law-distributions.html#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_dnorm, y_dnorm, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">col=</span><span class="st">&quot;skyblue&quot;</span>,</span>
+<span id="cb28-7"><a href="power-law-distributions.html#cb28-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Normal Distribution&quot;</span>)</span>
+<span id="cb28-8"><a href="power-law-distributions.html#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The following codes are from </span></span>
+<span id="cb28-9"><a href="power-law-distributions.html#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.tutorialspoint.com/r/r_binomial_distribution.htm</span></span>
+<span id="cb28-10"><a href="power-law-distributions.html#cb28-10" aria-hidden="true" tabindex="-1"></a>x_dbinom <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb28-11"><a href="power-law-distributions.html#cb28-11" aria-hidden="true" tabindex="-1"></a>y_dbinom <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x_dbinom,<span class="dv">50</span>,<span class="fl">0.5</span>)</span>
+<span id="cb28-12"><a href="power-law-distributions.html#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_dbinom, y_dbinom, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>,</span>
+<span id="cb28-13"><a href="power-law-distributions.html#cb28-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Binomail Distribution&quot;</span>)</span>
+<span id="cb28-14"><a href="power-law-distributions.html#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># The following codes are from https://statisticsglobe.com/poisson-</span></span>
+<span id="cb28-15"><a href="power-law-distributions.html#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># distribution-in-r-dpois-ppois-qpois-rpois</span></span>
+<span id="cb28-16"><a href="power-law-distributions.html#cb28-16" aria-hidden="true" tabindex="-1"></a>x_dpois <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb28-17"><a href="power-law-distributions.html#cb28-17" aria-hidden="true" tabindex="-1"></a>y_dpois <span class="ot">&lt;-</span> <span class="fu">dpois</span>(x_dpois, <span class="at">lambda =</span> <span class="dv">10</span>)</span>
+<span id="cb28-18"><a href="power-law-distributions.html#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_dpois, y_dpois, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">col=</span><span class="st">&quot;purple&quot;</span>,</span>
+<span id="cb28-19"><a href="power-law-distributions.html#cb28-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Poisson Distribution&quot;</span>)</span>
+<span id="cb28-20"><a href="power-law-distributions.html#cb28-20" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb28-21"><a href="power-law-distributions.html#cb28-21" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">*</span>x<span class="sc">^</span>(<span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb28-22"><a href="power-law-distributions.html#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (x, y, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb28-23"><a href="power-law-distributions.html#cb28-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab=</span><span class="st">&quot;log(X)&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;log(Y)&quot;</span>,</span>
+<span id="cb28-24"><a href="power-law-distributions.html#cb28-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">main=</span><span class="st">&quot;Power-law Distribution (Log-Log Scale)&quot;</span>,</span>
+<span id="cb28-25"><a href="power-law-distributions.html#cb28-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">log=</span><span class="st">&quot;xy&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-47"></span>
+<img src="netsci_files/figure-html/unnamed-chunk-47-1.png" alt="Comparing Four Different Distributions" width="100%" />
 <p class="caption">
 FIGURE 5.1: Comparing Four Different Distributions
 </p>
 </div>
-<p>If we have many outliers in the tail, for example, in the household income distribution shown below by <span class="citation">Donovan, Labonte, and Dalaker (<a href="#ref-donovan2016us" role="doc-biblioref">2016</a>)</span>, which of the four distributions shown above will you choose to fit the income distribution? Definitely we’ll use the power-law distribution which has a fat tail.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-46"></span>
+<p>If we have many outliers in the tail, for example, in the household income distribution shown below by <span class="citation"><a href="references.html#ref-donovan2016us" role="doc-biblioref">Donovan, Labonte, and Dalaker</a> (<a href="references.html#ref-donovan2016us" role="doc-biblioref">2016</a>)</span>, which of the four distributions shown above will you choose to fit the income distribution? Definitely we’ll use the power-law distribution which has a fat tail.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-48"></span>
 <img src="images/income_distribution.png" alt="US Household Income Distribution in 2015, Visualization by @donovan2016us" width="90%" />
 <p class="caption">
-FIGURE 5.2: US Household Income Distribution in 2015, Visualization by <span class="citation">Donovan, Labonte, and Dalaker (<a href="#ref-donovan2016us" role="doc-biblioref">2016</a>)</span>
+FIGURE 5.2: US Household Income Distribution in 2015, Visualization by <span class="citation"><a href="references.html#ref-donovan2016us" role="doc-biblioref">Donovan, Labonte, and Dalaker</a> (<a href="references.html#ref-donovan2016us" role="doc-biblioref">2016</a>)</span>
 </p>
 </div>
 <p>We can also compare a normal distribution and a power-law distribution side by side:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="power-law-distributions.html#cb29-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</span>
-<span id="cb29-2"><a href="power-law-distributions.html#cb29-2"></a>x_dnorm_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">seq</span> (<span class="dv">0</span>, <span class="dv">10000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</span>
-<span id="cb29-3"><a href="power-law-distributions.html#cb29-3"></a>y_dnorm_<span class="dv">2</span> &lt;-<span class="kw">dnorm</span>(x_dnorm_<span class="dv">2</span>)</span>
-<span id="cb29-4"><a href="power-law-distributions.html#cb29-4"></a><span class="kw">plot</span> (x_dnorm_<span class="dv">2</span>, y_dnorm_<span class="dv">2</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.1</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb29-5"><a href="power-law-distributions.html#cb29-5"></a>      <span class="dt">xlab=</span><span class="st">&quot;x_dnorm&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;y_dnorm&quot;</span>,</span>
-<span id="cb29-6"><a href="power-law-distributions.html#cb29-6"></a>      <span class="dt">main=</span><span class="st">&quot;Normal Distribution&quot;</span>)</span>
-<span id="cb29-7"><a href="power-law-distributions.html#cb29-7"></a>x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10000</span></span>
-<span id="cb29-8"><a href="power-law-distributions.html#cb29-8"></a>y &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">*</span>x<span class="op">^</span>(<span class="op">-</span><span class="dv">2</span>)</span>
-<span id="cb29-9"><a href="power-law-distributions.html#cb29-9"></a><span class="kw">plot</span> (x, y, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.1</span>, <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb29-10"><a href="power-law-distributions.html#cb29-10"></a>      <span class="dt">xlab=</span><span class="st">&quot;log(X)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;log(Y)&quot;</span>,</span>
-<span id="cb29-11"><a href="power-law-distributions.html#cb29-11"></a>      <span class="dt">main=</span><span class="st">&quot;Power-law Distribution (Log-Log Scale)&quot;</span>,</span>
-<span id="cb29-12"><a href="power-law-distributions.html#cb29-12"></a>      <span class="dt">log=</span><span class="st">&quot;xy&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-47"></span>
-<img src="netsci_files/figure-html/unnamed-chunk-47-1.png" alt="Comparing Normal Distribution and Power-law Distribution Side by Side" width="100%" />
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="power-law-distributions.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</span>
+<span id="cb29-2"><a href="power-law-distributions.html#cb29-2" aria-hidden="true" tabindex="-1"></a>x_dnorm_2 <span class="ot">&lt;-</span> <span class="fu">seq</span> (<span class="dv">0</span>, <span class="dv">10000</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb29-3"><a href="power-law-distributions.html#cb29-3" aria-hidden="true" tabindex="-1"></a>y_dnorm_2 <span class="ot">&lt;-</span><span class="fu">dnorm</span>(x_dnorm_2)</span>
+<span id="cb29-4"><a href="power-law-distributions.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (x_dnorm_2, y_dnorm_2, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.1</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb29-5"><a href="power-law-distributions.html#cb29-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab=</span><span class="st">&quot;x_dnorm&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y_dnorm&quot;</span>,</span>
+<span id="cb29-6"><a href="power-law-distributions.html#cb29-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">main=</span><span class="st">&quot;Normal Distribution&quot;</span>)</span>
+<span id="cb29-7"><a href="power-law-distributions.html#cb29-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10000</span></span>
+<span id="cb29-8"><a href="power-law-distributions.html#cb29-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">*</span>x<span class="sc">^</span>(<span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb29-9"><a href="power-law-distributions.html#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (x, y, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.1</span>, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb29-10"><a href="power-law-distributions.html#cb29-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab=</span><span class="st">&quot;log(X)&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;log(Y)&quot;</span>,</span>
+<span id="cb29-11"><a href="power-law-distributions.html#cb29-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">main=</span><span class="st">&quot;Power-law Distribution (Log-Log Scale)&quot;</span>,</span>
+<span id="cb29-12"><a href="power-law-distributions.html#cb29-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">log=</span><span class="st">&quot;xy&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-49"></span>
+<img src="netsci_files/figure-html/unnamed-chunk-49-1.png" alt="Comparing Normal Distribution and Power-law Distribution Side by Side" width="100%" />
 <p class="caption">
 FIGURE 5.3: Comparing Normal Distribution and Power-law Distribution Side by Side
 </p>
@@ -381,24 +392,14 @@ FIGURE 5.3: Comparing Normal Distribution and Power-law Distribution Side by Sid
 <div class="rmdreminder">
 One thing I still did not understand is the range of <span class="math inline">\(x\)</span>. Should it always be <span class="math inline">\(\ge 1\)</span>, or <span class="math inline">\(\ge 0\)</span>? Why or why not?
 </div>
-
-<div id="property-2-scale-freeness" class="section level5">
+<div id="property-2-scale-freeness" class="section level5" number="5.1.4.1.1">
 <h5><span class="header-section-number">5.1.4.1.1</span> Property 2: scale-freeness</h5>
 <p>To deeply understand what the term “scale-free” means, you can read <a href="http://networksciencebook.com/chapter/4#scale-free">Chapter 4.4</a> in <a href="http://networksciencebook.com/">Network Science</a>.</p>
-<p>I’ll explain in my own words here. To understand “scale-free”, we must first understand “scale”. Mark <span class="citation">Newman (<a href="#ref-newman2005power" role="doc-biblioref">2005</a>)</span> defines it this way: A scale is "a typical value around which individual elements are centered (p.1). Therefore, <strong>scale-free</strong> means that we don’t know around <strong>which</strong> value individual elements in the distribution are centered. A normal distribution is <strong>not</strong> scale-free because we expect that more than 99% of the data falls within three standard deviations from the mean.</p>
-<p>You can read<a href="https://arxiv.org/pdf/cond-mat/0412004.pdf"><em>Power laws, Pareto distributions and Zipf’s law</em></a> by Mark <span class="citation">Newman (<a href="#ref-newman2005power" role="doc-biblioref">2005</a>)</span> for details. This paper is also a must read if you want to gain a deeper understanding about power law.)</p>
+<p>I’ll explain in my own words here. To understand “scale-free,” we must first understand “scale.” Mark <span class="citation"><a href="references.html#ref-newman2005power" role="doc-biblioref">Newman</a> (<a href="references.html#ref-newman2005power" role="doc-biblioref">2005</a>)</span> defines it this way: A scale is "a typical value around which individual elements are centered (p.1). Therefore, <strong>scale-free</strong> means that we don’t know around <strong>which</strong> value individual elements in the distribution are centered. A normal distribution is <strong>not</strong> scale-free because we expect that more than 99% of the data falls within three standard deviations from the mean.</p>
+<p>You can read<a href="https://arxiv.org/pdf/cond-mat/0412004.pdf"><em>Power laws, Pareto distributions and Zipf’s law</em></a> by Mark <span class="citation"><a href="references.html#ref-newman2005power" role="doc-biblioref">Newman</a> (<a href="references.html#ref-newman2005power" role="doc-biblioref">2005</a>)</span> for details. This paper is also a must read if you want to gain a deeper understanding about power law.)</p>
 <p>In a power-law distribution, it’s totally different. For example, if we have <span class="math inline">\(y = 5*x^{-2}\)</span>. Let’s imagine that human height follows this distribution. Suppose your height is <span class="math inline">\(x\)</span>, and <span class="math inline">\(n\)</span> people have the same height as you. Then you’ll see <span class="math inline">\(\frac{1}{4} \cdot n\)</span> people twice as tall as you<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>, and <span class="math inline">\(4 \cdot n\)</span> people half of your size. The thing is, <strong>you don’t know where you are located in the distribution!</strong> You can be as tiny as <span class="math inline">\(10\)</span> inches or as tall as <span class="math inline">\(100\)</span> feet. Wherever you stand, you will always find <span class="math inline">\(\frac{1}{4} \cdot n\)</span> people twice as tall as you, and <span class="math inline">\(4 \cdot n\)</span> people half of your size. <strong>Think about it!</strong> What a crazy world! That’s why we call it <strong>scale-free</strong>: no inherent scale in the distribution.</p>
 </div>
 </div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-donovan2016us">
-<p>Donovan, Sarah A, Marc Labonte, and Joseph Dalaker. 2016. “The Us Income Distribution: Trends and Issues.” <em>CRS Report, US Congressional Research Service, Washington, DC</em>.</p>
-</div>
-<div id="ref-newman2005power">
-<p>Newman, Mark EJ. 2005. “Power Laws, Pareto Distributions and Zipf’s Law.” <em>Contemporary Physics</em> 46 (5): 323–51.</p>
 </div>
 </div>
 <div class="footnotes">

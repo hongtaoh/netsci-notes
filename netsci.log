@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.11.14)  19 NOV 2020 13:06
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.11.14)  21 NOV 2020 18:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -133,17 +133,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-(/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks15
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip77
 For additional information on amsmath, use the `?' option.
@@ -151,7 +141,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
+\@emptytoks=\toks15
 \ex@=\dimen161
 )) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -179,21 +169,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \dotsspace@=\muskip16
 \c@parentequation=\count189
 \dspbrk@lvl=\count190
-\tag@help=\toks17
+\tag@help=\toks16
 \row@=\count191
 \column@=\count192
 \maxfields@=\count193
-\andhelp@=\toks18
+\andhelp@=\toks17
 \eqnshift@=\dimen164
 \alignsep@=\dimen165
 \tagshift@=\dimen166
 \tagwidth@=\dimen167
 \totwidth@=\dimen168
 \lineht@=\dimen169
-\@envbody=\toks19
+\@envbody=\toks18
 \multlinegap=\skip78
 \multlinetaggap=\skip79
-\mathdisplay@stack=\toks20
+\mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 ) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
@@ -265,9 +255,9 @@ ty
 Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
+\KV@toks@=\toks20
 )
-\MT@toks=\toks22
+\MT@toks=\toks21
 \MT@count=\count277
 LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen173
@@ -419,7 +409,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip80
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 47.
+Package hyperref Info: Option `colorlinks' set `true' on input line 48.
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
 \FV@CodeLineNo=\count291
@@ -451,7 +441,7 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LT@rows=\count296
 \c@LT@tables=\count297
 \c@LT@chunks=\count298
-\LT@p@ftn=\toks23
+\LT@p@ftn=\toks22
 ) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen183
@@ -471,13 +461,25 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count301
 \@lastruleclass=\count302
 \@thisrulewidth=\dimen195
+) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count303
+\calc@Bcount=\count304
+\calc@Adimen=\dimen196
+\calc@Bdimen=\dimen197
+\calc@Askip=\skip86
+\calc@Bskip=\skip87
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count305
+\calc@Cskip=\skip88
 ) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count303
+\etb@tempcnta=\count306
 ) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box81
-\fn@width=\dimen196
+\fn@width=\dimen198
 ) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
@@ -489,24 +491,19 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 )
-\Gin@req@height=\dimen197
-\Gin@req@width=\dimen198
-) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
-Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
-y)
-Package grffile Info: This package is an empty stub for compatibility on input 
-line 40.
+\Gin@req@height=\dimen199
+\Gin@req@width=\dimen256
 ) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen199
-\captionmargin@=\dimen256
-\captionwidth=\dimen257
-\caption@tempdima=\dimen258
-\caption@indent=\dimen259
-\caption@parindent=\dimen260
-\caption@hangindent=\dimen261
+\captionmargin=\dimen257
+\captionmargin@=\dimen258
+\captionwidth=\dimen259
+\caption@tempdima=\dimen260
+\caption@indent=\dimen261
+\caption@parindent=\dimen262
+\caption@hangindent=\dimen263
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
@@ -519,8 +516,8 @@ Package caption Warning: Unknown document class (or package),
 (caption)                standard defaults will be used.
 See the caption package documentation for explanation.
 
-\c@caption@flags=\count304
-\c@continuedfloat=\count305
+\c@caption@flags=\count307
+\c@continuedfloat=\count308
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
@@ -534,58 +531,58 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 Writing index file netsci.idx
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks24
-\thm@bodyfont=\toks25
-\thm@headfont=\toks26
-\thm@notefont=\toks27
-\thm@headpunct=\toks28
-\thm@preskip=\skip86
-\thm@postskip=\skip87
-\thm@headsep=\skip88
-\dth@everypar=\toks29
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip89
+\thm@postskip=\skip90
+\thm@headsep=\skip91
+\dth@everypar=\toks28
 ) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip89
-\bibsep=\skip90
+\bibhang=\skip92
+\bibsep=\skip93
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count306
+\c@NAT@ctr=\count309
 ) (./netsci.aux)
 \openout1 = `netsci.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 212.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 217.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 212.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 217.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 212.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 217.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 212.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 217.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 212.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 217.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 212.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 217.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 212.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 217.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -614,7 +611,7 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 212.
+(Font)              scaled to size 10.0pt on input line 217.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -653,18 +650,18 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 212.
+(Font)              scaled to size 10.0pt on input line 217.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 212.
+(Font)              `operators' in the math version `normal' on input line 217.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 212.
+ line 217.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 212.
+(Font)              `operators' in the math version `bold' on input line 217.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 212.
+t line 217.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -751,15 +748,15 @@ t=math;language=dflt;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 212.
+(Font)              `symbols' in the math version `normal' on input line 217.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 212.
+t line 217.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 212.
+(Font)              `symbols' in the math version `bold' on input line 217.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 212.
+t line 217.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -829,17 +826,17 @@ pt=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 2
-12.
+17.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 212.
+t line 217.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 212
+(Font)              `largesymbols' in the math version `bold' on input line 217
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 212.
-LaTeX Info: Redefining \microtypecontext on input line 212.
+t line 217.
+LaTeX Info: Redefining \microtypecontext on input line 217.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -851,7 +848,7 @@ cfg
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-Package hyperref Info: Link coloring ON on input line 212.
+Package hyperref Info: Link coloring ON on input line 217.
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -861,11 +858,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 g.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count307
+\c@section@level=\count310
 )
-LaTeX Info: Redefining \ref on input line 212.
-LaTeX Info: Redefining \pageref on input line 212.
-LaTeX Info: Redefining \nameref on input line 212.
+LaTeX Info: Redefining \ref on input line 217.
+LaTeX Info: Redefining \pageref on input line 217.
+LaTeX Info: Redefining \nameref on input line 217.
 (./netsci.out) (./netsci.out)
 \@outlinefile=\write5
 \openout5 = `netsci.out'.
@@ -953,43 +950,43 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [2
 
 ]
-Underfull \vbox (badness 10000) detected at line 218
+Underfull \vbox (badness 10000) detected at line 223
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 218
+Overfull \hbox (336.25pt too wide) detected at line 223
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 218
+Underfull \vbox (badness 10000) detected at line 223
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 218
+Overfull \hbox (336.25pt too wide) detected at line 223
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 218
+Underfull \vbox (badness 10000) detected at line 223
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 218
+Overfull \hbox (336.25pt too wide) detected at line 223
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 218
+Underfull \vbox (badness 10000) detected at line 223
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 218
+Overfull \hbox (336.25pt too wide) detected at line 223
 []
  []
 
 
-Underfull \hbox (badness 10000) detected at line 218
+Underfull \hbox (badness 10000) detected at line 223
 []
  []
 
@@ -1015,18 +1012,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 6.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 6.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
-(/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
-(/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/Users/Tal/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
+
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
@@ -1075,43 +1061,43 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [6
 
 ]
-Underfull \vbox (badness 10000) detected at line 220
+Underfull \vbox (badness 10000) detected at line 225
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 220
+Overfull \hbox (336.25pt too wide) detected at line 225
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 220
+Underfull \vbox (badness 10000) detected at line 225
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 220
+Overfull \hbox (336.25pt too wide) detected at line 225
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 220
+Underfull \vbox (badness 10000) detected at line 225
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 220
+Overfull \hbox (336.25pt too wide) detected at line 225
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 220
+Underfull \vbox (badness 10000) detected at line 225
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 220
+Overfull \hbox (336.25pt too wide) detected at line 225
 []
  []
 
 
-Underfull \hbox (badness 10000) detected at line 220
+Underfull \hbox (badness 10000) detected at line 225
 []
  []
 
@@ -1169,43 +1155,43 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [8
 
 ]
-Underfull \vbox (badness 10000) detected at line 221
+Underfull \vbox (badness 10000) detected at line 226
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 221
+Overfull \hbox (336.25pt too wide) detected at line 226
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 221
+Underfull \vbox (badness 10000) detected at line 226
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 221
+Overfull \hbox (336.25pt too wide) detected at line 226
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 221
+Underfull \vbox (badness 10000) detected at line 226
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 221
+Overfull \hbox (336.25pt too wide) detected at line 226
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 221
+Underfull \vbox (badness 10000) detected at line 226
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 221
+Overfull \hbox (336.25pt too wide) detected at line 226
 []
  []
 
 
-Underfull \hbox (badness 10000) detected at line 221
+Underfull \hbox (badness 10000) detected at line 226
 []
  []
 
@@ -1221,58 +1207,58 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 \openout8 = `netsci.lof'.
 
 [10]
-Underfull \vbox (badness 10000) detected at line 223
+Underfull \vbox (badness 10000) detected at line 228
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 223
+Overfull \hbox (336.25pt too wide) detected at line 228
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 223
+Underfull \vbox (badness 10000) detected at line 228
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 223
+Overfull \hbox (336.25pt too wide) detected at line 228
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 223
+Underfull \vbox (badness 10000) detected at line 228
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 223
+Overfull \hbox (336.25pt too wide) detected at line 228
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 223
+Underfull \vbox (badness 10000) detected at line 228
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 223
+Overfull \hbox (336.25pt too wide) detected at line 228
 []
  []
 
 
-Underfull \hbox (badness 10000) detected at line 223
+Underfull \hbox (badness 10000) detected at line 228
 []
  []
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 226.
+(Font)              scaled to size 8.0pt on input line 231.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 226.
+(Font)              scaled to size 6.0pt on input line 231.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 226.
+(Font)              scaled to size 8.00073pt on input line 231.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 226.
+(Font)              scaled to size 6.00055pt on input line 231.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 226.
+(Font)              scaled to size 7.99915pt on input line 231.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 226.
+(Font)              scaled to size 5.99936pt on input line 231.
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 File: images/reminder.png Graphic file (type bmp)
@@ -1281,8 +1267,8 @@ File: images/tip.png Graphic file (type bmp)
 <images/tip.png>
 File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
-File: images/license.png Graphic file (type bmp)
-<images/license.png>
+File: images/important.png Graphic file (type bmp)
+<images/important.png>
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
@@ -1292,41 +1278,43 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
+File: images/license.png Graphic file (type bmp)
+<images/license.png>
 File: images/edit.png Graphic file (type bmp)
 <images/edit.png>
 [12]
-Underfull \vbox (badness 10000) detected at line 259
+Underfull \vbox (badness 10000) detected at line 268
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 259
+Overfull \hbox (336.25pt too wide) detected at line 268
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 259
+Underfull \vbox (badness 10000) detected at line 268
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 259
+Overfull \hbox (336.25pt too wide) detected at line 268
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 259
+Underfull \vbox (badness 10000) detected at line 268
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 259
+Overfull \hbox (336.25pt too wide) detected at line 268
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 259
+Underfull \vbox (badness 10000) detected at line 268
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 259
+Overfull \hbox (336.25pt too wide) detected at line 268
 []
  []
 
@@ -1334,12 +1322,12 @@ Chapter 1.
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-Underfull \hbox (badness 10000) detected at line 286
+Underfull \hbox (badness 10000) detected at line 295
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 286
+Underfull \hbox (badness 10000) detected at line 295
 [][][]
  []
 
@@ -1353,12 +1341,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 10000) detected at line 296
+Underfull \hbox (badness 10000) detected at line 305
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 296
+Underfull \hbox (badness 10000) detected at line 305
 [][][]
  []
 
@@ -1369,50 +1357,50 @@ File: images/note.png Graphic file (type bmp)
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][] []
  [][][][][][] [][]
  []
 
 [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 435--435
+Underfull \hbox (badness 10000) in paragraph at lines 444--444
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][] []
  [][][][][][] [][]
  []
 
 [6]
-Underfull \hbox (badness 10000) detected at line 467
+Underfull \hbox (badness 10000) detected at line 476
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 467
+Underfull \hbox (badness 10000) detected at line 476
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 469
+Underfull \hbox (badness 10000) detected at line 478
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 469
+Underfull \hbox (badness 10000) detected at line 478
 [][][]
  []
 
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--478
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][] []
  [][][][][][] []
  []
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 488.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 497.
 [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1453,38 +1441,38 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [8
 
 ]
-Underfull \vbox (badness 10000) detected at line 497
+Underfull \vbox (badness 10000) detected at line 506
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 497
+Overfull \hbox (336.25pt too wide) detected at line 506
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 497
+Underfull \vbox (badness 10000) detected at line 506
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 497
+Overfull \hbox (336.25pt too wide) detected at line 506
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 497
+Underfull \vbox (badness 10000) detected at line 506
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 497
+Overfull \hbox (336.25pt too wide) detected at line 506
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 497
+Underfull \vbox (badness 10000) detected at line 506
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 497
+Overfull \hbox (336.25pt too wide) detected at line 506
 []
  []
 
@@ -1508,26 +1496,26 @@ File: netsci_files/figure-latex/nunit2-nodes-directed-1.pdf Graphic file (type
 pdf)
 <use netsci_files/figure-latex/nunit2-nodes-directed-1.pdf>
 [12] [13]
-File: netsci_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-19-1.pdf>
-[14]
 File: netsci_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/unnamed-chunk-20-1.pdf>
+[14]
+File: netsci_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-21-1.pdf>
 [15]
-File: netsci_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-22-1.pdf>
+File: netsci_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-23-1.pdf>
 [16]
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--740
+Underfull \hbox (badness 10000) in paragraph at lines 749--749
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][][][
 ][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 743--743
+Underfull \hbox (badness 10000) in paragraph at lines 752--752
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][][][
 ][] [] [][][][][][][][][][] []
@@ -1535,9 +1523,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 743--743
 
 [17]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <11> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 748.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 757.
 
-Underfull \hbox (badness 10000) in paragraph at lines 769--769
+Underfull \hbox (badness 10000) in paragraph at lines 778--778
 [][][][][]$[][][][][] [] [] [] [][][][][][] [][] [] [][] [][][][][][][][] [][] 
 [][][][][][] [][] [][][][] [] [][][][][][][][][][][] [] [][] [] [][] [] [][][][
 ][][] []
@@ -1547,32 +1535,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 769--769
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 818--818
+Underfull \hbox (badness 10000) in paragraph at lines 827--827
 [][][][][]$[][][][][] [] [] [] [][][][][][][][] [] [][][][][][] [] [][] [] [][]
 [][][][][][][][][][][] [] [][][][][][] [] [][][][][][][][][] [] [][][][][][][][
 ][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 820--820
+Underfull \hbox (badness 10000) in paragraph at lines 829--829
 [][][][][]$[][][][][] [] [] [] [][][][][][][][] [] [][][][][][] [] [][] [] [][]
 [][][][][][][][][][][] [] [][][][][][] [] [][][][][][][][][] [] [][][][][][][][
 ][] []
  []
 
 
-Underfull \hbox (badness 7203) in paragraph at lines 820--821
+Underfull \hbox (badness 7203) in paragraph at lines 829--830
 []\TU/lmr/m/n/10 2-3-2. Generate a scale-free network with 20 nodes with each
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 820--821
+Underfull \hbox (badness 2253) in paragraph at lines 829--830
 \TU/lmr/m/n/10 new node having three edges to attach to existing nodes. \TU/lmr
 /m/it/10 Hint \TU/lmr/m/n/10 :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 826--826
+Underfull \hbox (badness 10000) in paragraph at lines 835--835
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][][][
 ][] [] [][][][][][][][][][] []
@@ -1618,38 +1606,38 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [20
 
 ]
-Underfull \vbox (badness 10000) detected at line 829
+Underfull \vbox (badness 10000) detected at line 838
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 829
+Overfull \hbox (336.25pt too wide) detected at line 838
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 829
+Underfull \vbox (badness 10000) detected at line 838
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 829
+Overfull \hbox (336.25pt too wide) detected at line 838
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 829
+Underfull \vbox (badness 10000) detected at line 838
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 829
+Overfull \hbox (336.25pt too wide) detected at line 838
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 829
+Underfull \vbox (badness 10000) detected at line 838
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 829
+Overfull \hbox (336.25pt too wide) detected at line 838
 []
  []
 
@@ -1664,31 +1652,33 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [21
 
 ]
-File: netsci_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-27-1.pdf>
+File: netsci_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-28-1.pdf>
 
-Underfull \hbox (badness 10000) detected at line 871
+Underfull \hbox (badness 10000) detected at line 880
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 871
+Underfull \hbox (badness 10000) detected at line 880
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 873
+Underfull \hbox (badness 10000) detected at line 882
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 873
+Underfull \hbox (badness 10000) detected at line 882
 [][][]
  []
 
 [22]
 File: netsci_files/figure-latex/g3-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/g3-1.pdf>
+File: images/important.png Graphic file (type bmp)
+<images/important.png>
 [23]
 File: netsci_files/figure-latex/random3-1-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/random3-1-1.pdf>
@@ -1702,22 +1692,22 @@ File: images/bfs03.png Graphic file (type bmp)
 File: images/bfs04.png Graphic file (type bmp)
 <images/bfs04.png>
 [25]
-Underfull \hbox (badness 10000) detected at line 1004
+Underfull \hbox (badness 10000) detected at line 1017
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1004
+Underfull \hbox (badness 10000) detected at line 1017
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1006
+Underfull \hbox (badness 10000) detected at line 1019
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1006
+Underfull \hbox (badness 10000) detected at line 1019
 [][][]
  []
 
@@ -1725,104 +1715,66 @@ File: netsci_files/figure-latex/disconnected-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/disconnected-1.pdf>
 File: images/blockDiagonal.png Graphic file (type bmp)
 <images/blockDiagonal.png>
+[26] [27]
 File: netsci_files/figure-latex/blockDiagonal02-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/blockDiagonal02-1.pdf>
-[26] [27] [28]
+[28]
 File: images/bfsD1.png Graphic file (type bmp)
 <images/bfsD1.png>
 File: images/bfsD2.png Graphic file (type bmp)
 <images/bfsD2.png>
 File: images/bfsD3.png Graphic file (type bmp)
 <images/bfsD3.png>
-[29] [30]
+[29] [30] [31]
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1143
+Underfull \hbox (badness 10000) in paragraph at lines 1156--1156
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][][][
 ] [] [][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1146--1146
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1159
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][] [] [][][][][][] [
 ][] [][][][][][] [] [][][][] [] [][][][][][] [] [][][] [][] [][][][][][][][][][
 ] [] [][][][][][][][] []
  []
 
-[31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[32]
+Underfull \vbox (badness 10000) detected at line 1162
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 1162
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 1162
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 1162
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 1162
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 1162
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
-[]
+Underfull \vbox (badness 10000) detected at line 1162
  []
 
 
-Underfull \hbox (badness 10000) has occurred while \output is active
- [][][][] 
- []
-
-[32
-
-]
-Underfull \vbox (badness 10000) detected at line 1149
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 1149
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1149
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 1149
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1149
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 1149
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1149
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 1149
+Overfull \hbox (336.25pt too wide) detected at line 1162
 []
  []
 
@@ -1835,6 +1787,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [33
+
 
 ]
 File: netsci_files/figure-latex/g4-1-1.pdf Graphic file (type pdf)
@@ -1851,104 +1804,119 @@ File: images/caution.png Graphic file (type bmp)
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1261.
+(amsmath)                 on input line 1274.
 
 File: images/tip.png Graphic file (type bmp)
 <images/tip.png>
-[37] [38]
-Underfull \hbox (badness 10000) detected at line 1402
+[37]
+Overfull \hbox (14.99513pt too wide) in alignment at lines 1326--1339
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.99513pt too wide) in alignment at lines 1339--1351
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.99513pt too wide) in alignment at lines 1351--1371
+ [] [] [] [] 
+ []
+
+[38]
+Underfull \hbox (badness 10000) detected at line 1415
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1402
+Underfull \hbox (badness 10000) detected at line 1415
 [][][]
  []
 
 [39]
-Underfull \hbox (badness 10000) detected at line 1404
+Underfull \hbox (badness 10000) detected at line 1417
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1404
+Underfull \hbox (badness 10000) detected at line 1417
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1406
+Underfull \hbox (badness 10000) detected at line 1419
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1406
+Underfull \hbox (badness 10000) detected at line 1419
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1408
+Underfull \hbox (badness 10000) detected at line 1421
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1408
+Underfull \hbox (badness 10000) detected at line 1421
 [][][]
  []
 
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1412--1413
+Underfull \hbox (badness 10000) in paragraph at lines 1425--1426
 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1425
+Underfull \hbox (badness 10000) detected at line 1438
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1425
+Underfull \hbox (badness 10000) detected at line 1438
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1427
+Underfull \hbox (badness 10000) detected at line 1440
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1427
+Underfull \hbox (badness 10000) detected at line 1440
 [][][]
  []
 
 [40]
-Underfull \hbox (badness 10000) detected at line 1456
+Underfull \hbox (badness 10000) detected at line 1469
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1456
+Underfull \hbox (badness 10000) detected at line 1469
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1458
+Underfull \hbox (badness 10000) detected at line 1471
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1458
+Underfull \hbox (badness 10000) detected at line 1471
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1460
+Underfull \hbox (badness 10000) detected at line 1473
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1460
+Underfull \hbox (badness 10000) detected at line 1473
 [][][]
  []
 
@@ -1958,45 +1926,45 @@ File: images/tried.png Graphic file (type bmp)
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1498--1498
+Underfull \hbox (badness 10000) in paragraph at lines 1511--1511
 [][][][][]$[][][][] [] [] [] [][][][][][][][] [] [][] [] [][][] [] [][] [] [][]
 [][][][][][][][] [] [][][][][] [] [][][][] [] [][] [] [][][][][] [][] [][][][][
 ][][][][][] []
  []
 
 [42]
-Underfull \vbox (badness 10000) detected at line 1505
+Underfull \vbox (badness 10000) detected at line 1518
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1505
+Overfull \hbox (336.25pt too wide) detected at line 1518
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1505
+Underfull \vbox (badness 10000) detected at line 1518
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1505
+Overfull \hbox (336.25pt too wide) detected at line 1518
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1505
+Underfull \vbox (badness 10000) detected at line 1518
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1505
+Overfull \hbox (336.25pt too wide) detected at line 1518
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1505
+Underfull \vbox (badness 10000) detected at line 1518
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1505
+Overfull \hbox (336.25pt too wide) detected at line 1518
 []
  []
 
@@ -2004,34 +1972,34 @@ Chapter 5.
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1519--1519
+Underfull \hbox (badness 10000) in paragraph at lines 1532--1532
 [][][][][]$[][][][][] [] [] [] [][][][][][][][] [] [][] [] [][][] [] [][][][] [
 ] [][][][] [] [][] [] [][][][][] [][] [][][] [][] [] [][] [][][][] [][] [][][][
 ][][][] [][] [][] [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1524
+Underfull \hbox (badness 10000) detected at line 1537
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1524
+Underfull \hbox (badness 10000) detected at line 1537
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1526
+Underfull \hbox (badness 10000) detected at line 1539
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1526
+Underfull \hbox (badness 10000) detected at line 1539
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1529--1529
+Underfull \hbox (badness 10000) in paragraph at lines 1542--1542
 [][][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][] [] [][][] [] [][][]
 [][][][] [] [][][][][] [][] [][][][][][][][][] [] [][][][][][] [][] [][][][][] 
 [][] [][][][][][] [][] [][][][] [][]
@@ -2048,70 +2016,70 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 ]
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
-File: netsci_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-39-1.pdf>
-File: netsci_files/figure-latex/unnamed-chunk-40-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-40-1.pdf>
+File: netsci_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-41-1.pdf>
+File: netsci_files/figure-latex/unnamed-chunk-42-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-42-1.pdf>
 [44]
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 File: images/tip.png Graphic file (type bmp)
 <images/tip.png>
 
-Underfull \hbox (badness 10000) detected at line 1607
+Underfull \hbox (badness 10000) detected at line 1620
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1607
+Underfull \hbox (badness 10000) detected at line 1620
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1609
+Underfull \hbox (badness 10000) detected at line 1622
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1609
+Underfull \hbox (badness 10000) detected at line 1622
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1611
+Underfull \hbox (badness 10000) detected at line 1624
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1611
+Underfull \hbox (badness 10000) detected at line 1624
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1613
+Underfull \hbox (badness 10000) detected at line 1626
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1613
+Underfull \hbox (badness 10000) detected at line 1626
 [][][]
  []
 
 [45]
-File: netsci_files/figure-latex/unnamed-chunk-43-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-43-1.pdf>
-[46]
-File: netsci_files/figure-latex/unnamed-chunk-44-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-44-1.pdf>
-[47]
 File: netsci_files/figure-latex/unnamed-chunk-45-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/unnamed-chunk-45-1.pdf>
+[46]
+File: netsci_files/figure-latex/unnamed-chunk-46-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-46-1.pdf>
+[47]
+File: netsci_files/figure-latex/unnamed-chunk-47-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-47-1.pdf>
 File: /Users/Tal/Desktop/netsci-notes/images/income_distribution.png Graphic fi
 le (type bmp)
 </Users/Tal/Desktop/netsci-notes/images/income_distribution.png>
 [48] [49]
-File: netsci_files/figure-latex/unnamed-chunk-47-1.pdf Graphic file (type pdf)
-<use netsci_files/figure-latex/unnamed-chunk-47-1.pdf>
+File: netsci_files/figure-latex/unnamed-chunk-49-1.pdf Graphic file (type pdf)
+<use netsci_files/figure-latex/unnamed-chunk-49-1.pdf>
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 [50]
@@ -2121,14 +2089,14 @@ File: images/note.png Graphic file (type bmp)
 File: netsci_files/figure-latex/powerLaw-poisson-1.pdf Graphic file (type pdf)
 <use netsci_files/figure-latex/powerLaw-poisson-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1813--1813
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1826
 [][][][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][]
 [][][][][] [] [][][][][][][] [] [][][][][][][][] [][] [][][][][][][][] [][] [][
 ][][][][] [][] [][][][] [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1817--1818
+Underfull \hbox (badness 10000) in paragraph at lines 1830--1831
 []\TU/lmr/m/n/10 A quick note: in the above codes, \TU/lmtt/m/n/10 y2 <- dpois(
 x, lambda =
  []
@@ -2145,44 +2113,44 @@ File: images/reminder.png Graphic file (type bmp)
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) detected at line 1870
+Underfull \hbox (badness 10000) detected at line 1883
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1870
+Underfull \hbox (badness 10000) detected at line 1883
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1872
+Underfull \hbox (badness 10000) detected at line 1885
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1872
+Underfull \hbox (badness 10000) detected at line 1885
 [][][]
  []
 
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) detected at line 1886
+Underfull \hbox (badness 10000) detected at line 1899
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1886
+Underfull \hbox (badness 10000) detected at line 1899
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1888
+Underfull \hbox (badness 10000) detected at line 1901
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1888
+Underfull \hbox (badness 10000) detected at line 1901
 [][][]
  []
 
@@ -2194,12 +2162,12 @@ File: images/reminder.png Graphic file (type bmp)
 File: images/reminder.png Graphic file (type bmp)
 <images/reminder.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1908--1909
+Underfull \hbox (badness 10000) in paragraph at lines 1921--1922
 []\TU/lmr/m/n/10 Update: Yeah, i was wrong. Originally, when calculating
  []
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 1908--1909
+Underfull \hbox (badness 1019) in paragraph at lines 1921--1922
 \TU/lmtt/m/n/10 deg.dist_internet\TU/lmr/m/n/10 , I set \TU/lmtt/m/n/10 cumulat
 ive \TU/lmr/m/n/10 to be \TU/lmtt/m/n/10 FALSE\TU/lmr/m/n/10 . This is due to
  []
@@ -2302,15 +2270,15 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 ] (./netsci.ind) (./netsci.aux)
 Package rerunfilecheck Info: File `netsci.out' has not changed.
-(rerunfilecheck)             Checksum: 43A015A8C0DAEAD4D98AC7B86D9730C4;11301.
+(rerunfilecheck)             Checksum: F070090FFE33EFA0A3992403966CD92C;11470.
  ) 
 Here is how much of TeX's memory you used:
- 20620 strings out of 479426
- 367150 string characters out of 5880339
- 862464 words of memory out of 5000000
- 39623 multiletter control sequences out of 15000+600000
- 540650 words of font info for 85 fonts, out of 8000000 for 9000
+ 20336 strings out of 479426
+ 363579 string characters out of 5880339
+ 862699 words of memory out of 5000000
+ 39365 multiletter control sequences out of 15000+600000
+ 538578 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 94i,15n,118p,858b,667s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,15n,118p,858b,675s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on netsci.pdf (72 pages).

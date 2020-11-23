@@ -6,7 +6,7 @@ The following is not originally from me, but my notes from reading [*Network Sci
 
 Before we can understand the small world phenomenon, we need to have more basic knowledge about a network: shortest path, average path length, Breath-first search algorithm, components, and local and average clustering coefficient. 
 
-## Basic ideals
+## Weight, paths, connectedness, and clustering
 ### Weighted network
 So far, we assumed that the weight of all links in a network is the same. However, networks can be weighted. Take social network as an example. Although you are connected to many people, the weight of these connections is unequal. You probably talk to your family and your close friends more often than to your acquaintances. In an adjacency matrix, suppose you are represented by node $i$, your mom node $j$ and one of your acquaintances node $m$. Also suppose the weight of the link between you and your mom is $10$, which is ten times the weight of the link between you and the acquaintance. Then we have $A_{ij} = 10$ and $A_{im} = 1$. 
 
@@ -39,6 +39,10 @@ plot(g3)
 ```
 
 There are paths ($1 \to 2$, and $1 \to 3 \to 4 \to 2$) from node $1$ to node $2$ but we don't have on any from node $2$ to node $1$. Furthermore, $d_{2, 4} = 2$ whereas $d_{4,2} = 1$. 
+
+```{block2, type='rmdimportant'}
+Please note that all the above discussions on shortest path lenghts are based on the assumption that it is a simple contagion. In a complex contagion, things are very different because multiple reinforcements are necessary. Read @centola2007complex for more detailed explanations. 
+```
 
 #### Network diameter
 Among all the shortest paths in a network, the longest one is called the **diameter** of this network, denoted as $d_{max}$. In the above Network \@ref(fig:g3), $d_{max} = 2$: $d_{1,4} = d_{2,4} = 2$.
@@ -106,7 +110,7 @@ par(mar = c(1, 1, 1, 1))
 plot(disconnectedG)
 ```
 
-I its adjacency matrix, nonzero elements are contained in square blocks along the diagonal and all the remaining elements are zeros:
+In its adjacency matrix, nonzero elements are contained in square blocks along the diagonal and all the remaining elements are zeros:
 
 ```{r BDmatrix, echo = FALSE, fig.align='center', fig.cap="Adjacency matrix of the disconnected network", out.width="45%"}
 knitr::include_graphics('images/blockDiagonal.png')

@@ -24,7 +24,7 @@
 <meta name="author" content="Hongtao Hao" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2020-11-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="adjacency-matrix.html"/>
 <link rel="next" href="SmallWorld.html"/>
+<script src="libs/header-attrs-2.5.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,13 +136,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Network Science</a><ul>
-<li class="chapter" data-level="1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html"><i class="fa fa-check"></i><b>1.1</b> Intro to networks</a><ul>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Network Science</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html"><i class="fa fa-check"></i><b>1.1</b> Intro to networks</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="intro-to-networks.html"><a href="intro-to-networks.html#networks-and-complex-systems"><i class="fa fa-check"></i><b>1.1.1</b> Networks and complex systems</a></li>
 <li class="chapter" data-level="1.1.2" data-path="intro-to-networks.html"><a href="intro-to-networks.html#driving-forces-behind-network-sciences-emerging-as-a-discipline"><i class="fa fa-check"></i><b>1.1.2</b> Driving forces behind network science’s emerging as a discipline</a></li>
 <li class="chapter" data-level="1.1.3" data-path="intro-to-networks.html"><a href="intro-to-networks.html#key-characteristics-of-network-science"><i class="fa fa-check"></i><b>1.1.3</b> Key characteristics of network science</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html"><i class="fa fa-check"></i><b>1.2</b> Definition and significance of networks</a><ul>
+<li class="chapter" data-level="1.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html"><i class="fa fa-check"></i><b>1.2</b> Definition and significance of networks</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#what-is-a-network"><i class="fa fa-check"></i><b>1.2.1</b> What is a network</a></li>
 <li class="chapter" data-level="1.2.2" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#why-should-we-care-about-networks"><i class="fa fa-check"></i><b>1.2.2</b> Why should we care about networks?</a></li>
 <li class="chapter" data-level="1.2.3" data-path="definition-and-significance-of-networks.html"><a href="definition-and-significance-of-networks.html#think-for-yourself"><i class="fa fa-check"></i><b>1.2.3</b> Think for yourself</a></li>
@@ -151,56 +153,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="python-setup.html"><a href="python-setup.html"><i class="fa fa-check"></i><b>1.3</b> Python setup</a></li>
 <li class="chapter" data-level="1.4" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>1.4</b> Homework</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="Graph.html"><a href="Graph.html"><i class="fa fa-check"></i><b>2</b> Graph Theory and Some Basic Concepts</a><ul>
+<li class="chapter" data-level="2" data-path="Graph.html"><a href="Graph.html"><i class="fa fa-check"></i><b>2</b> Graph Theory and Some Basic Concepts</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="königsberg-bridge-problem-ch-2-1.html"><a href="königsberg-bridge-problem-ch-2-1.html"><i class="fa fa-check"></i><b>2.1</b> Königsberg bridge problem (Ch. 2.1)</a></li>
 <li class="chapter" data-level="2.2" data-path="networks-and-graphs-ch-2-2.html"><a href="networks-and-graphs-ch-2-2.html"><i class="fa fa-check"></i><b>2.2</b> Networks and graphs (Ch. 2.2)</a></li>
-<li class="chapter" data-level="2.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html"><i class="fa fa-check"></i><b>2.3</b> Degree, average degree, and degree distribution (Ch. 2.3)</a><ul>
+<li class="chapter" data-level="2.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html"><i class="fa fa-check"></i><b>2.3</b> Degree, average degree, and degree distribution (Ch. 2.3)</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree"><i class="fa fa-check"></i><b>2.3.1</b> Degree</a></li>
 <li class="chapter" data-level="2.3.2" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#average-degree"><i class="fa fa-check"></i><b>2.3.2</b> Average degree</a></li>
 <li class="chapter" data-level="2.3.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Degree distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="adjacency-matrix.html"><a href="adjacency-matrix.html"><i class="fa fa-check"></i><b>2.4</b> Adjacency matrix</a></li>
-<li class="chapter" data-level="2.5" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html"><i class="fa fa-check"></i><b>2.5</b> Chapter 2 Homework</a><ul>
+<li class="chapter" data-level="2.5" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html"><i class="fa fa-check"></i><b>2.5</b> Chapter 2 Homework</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-1-networkx-basics"><i class="fa fa-check"></i><b>2.5.1</b> Task 2-1: <code>Networkx</code> Basics</a></li>
 <li class="chapter" data-level="2.5.2" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-2-friendship-paradox-example"><i class="fa fa-check"></i><b>2.5.2</b> Task 2-2: Friendship paradox example</a></li>
 <li class="chapter" data-level="2.5.3" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-3-generating-random-and-scale-free-networks"><i class="fa fa-check"></i><b>2.5.3</b> Task 2-3: Generating random and scale-free networks</a></li>
 <li class="chapter" data-level="2.5.4" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html#task-2-4-homework-by-professor-yy"><i class="fa fa-check"></i><b>2.5.4</b> Task 2-4: Homework by Professor YY</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="SmallWorld.html"><a href="SmallWorld.html"><i class="fa fa-check"></i><b>3</b> Small World Phenomenon</a><ul>
-<li class="chapter" data-level="3.1" data-path="basic-ideals.html"><a href="basic-ideals.html"><i class="fa fa-check"></i><b>3.1</b> Basic ideals</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="basic-ideals.html"><a href="basic-ideals.html#weighted-network"><i class="fa fa-check"></i><b>3.1.1</b> Weighted network</a></li>
-<li class="chapter" data-level="3.1.2" data-path="basic-ideals.html"><a href="basic-ideals.html#shortest-path-network-diameter-and-average-path-length"><i class="fa fa-check"></i><b>3.1.2</b> Shortest path, network diameter, and average path length</a></li>
-<li class="chapter" data-level="3.1.3" data-path="basic-ideals.html"><a href="basic-ideals.html#connectedness"><i class="fa fa-check"></i><b>3.1.3</b> Connectedness</a></li>
-<li class="chapter" data-level="3.1.4" data-path="basic-ideals.html"><a href="basic-ideals.html#clustering-coefficient"><i class="fa fa-check"></i><b>3.1.4</b> Clustering coefficient</a></li>
+<li class="chapter" data-level="3" data-path="SmallWorld.html"><a href="SmallWorld.html"><i class="fa fa-check"></i><b>3</b> Small World Phenomenon</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html"><i class="fa fa-check"></i><b>3.1</b> Weight, paths, connectedness, and clustering</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html#weighted-network"><i class="fa fa-check"></i><b>3.1.1</b> Weighted network</a></li>
+<li class="chapter" data-level="3.1.2" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html#shortest-path-network-diameter-and-average-path-length"><i class="fa fa-check"></i><b>3.1.2</b> Shortest path, network diameter, and average path length</a></li>
+<li class="chapter" data-level="3.1.3" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html#connectedness"><i class="fa fa-check"></i><b>3.1.3</b> Connectedness</a></li>
+<li class="chapter" data-level="3.1.4" data-path="weight-paths-connectedness-and-clustering.html"><a href="weight-paths-connectedness-and-clustering.html#clustering-coefficient"><i class="fa fa-check"></i><b>3.1.4</b> Clustering coefficient</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="chapter-3-homework.html"><a href="chapter-3-homework.html"><i class="fa fa-check"></i><b>3.2</b> Chapter 3 Homework</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="weak-ties-and-watts-strogatz-model.html"><a href="weak-ties-and-watts-strogatz-model.html"><i class="fa fa-check"></i><b>4</b> Weak Ties and Watts-Strogatz model</a><ul>
-<li class="chapter" data-level="4.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html"><i class="fa fa-check"></i><b>4.1</b> Random networks (Barabási Ch.3)</a><ul>
+<li class="chapter" data-level="4" data-path="weak-ties-and-watts-strogatz-model.html"><a href="weak-ties-and-watts-strogatz-model.html"><i class="fa fa-check"></i><b>4</b> Weak Ties and Watts-Strogatz model</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html"><i class="fa fa-check"></i><b>4.1</b> Random networks (Barabási Ch.3)</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#generating-a-random-network"><i class="fa fa-check"></i><b>4.1.1</b> Generating a random network</a></li>
 <li class="chapter" data-level="4.1.2" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#average-degree-and-the-expected-number-of-links-in-a-random-network"><i class="fa fa-check"></i><b>4.1.2</b> Average degree, and the expected number of links in a random network</a></li>
 <li class="chapter" data-level="4.1.3" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#degree-distribution-1"><i class="fa fa-check"></i><b>4.1.3</b> Degree distribution</a></li>
 <li class="chapter" data-level="4.1.4" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#poisson-distribution-does-not-capture-reality"><i class="fa fa-check"></i><b>4.1.4</b> Poisson distribution does not capture reality</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html"><i class="fa fa-check"></i><b>4.2</b> Reading two seminal papers</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#the-strength-of-weak-ties-by-granovetter1973strength"><i class="fa fa-check"></i><b>4.2.1</b> <em>The Strength of Weak Ties</em> by <span class="citation">Granovetter (<span>1973</span>)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html"><i class="fa fa-check"></i><b>4.2</b> Reading two seminal papers</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#the-strength-of-weak-ties-by-granovetter1973strength"><i class="fa fa-check"></i><b>4.2.1</b> <em>The Strength of Weak Ties</em> by <span class="citation"><span>Granovetter</span> (<span>1973</span>)</span></a></li>
 <li class="chapter" data-level="4.2.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#watts-strogatz-model-of-small-world"><i class="fa fa-check"></i><b>4.2.2</b> Watts-Strogatz model of small world</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="scale-free.html"><a href="scale-free.html"><i class="fa fa-check"></i><b>5</b> Scale-Free Networks</a><ul>
-<li class="chapter" data-level="5.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html"><i class="fa fa-check"></i><b>5.1</b> Power-Law Distributions</a><ul>
+<li class="chapter" data-level="5" data-path="scale-free.html"><a href="scale-free.html"><i class="fa fa-check"></i><b>5</b> Scale-Free Networks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html"><i class="fa fa-check"></i><b>5.1</b> Power-Law Distributions</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="power-law-distributions.html"><a href="power-law-distributions.html#differences-between-fb-study-and-the-milgram-study"><i class="fa fa-check"></i><b>5.1.1</b> Differences between FB study and the Milgram study</a></li>
 <li class="chapter" data-level="5.1.2" data-path="power-law-distributions.html"><a href="power-law-distributions.html#power-law"><i class="fa fa-check"></i><b>5.1.2</b> Power law</a></li>
 <li class="chapter" data-level="5.1.3" data-path="power-law-distributions.html"><a href="power-law-distributions.html#logarithmic-scale"><i class="fa fa-check"></i><b>5.1.3</b> Logarithmic scale</a></li>
 <li class="chapter" data-level="5.1.4" data-path="power-law-distributions.html"><a href="power-law-distributions.html#properties-of-power-law-distributions"><i class="fa fa-check"></i><b>5.1.4</b> Properties of power-law distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="scale-free-property.html"><a href="scale-free-property.html"><i class="fa fa-check"></i><b>5.2</b> Scale-free property</a><ul>
+<li class="chapter" data-level="5.2" data-path="scale-free-property.html"><a href="scale-free-property.html"><i class="fa fa-check"></i><b>5.2</b> Scale-free property</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="scale-free-property.html"><a href="scale-free-property.html#hubs"><i class="fa fa-check"></i><b>5.2.1</b> Hubs</a></li>
 <li class="chapter" data-level="5.2.2" data-path="scale-free-property.html"><a href="scale-free-property.html#universality"><i class="fa fa-check"></i><b>5.2.2</b> Universality</a></li>
 <li class="chapter" data-level="5.2.3" data-path="scale-free-property.html"><a href="scale-free-property.html#ultra-small-property-and-the-role-of-degree-exponent"><i class="fa fa-check"></i><b>5.2.3</b> Ultra-small property, and the role of degree exponent</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html"><i class="fa fa-check"></i><b>5.3</b> The Barabási-Albert Model</a><ul>
+<li class="chapter" data-level="5.3" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html"><i class="fa fa-check"></i><b>5.3</b> The Barabási-Albert Model</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="the-barabási-albert-model.html"><a href="the-barabási-albert-model.html#improving-the-ba-model"><i class="fa fa-check"></i><b>5.3.1</b> Improving the BA model</a></li>
 </ul></li>
 </ul></li>
@@ -225,16 +239,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chapter-2-homework" class="section level2">
+<div id="chapter-2-homework" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Chapter 2 Homework</h2>
 
 <div class="rmdnote">
 This part is based on Professor YY’s module 2 assignment of <a href="https://github.com/yy/netsci-course/blob/master/m02-whynetworks/friendship_paradox.ipynb">measuring the friendship paradox</a>.
 </div>
-
 <p>You can find the homework <a href="https://github.com/yy/netsci-course/blob/master/m02-whynetworks/friendship_paradox.ipynb">here</a>.</p>
 <p>The following task prompts are based on the above homework. You can use them to keep practicing coding in Python.</p>
-<div id="task-2-1-networkx-basics" class="section level3">
+<div id="task-2-1-networkx-basics" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Task 2-1: <code>Networkx</code> Basics</h3>
 <ul>
 <li><p>2-1-1. Import <code>networkx</code> as <code>nx</code>.</p></li>
@@ -242,8 +255,8 @@ This part is based on Professor YY’s module 2 assignment of <a href="https://g
 <li><p>2-1-3. Create a networkx graph named <code>my_first_graph</code> which contains three nodes and 2 edges, i.e., (1,2) and (2,3).</p></li>
 <li><p>2-1-4. In the codes you used for Task <code>2-3</code>: Which element is a <code>class</code>? Which is an <code>object</code>? Which is a <code>method</code>?</p></li>
 <li><p>2-1-5. Print the number of nodes in <code>my_first_graph</code>. <em>Hint</em> : <code>len()</code></p></li>
-<li><p>2-1-6. Print the degree of Node 2, in the format of “Node 2’s degree: m”.</p></li>
-<li><p>2-1-7. Print Node 2’s neighbors, in the format of “Node 2’s neighbors: [m, n, p, q]”. <em>Hint</em> : <code>neighbor()</code> or <code>neighbors()</code>?</p>
+<li><p>2-1-6. Print the degree of Node 2, in the format of “Node 2’s degree: m.”</p></li>
+<li><p>2-1-7. Print Node 2’s neighbors, in the format of “Node 2’s neighbors: [m, n, p, q].” <em>Hint</em> : <code>neighbor()</code> or <code>neighbors()</code>?</p>
 <ul>
 <li>Note: When you directly return Node 2’s neighbors, the result will be <code>dict_keyiterator at 0x10ec84860</code>, which is an <a href="https://www.w3schools.com/python/python_iterators.asp">iterator object</a>. Try to solve this problem either by a for loop or through a <a href="https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html">list comprehension</a></li>
 </ul></li>
@@ -255,7 +268,7 @@ This part is based on Professor YY’s module 2 assignment of <a href="https://g
 <li><p>2-1-10. Plot <code>my_first_graph</code>. <em>Hint</em> : <code>.draw()</code></p></li>
 </ul>
 </div>
-<div id="task-2-2-friendship-paradox-example" class="section level3">
+<div id="task-2-2-friendship-paradox-example" class="section level3" number="2.5.2">
 <h3><span class="header-section-number">2.5.2</span> Task 2-2: Friendship paradox example</h3>
 <ul>
 <li><p>2-2-1. Create a star graph with 20 nodes, and plot it.</p></li>
@@ -267,21 +280,20 @@ This part is based on Professor YY’s module 2 assignment of <a href="https://g
 </ul>
 
 <div class="rmdreminder">
-I do not understand Professor YY’s note here: “so if you print a numpy float it will display differently than if you printed a python float, which is why we get the intentional truncation of the value when displayed”.
+I do not understand Professor YY’s note here: “so if you print a numpy float it will display differently than if you printed a python float, which is why we get the intentional truncation of the value when displayed.”
 </div>
-
 <ul>
 <li>2-2-4. Get <code>star_graph</code>’s average degree using networkx’s <code>info()</code> function.</li>
 </ul>
 </div>
-<div id="task-2-3-generating-random-and-scale-free-networks" class="section level3">
+<div id="task-2-3-generating-random-and-scale-free-networks" class="section level3" number="2.5.3">
 <h3><span class="header-section-number">2.5.3</span> Task 2-3: Generating random and scale-free networks</h3>
 <ul>
 <li><p>2-3-1. Generate a random network with 20 nodes and a connection probability of 0.3. <em>Hint</em> : <a href="https://networkx.github.io/documentation/stable/reference/generated/networkx.generators.random_graphs.erdos_renyi_graph.html"><code>erdos_renyi_graph</code></a>.</p></li>
 <li><p>2-3-2. Generate a scale-free network with 20 nodes with each new node having three edges to attach to existing nodes. <em>Hint</em> : <a href="https://networkx.github.io/documentation/stable/reference/generated/networkx.generators.random_graphs.barabasi_albert_graph.html"><code>barabasi_albert_graph()</code></a></p></li>
 </ul>
 </div>
-<div id="task-2-4-homework-by-professor-yy" class="section level3">
+<div id="task-2-4-homework-by-professor-yy" class="section level3" number="2.5.4">
 <h3><span class="header-section-number">2.5.4</span> Task 2-4: Homework by Professor YY</h3>
 <p>Answer <a href="https://github.com/yy/netsci-course/blob/master/m02-whynetworks/friendship_paradox.ipynb">Q1 - Q4</a> as explained by Professor YY.</p>
 
