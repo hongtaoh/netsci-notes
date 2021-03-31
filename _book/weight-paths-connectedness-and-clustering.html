@@ -24,7 +24,7 @@
 <meta name="author" content="Hongtao Hao" />
 
 
-<meta name="date" content="2020-11-28" />
+<meta name="date" content="2021-03-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -243,13 +243,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.1</span> Weight, paths, connectedness, and clustering</h2>
 <div id="weighted-network" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Weighted network</h3>
-<p>So far, we assumed that the weight of all links in a network is the same. However, networks can be weighted. Take social network as an example. Although you are connected to many people, the weight of these connections is unequal. You probably talk to your family and your close friends more often than to your acquaintances. In an adjacency matrix, suppose you are represented by node <span class="math inline">\(i\)</span>, your mom node <span class="math inline">\(j\)</span> and one of your acquaintances node <span class="math inline">\(m\)</span>. Also suppose the weight of the link between you and your mom is <span class="math inline">\(10\)</span>, which is ten times the weight of the link between you and the acquaintance. Then we have <span class="math inline">\(A_{ij} = 10\)</span> and <span class="math inline">\(A_{im} = 1\)</span>.</p>
+<p>So far, we have assumed that the weight of all links in a network is the same. However, networks can be weighted. Take social network as an example. Although you are connected to many people, the weight of these connections is unequal. You probably talk to your family and your close friends more often than to your acquaintances. In an adjacency matrix, suppose you are represented by node <span class="math inline">\(i\)</span>, your mom node <span class="math inline">\(j\)</span> and one of your acquaintances node <span class="math inline">\(m\)</span>. Also suppose the weight of the link between you and your mom is <span class="math inline">\(10\)</span>, which is ten times the weight of the link between you and the acquaintance. Then we have <span class="math inline">\(A_{ij} = 10\)</span> and <span class="math inline">\(A_{im} = 1\)</span>.</p>
 </div>
 <div id="shortest-path-network-diameter-and-average-path-length" class="section level3" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Shortest path, network diameter, and average path length</h3>
 <div id="shortest-path" class="section level4" number="3.1.2.1">
 <h4><span class="header-section-number">3.1.2.1</span> Shortest path</h4>
-<p>In real world, objects have physical distances between each other, and that’s why you need to fly for three hours from New York to Florida. In networks, physical distances are replaced by <strong>path lengths</strong>: how many links does the path contain?</p>
+<p>In the real world, objects have physical distances between each other, and that’s why we need to fly for three hours from New York to Florida. In networks, physical distances are replaced by <strong>path lengths</strong>: how many links does the path contain?</p>
 <p>For example, in <code>g1</code>, the path length between node <span class="math inline">\(1\)</span> and node <span class="math inline">\(4\)</span> can either be 2 (<span class="math inline">\(1 \to 3 \to 4\)</span>) or 3 (<span class="math inline">\(1 \to 2 \to 3 \to 4\)</span>):</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="weight-paths-connectedness-and-clustering.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
 <span id="cb13-2"><a href="weight-paths-connectedness-and-clustering.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g1)</span></code></pre></div>
@@ -303,7 +303,7 @@ FIGURE 3.2: A random network to explain Breath-first search (BFS) algorithm
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="weight-paths-connectedness-and-clustering.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shortest_paths</span>(random3, <span class="at">from =</span> <span class="dv">3</span>, <span class="at">to =</span> <span class="dv">90</span>)</span></code></pre></div>
 <pre><code>## $vpath
 ## $vpath[[1]]
-## + 4/100 vertices, from d4ce7b6:
+## + 4/100 vertices, from a45c575:
 ## [1]  3  8 28 90
 ## 
 ## 

@@ -24,7 +24,7 @@
 <meta name="author" content="Hongtao Hao" />
 
 
-<meta name="date" content="2020-11-28" />
+<meta name="date" content="2021-03-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -301,7 +301,7 @@ In <a href="http://networksciencebook.com/chapter/3#random-network">Chapter 3.2<
 </div>
 <div id="average-degree-and-the-expected-number-of-links-in-a-random-network" class="section level3" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Average degree, and the expected number of links in a random network</h3>
-<p>We can think of the process of first generating a random number for a pair of nodes, then comparing it with <span class="math inline">\(p\)</span>, and finally deciding whether to link the pair or not as tossing a coin <span class="citation">(<a href="references.html#ref-menczer2020first" role="doc-biblioref">Menczer, Fortunato, and Davis 2020</a>)</span>.</p>
+<p>We can think of the process (of first generating a random number for a pair of nodes, then comparing it with <span class="math inline">\(p\)</span>, and finally deciding whether to link the pair or not) as tossing a coin <span class="citation">(<a href="references.html#ref-menczer2020first" role="doc-biblioref">Menczer, Fortunato, and Davis 2020</a>)</span>.</p>
 <p>Imagine we have a biased coin which gives us heads with probability <span class="math inline">\(p\)</span>, which is equal to the <strong>link probability</strong> we talked about before. Take <span class="math inline">\(p=0.1\)</span> as an example. If we toss the coin for ten times, then we are expecting <span class="math inline">\(10*0.1=1\)</span> head, right? For the same token, when we have <span class="math inline">\(100\)</span> tosses, we will be expecting <span class="math inline">\(10\)</span> heads.</p>
 <p>In the procudure of random network generation discussed above, we concluded that a pair of nodes being connected has a probability of <span class="math inline">\(p\)</span>, which is the same as the probability of us having a head when we toss a coin. Since we are expecting <span class="math inline">\(10\)</span> heads out of <span class="math inline">\(100\)</span> tosses, then how many connected pairs of nodes are expected, or, how many links are expected, if we examine <span class="math inline">\(100\)</span> pairs? <span class="math inline">\(10\)</span>, right?</p>
 <p>How do we get this number? We simply multiply the total number of tosses in the case of flipping coins (or the total number of pairs of nodes we have in the case of random network generation) by <span class="math inline">\(p\)</span>.
@@ -394,7 +394,7 @@ The average degree of a random network is the product of <span class="math inlin
   p_k = e^{-\langle k \rangle}\frac{\langle k \rangle^k}{k!} \tag{4.8}
 \end{equation}\]</span></p>
 <p>Eq. <a href="random-networks-barabási-ch-3.html#eq:random-network-binomial">(4.4)</a> and Eq. <a href="random-networks-barabási-ch-3.html#eq:poisson">(4.8)</a> are collectively called <strong>degree dostribution of a random network</strong>.</p>
-<p>Something needs remembering:</p>
+<p>Things to keep in mind:</p>
 <ol style="list-style-type: decimal">
 <li><p>Binomial form is the exact version; Poisson distribution is only an approximation;</p></li>
 <li><p>We’d better use Binomial distribution to describe a small network, for example, <span class="math inline">\(N = 10^2\)</span>, but use Poisson distribution for large networks, for example, <span class="math inline">\(N = 10^3\)</span> or <span class="math inline">\(10^4\)</span>;</p></li>

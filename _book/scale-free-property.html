@@ -24,7 +24,7 @@
 <meta name="author" content="Hongtao Hao" />
 
 
-<meta name="date" content="2020-11-28" />
+<meta name="date" content="2021-03-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -250,7 +250,7 @@ The following is not originally from me, but my notes from reading <a href="http
 <li><p>No matter what properties of a network we are studying, we need to base our understanding on the network’s <strong>degree distribution</strong>.</p></li>
 </ul>
 <p>The book compares the Poisson distribution and power-law distribution by drawing the degree distribution of the WWW. I wanted to understand these two distributions better so I decided to try drawing them by myself.</p>
-<p>The data I used is called <a href="http://www-personal.umich.edu/~mejn/netdata/as-22july06.zip">“Internet”</a> from <a href="http://www-personal.umich.edu/~mejn/netdata/">http://www-personal.umich.edu/~mejn/netdata/</a>. I’ll use R to plot it. See the result in <a href="scale-free-property.html#fig:powerLaw-poisson">5.4</a></p>
+<p>The data I used is called <a href="http://www-personal.umich.edu/~mejn/netdata/as-22july06.zip">“Internet”</a> from <a href="http://www-personal.umich.edu/~mejn/netdata/">http://www-personal.umich.edu/~mejn/netdata/</a>. I’ll use R to plot it. See the result in Figure <a href="scale-free-property.html#fig:powerLaw-poisson">5.4</a></p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="scale-free-property.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb30-2"><a href="scale-free-property.html#cb30-2" aria-hidden="true" tabindex="-1"></a>internet <span class="ot">&lt;-</span> <span class="fu">read_graph</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>,<span class="st">&quot;as-22july06.gml&quot;</span>), </span>
 <span id="cb30-3"><a href="scale-free-property.html#cb30-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">format =</span> <span class="st">&quot;gml&quot;</span>)</span>

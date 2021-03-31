@@ -2,7 +2,7 @@
 
 # Introduction to Network Science {#intro}
 
-We are going to dive into the field of network science. To learn a new subject, it's always beneficial to learn a little bit about it's history, definition, and significance. These will be the focus our this Chapter.
+We are going to dive into the field of network science. To learn a new subject, it's always beneficial to learn a little bit about it's history, definition, and significance. These will be the focus of this Chapter.
 
 ## Intro to networks
 ```{block2, type='rmdnote'}
@@ -168,7 +168,7 @@ import matplotlib as plt
 % matplotlib inline
 ```
 
-If you have successfully downloaded Anaconda, you won't see any errors. If you do, go back and read the above instructions more carefully. Chances are that you might have missed some steps. Use Google or other search engines to look for answers to questions not convered here. 
+If you have successfully downloaded Anaconda, you won't see any errors. If you do, go back and read [the instructions](https://netsci.hongtaoh.com/python-setup.html) more carefully. Chances are that you might have missed some steps. Use Google or other search engines to look for answers to questions not discussed here. 
 
 Thanks. 
 

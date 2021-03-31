@@ -212,7 +212,7 @@
 
 \title{Notes on Network Science}
 \author{Hongtao Hao}
-\date{2020-11-28}
+\date{2021-03-31}
 
 \begin{document}
 \maketitle
@@ -256,9 +256,9 @@ This website is built with \href{https://bookdown.org/}{Bookdown} and deployed b
 
 \includegraphics{images/license.png}
 
-This online book is licensed under the \href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License}.
+This book is licensed under the \href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License}.
 
-If you notice any errors, including typos and mistakes in math formulas, you are welcome to contribute to the project by clicking the ``Editing'' button on the upper-left of this online book (shown below). You will be directed to fork this project on GitHub before you and suggest changes.
+If you notice any errors, including typos and mistakes in math formulas, you are welcome to contribute to the project by clicking the ``Editing'' button on the upper-left of this online book (shown below). You will be directed to fork this project before suggesting changes.
 
 \begin{center}\includegraphics[width=0.45\linewidth]{images/edit} \end{center}
 
@@ -267,7 +267,7 @@ If you notice any errors, including typos and mistakes in math formulas, you are
 \hypertarget{intro}{%
 \chapter{Introduction to Network Science}\label{intro}}
 
-We are going to dive into the field of network science. To learn a new subject, it's always beneficial to learn a little bit about it's history, definition, and significance. These will be the focus our this Chapter.
+We are going to dive into the field of network science. To learn a new subject, it's always beneficial to learn a little bit about it's history, definition, and significance. These will be the focus of this Chapter.
 
 \hypertarget{intro-to-networks}{%
 \section{Intro to networks}\label{intro-to-networks}}
@@ -498,7 +498,7 @@ Create a notebook, name it as \texttt{python-setup}, and run the following codes
 \end{Highlighting}
 \end{Shaded}
 
-If you have successfully downloaded Anaconda, you won't see any errors. If you do, go back and read the above instructions more carefully. Chances are that you might have missed some steps. Use Google or other search engines to look for answers to questions not convered here.
+If you have successfully downloaded Anaconda, you won't see any errors. If you do, go back and read \href{https://netsci.hongtaoh.com/python-setup.html}{the instructions} more carefully. Chances are that you might have missed some steps. Use Google or other search engines to look for answers to questions not discussed here.
 
 Thanks.
 
@@ -849,7 +849,7 @@ Before we can understand the small world phenomenon, we need to have more basic 
 \hypertarget{weighted-network}{%
 \subsection{Weighted network}\label{weighted-network}}
 
-So far, we assumed that the weight of all links in a network is the same. However, networks can be weighted. Take social network as an example. Although you are connected to many people, the weight of these connections is unequal. You probably talk to your family and your close friends more often than to your acquaintances. In an adjacency matrix, suppose you are represented by node \(i\), your mom node \(j\) and one of your acquaintances node \(m\). Also suppose the weight of the link between you and your mom is \(10\), which is ten times the weight of the link between you and the acquaintance. Then we have \(A_{ij} = 10\) and \(A_{im} = 1\).
+So far, we have assumed that the weight of all links in a network is the same. However, networks can be weighted. Take social network as an example. Although you are connected to many people, the weight of these connections is unequal. You probably talk to your family and your close friends more often than to your acquaintances. In an adjacency matrix, suppose you are represented by node \(i\), your mom node \(j\) and one of your acquaintances node \(m\). Also suppose the weight of the link between you and your mom is \(10\), which is ten times the weight of the link between you and the acquaintance. Then we have \(A_{ij} = 10\) and \(A_{im} = 1\).
 
 \hypertarget{shortest-path-network-diameter-and-average-path-length}{%
 \subsection{Shortest path, network diameter, and average path length}\label{shortest-path-network-diameter-and-average-path-length}}
@@ -857,7 +857,7 @@ So far, we assumed that the weight of all links in a network is the same. Howeve
 \hypertarget{shortest-path}{%
 \subsubsection{Shortest path}\label{shortest-path}}
 
-In real world, objects have physical distances between each other, and that's why you need to fly for three hours from New York to Florida. In networks, physical distances are replaced by \textbf{path lengths}: how many links does the path contain?
+In the real world, objects have physical distances between each other, and that's why we need to fly for three hours from New York to Florida. In networks, physical distances are replaced by \textbf{path lengths}: how many links does the path contain?
 
 For example, in \texttt{g1}, the path length between node \(1\) and node \(4\) can either be 2 (\(1 \to 3 \to 4\)) or 3 (\(1 \to 2 \to 3 \to 4\)):
 
@@ -962,7 +962,7 @@ We are not even sure whether the two nodes are connected or not, let alone knowi
 \begin{verbatim}
 ## $vpath
 ## $vpath[[1]]
-## + 4/100 vertices, from 15a6d78:
+## + 4/100 vertices, from 94e179f:
 ## [1]  3  8 28 90
 ## 
 ## 
@@ -1264,7 +1264,7 @@ In \href{http://networksciencebook.com/chapter/3\#random-network}{Chapter 3.2} o
 \hypertarget{average-degree-and-the-expected-number-of-links-in-a-random-network}{%
 \subsection{Average degree, and the expected number of links in a random network}\label{average-degree-and-the-expected-number-of-links-in-a-random-network}}
 
-We can think of the process of first generating a random number for a pair of nodes, then comparing it with \(p\), and finally deciding whether to link the pair or not as tossing a coin \citep{menczer2020first}.
+We can think of the process (of first generating a random number for a pair of nodes, then comparing it with \(p\), and finally deciding whether to link the pair or not) as tossing a coin \citep{menczer2020first}.
 
 Imagine we have a biased coin which gives us heads with probability \(p\), which is equal to the \textbf{link probability} we talked about before. Take \(p=0.1\) as an example. If we toss the coin for ten times, then we are expecting \(10*0.1=1\) head, right? For the same token, when we have \(100\) tosses, we will be expecting \(10\) heads.
 
@@ -1407,7 +1407,7 @@ Most real networks are sparce, so its average degree \(\langle k \rangle\) is mu
 
 Eq. \eqref{eq:random-network-binomial} and Eq. \eqref{eq:poisson} are collectively called \textbf{degree dostribution of a random network}.
 
-Something needs remembering:
+Things to keep in mind:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1646,7 +1646,7 @@ Before we take the log:
 
 I learned a lot about how to style the points from reading \href{https://kateto.net/networks-r-igraph}{Dr.Katya Ognyanova's blog post}.
 
-After we take a log:
+If we take a log:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1709,7 +1709,7 @@ If we have many outliers in the tail, for example, in the household income distr
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{/Users/Tal/Desktop/netsci-notes/images/income_distribution} 
+{\centering \includegraphics[width=0.9\linewidth]{/Users/Tal/Desktop/NetSci/netsci-notes/images/income_distribution} 
 
 }
 
@@ -1757,9 +1757,9 @@ To deeply understand what the term ``scale-free'' means, you can read \href{http
 
 I'll explain in my own words here. To understand ``scale-free'', we must first understand ``scale''. Mark \citet{newman2005power} defines it this way: A scale is "a typical value around which individual elements are centered (p.1). Therefore, \textbf{scale-free} means that we don't know around \textbf{which} value individual elements in the distribution are centered. A normal distribution is \textbf{not} scale-free because we expect that more than 99\% of the data falls within three standard deviations from the mean.
 
-You can read\href{https://arxiv.org/pdf/cond-mat/0412004.pdf}{\emph{Power laws, Pareto distributions and Zipf's law}} by Mark \citet{newman2005power} for details. This paper is also a must read if you want to gain a deeper understanding about power law.)
+You can read \href{https://arxiv.org/pdf/cond-mat/0412004.pdf}{\emph{Power laws, Pareto distributions and Zipf's law}} by Mark \citet{newman2005power} for details. This paper is also a must read if you want to gain a deeper understanding about power law.)
 
-In a power-law distribution, it's totally different. For example, if we have \(y = 5*x^{-2}\). Let's imagine that human height follows this distribution. Suppose your height is \(x\), and \(n\) people have the same height as you. Then you'll see \(\frac{1}{4} \cdot n\) people twice as tall as you\footnote{Just input \(2x\) in the above formula.}, and \(4 \cdot n\) people half of your size. The thing is, \textbf{you don't know where you are located in the distribution!} You can be as tiny as \(10\) inches or as tall as \(100\) feet. Wherever you stand, you will always find \(\frac{1}{4} \cdot n\) people twice as tall as you, and \(4 \cdot n\) people half of your size. \textbf{Think about it!} What a crazy world! That's why we call it \textbf{scale-free}: no inherent scale in the distribution.
+In a power-law distribution, it's totally different. For example, if we have \(y = 5 \cdot x^{-2}\). Let's imagine that human height follows this distribution. Suppose your height is \(x\), and \(n\) people have the same height as you. Then you'll see \(\frac{1}{4} \cdot n\) people twice as tall as you\footnote{Just input \(2x\) in the above formula.}, and \(4 \cdot n\) people half of your size. The thing is, \textbf{you don't know where you are located in the distribution!} You can be as tiny as \(10\) inches or as tall as \(100\) feet. Wherever you stand, you will always find \(\frac{1}{4} \cdot n\) people twice as tall as you, and \(4 \cdot n\) people half of your size. \textbf{Think about it!} What a crazy world! That's why we call it \textbf{scale-free}: no inherent scale in the distribution.
 
 \hypertarget{scale-free-property}{%
 \section{Scale-free property}\label{scale-free-property}}
@@ -1777,7 +1777,7 @@ The following is not originally from me, but my notes from reading \href{http://
 
 The book compares the Poisson distribution and power-law distribution by drawing the degree distribution of the WWW. I wanted to understand these two distributions better so I decided to try drawing them by myself.
 
-The data I used is called \href{http://www-personal.umich.edu/~mejn/netdata/as-22july06.zip}{``Internet''} from \url{http://www-personal.umich.edu/~mejn/netdata/}. I'll use R to plot it. See the result in \ref{fig:powerLaw-poisson}
+The data I used is called \href{http://www-personal.umich.edu/~mejn/netdata/as-22july06.zip}{``Internet''} from \url{http://www-personal.umich.edu/~mejn/netdata/}. I'll use R to plot it. See the result in Figure \ref{fig:powerLaw-poisson}
 
 \begin{Shaded}
 \begin{Highlighting}[]

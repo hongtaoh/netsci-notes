@@ -122,7 +122,7 @@ plot (x, y, pch=19, cex=0.5, col="orange",
 
 I learned a lot about how to style the points from reading [Dr.Katya Ognyanova's blog post](https://kateto.net/networks-r-igraph).
 
-After we take a log:
+If we take a log:
 
 ```{r}
 x <- 1:100
@@ -201,9 +201,9 @@ To deeply understand what the term "scale-free" means, you can read [Chapter 4.4
 
 I'll explain in my own words here. To understand "scale-free", we must first understand "scale". Mark @newman2005power defines it this way: A scale is "a typical value around which individual elements are centered (p.1). Therefore, **scale-free** means that we don't know around **which** value individual elements in the distribution are centered. A normal distribution is **not** scale-free because we expect that more than 99% of the data falls within three standard deviations from the mean. 
 
-You can read[*Power laws, Pareto distributions and Zipf's law*](https://arxiv.org/pdf/cond-mat/0412004.pdf) by Mark @newman2005power for details. This paper is also a must read if you want to gain a deeper understanding about power law.)
+You can read [*Power laws, Pareto distributions and Zipf's law*](https://arxiv.org/pdf/cond-mat/0412004.pdf) by Mark @newman2005power for details. This paper is also a must read if you want to gain a deeper understanding about power law.)  
 
-In a power-law distribution, it's totally different. For example, if we have $y = 5*x^{-2}$. Let's imagine that human height follows this distribution. Suppose your height is $x$, and $n$ people have the same height as you. Then you'll see $\frac{1}{4} \cdot n$ people twice as tall as you^[Just input $2x$ in the above formula.], and $4 \cdot n$ people half of your size. The thing is, **you don't know where you are located in the distribution!** You can be as tiny as $10$ inches or as tall as $100$ feet. Wherever you stand, you will always find $\frac{1}{4} \cdot n$ people twice as tall as you, and $4 \cdot n$ people half of your size. **Think about it!** What a crazy world! That's why we call it **scale-free**: no inherent scale in the distribution. 
+In a power-law distribution, it's totally different. For example, if we have $y = 5 \cdot x^{-2}$. Let's imagine that human height follows this distribution. Suppose your height is $x$, and $n$ people have the same height as you. Then you'll see $\frac{1}{4} \cdot n$ people twice as tall as you^[Just input $2x$ in the above formula.], and $4 \cdot n$ people half of your size. The thing is, **you don't know where you are located in the distribution!** You can be as tiny as $10$ inches or as tall as $100$ feet. Wherever you stand, you will always find $\frac{1}{4} \cdot n$ people twice as tall as you, and $4 \cdot n$ people half of your size. **Think about it!** What a crazy world! That's why we call it **scale-free**: no inherent scale in the distribution. 
 
 ## Scale-free property
 ```{block2, type='rmdnote'}
@@ -216,7 +216,7 @@ The following is not originally from me, but my notes from reading [*Network Sci
 
 The book compares the Poisson distribution and power-law distribution by drawing the degree distribution of the WWW. I wanted to understand these two distributions better so I decided to try drawing them by myself.
 
-The data I used is called ["Internet"](http://www-personal.umich.edu/~mejn/netdata/as-22july06.zip) from [http://www-personal.umich.edu/~mejn/netdata/](http://www-personal.umich.edu/~mejn/netdata/). I'll use R to plot it. See the result in \@ref(fig:powerLaw-poisson)
+The data I used is called ["Internet"](http://www-personal.umich.edu/~mejn/netdata/as-22july06.zip) from [http://www-personal.umich.edu/~mejn/netdata/](http://www-personal.umich.edu/~mejn/netdata/). I'll use R to plot it. See the result in Figure \@ref(fig:powerLaw-poisson)
 
 ```{r powerLaw-poisson, error=FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.cap="Poisson distribution does not explain degree distribution in real networks"}
 library(here)

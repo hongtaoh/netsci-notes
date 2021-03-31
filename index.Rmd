@@ -44,9 +44,9 @@ This website is built with [Bookdown](https://bookdown.org/) and deployed by [Ne
 
 ![](images/license.png)
 
-This online book is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+This book is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-If you notice any errors, including typos and mistakes in math formulas, you are welcome to contribute to the project by clicking the "Editing" button on the upper-left of this online book (shown below). You will be directed to fork this project on GitHub before you and suggest changes. 
+If you notice any errors, including typos and mistakes in math formulas, you are welcome to contribute to the project by clicking the "Editing" button on the upper-left of this online book (shown below). You will be directed to fork this project before suggesting changes.  
 
 ```{r edit, echo=FALSE, fig.align='center', out.width="45%"}
 knitr::include_graphics('images/edit.png')

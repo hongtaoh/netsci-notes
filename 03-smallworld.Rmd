@@ -8,12 +8,12 @@ Before we can understand the small world phenomenon, we need to have more basic 
 
 ## Weight, paths, connectedness, and clustering
 ### Weighted network
-So far, we assumed that the weight of all links in a network is the same. However, networks can be weighted. Take social network as an example. Although you are connected to many people, the weight of these connections is unequal. You probably talk to your family and your close friends more often than to your acquaintances. In an adjacency matrix, suppose you are represented by node $i$, your mom node $j$ and one of your acquaintances node $m$. Also suppose the weight of the link between you and your mom is $10$, which is ten times the weight of the link between you and the acquaintance. Then we have $A_{ij} = 10$ and $A_{im} = 1$. 
+So far, we have assumed that the weight of all links in a network is the same. However, networks can be weighted. Take social network as an example. Although you are connected to many people, the weight of these connections is unequal. You probably talk to your family and your close friends more often than to your acquaintances. In an adjacency matrix, suppose you are represented by node $i$, your mom node $j$ and one of your acquaintances node $m$. Also suppose the weight of the link between you and your mom is $10$, which is ten times the weight of the link between you and the acquaintance. Then we have $A_{ij} = 10$ and $A_{im} = 1$. 
 
 ### Shortest path, network diameter, and average path length
 
 #### Shortest path
-In real world, objects have physical distances between each other, and that's why you need to fly for three hours from New York to Florida. In networks, physical distances are replaced by **path lengths**: how many links does the path contain?
+In the real world, objects have physical distances between each other, and that's why we need to fly for three hours from New York to Florida. In networks, physical distances are replaced by **path lengths**: how many links does the path contain?
 
 For example, in `g1`, the path length between node $1$ and node $4$ can either be 2 ($1 \to 3 \to 4$) or 3 ($1 \to 2 \to 3 \to 4$):
 

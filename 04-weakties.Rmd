@@ -64,7 +64,7 @@ In [Chapter 3.2](http://networksciencebook.com/chapter/3#random-network) of [*Ne
 ```
 
 ### Average degree, and the expected number of links in a random network
-We can think of the process of first generating a random number for a pair of nodes, then comparing it with $p$, and finally deciding whether to link the pair or not as tossing a coin [@menczer2020first].
+We can think of the process (of first generating a random number for a pair of nodes, then comparing it with $p$, and finally deciding whether to link the pair or not) as tossing a coin [@menczer2020first].
 
 Imagine we have a biased coin which gives us heads with probability $p$, which is equal to the **link probability** we talked about before. Take $p=0.1$ as an example. If we toss the coin for ten times, then we are expecting $10*0.1=1$ head, right? For the same token, when we have $100$ tosses, we will be expecting $10$ heads. 
 
@@ -161,7 +161,7 @@ Most real networks are sparce, so its average degree $\langle k \rangle$ is much
 
 Eq. \@ref(eq:random-network-binomial) and Eq. \@ref(eq:poisson) are collectively called **degree dostribution of a random network**. 
 
-Something needs remembering:
+Things to keep in mind:
 
 1. Binomial form is the exact version; Poisson distribution is only an approximation;
 
