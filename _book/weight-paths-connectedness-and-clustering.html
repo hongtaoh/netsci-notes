@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.1 Weight, paths, connectedness, and clustering | Notes on Network Science</title>
   <meta name="description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.1 Weight, paths, connectedness, and clustering | Notes on Network Science" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is Hongtao Hao’s notes when learning Professor YY Ahn’s online course of Network Science" />
   <meta name="github-repo" content="hongtaoh/netsci-notes" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Hongtao Hao" />
 
 
-<meta name="date" content="2021-03-31" />
+<meta name="date" content="2025-10-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="SmallWorld.html"/>
 <link rel="next" href="chapter-3-homework.html"/>
-<script src="libs/header-attrs-2.5.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,33 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -155,13 +182,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="Graph.html"><a href="Graph.html"><i class="fa fa-check"></i><b>2</b> Graph Theory and Some Basic Concepts</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="königsberg-bridge-problem-ch-2-1.html"><a href="königsberg-bridge-problem-ch-2-1.html"><i class="fa fa-check"></i><b>2.1</b> Königsberg bridge problem (Ch. 2.1)</a></li>
-<li class="chapter" data-level="2.2" data-path="networks-and-graphs-ch-2-2.html"><a href="networks-and-graphs-ch-2-2.html"><i class="fa fa-check"></i><b>2.2</b> Networks and graphs (Ch. 2.2)</a></li>
-<li class="chapter" data-level="2.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html"><i class="fa fa-check"></i><b>2.3</b> Degree, average degree, and degree distribution (Ch. 2.3)</a>
+<li class="chapter" data-level="2.1" data-path="königsberg-bridge-problem-ch.-2.html"><a href="königsberg-bridge-problem-ch.-2.html"><i class="fa fa-check"></i><b>2.1</b> Königsberg bridge problem (Ch. 2.1)</a></li>
+<li class="chapter" data-level="2.2" data-path="networks-and-graphs-ch.-2.html"><a href="networks-and-graphs-ch.-2.html"><i class="fa fa-check"></i><b>2.2</b> Networks and graphs (Ch. 2.2)</a></li>
+<li class="chapter" data-level="2.3" data-path="degree-average-degree-and-degree-distribution-ch.-2.html"><a href="degree-average-degree-and-degree-distribution-ch.-2.html"><i class="fa fa-check"></i><b>2.3</b> Degree, average degree, and degree distribution (Ch. 2.3)</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree"><i class="fa fa-check"></i><b>2.3.1</b> Degree</a></li>
-<li class="chapter" data-level="2.3.2" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#average-degree"><i class="fa fa-check"></i><b>2.3.2</b> Average degree</a></li>
-<li class="chapter" data-level="2.3.3" data-path="degree-average-degree-and-degree-distribution-ch-2-3.html"><a href="degree-average-degree-and-degree-distribution-ch-2-3.html#degree-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Degree distribution</a></li>
+<li class="chapter" data-level="2.3.1" data-path="degree-average-degree-and-degree-distribution-ch.-2.html"><a href="degree-average-degree-and-degree-distribution-ch.-2.html#degree"><i class="fa fa-check"></i><b>2.3.1</b> Degree</a></li>
+<li class="chapter" data-level="2.3.2" data-path="degree-average-degree-and-degree-distribution-ch.-2.html"><a href="degree-average-degree-and-degree-distribution-ch.-2.html#average-degree"><i class="fa fa-check"></i><b>2.3.2</b> Average degree</a></li>
+<li class="chapter" data-level="2.3.3" data-path="degree-average-degree-and-degree-distribution-ch.-2.html"><a href="degree-average-degree-and-degree-distribution-ch.-2.html#degree-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Degree distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="adjacency-matrix.html"><a href="adjacency-matrix.html"><i class="fa fa-check"></i><b>2.4</b> Adjacency matrix</a></li>
 <li class="chapter" data-level="2.5" data-path="chapter-2-homework.html"><a href="chapter-2-homework.html"><i class="fa fa-check"></i><b>2.5</b> Chapter 2 Homework</a>
@@ -185,16 +212,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="weak-ties-and-watts-strogatz-model.html"><a href="weak-ties-and-watts-strogatz-model.html"><i class="fa fa-check"></i><b>4</b> Weak Ties and Watts-Strogatz model</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html"><i class="fa fa-check"></i><b>4.1</b> Random networks (Barabási Ch.3)</a>
+<li class="chapter" data-level="4.1" data-path="random-networks-barabási-ch.html"><a href="random-networks-barabási-ch.html"><i class="fa fa-check"></i><b>4.1</b> Random networks (Barabási Ch.3)</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#generating-a-random-network"><i class="fa fa-check"></i><b>4.1.1</b> Generating a random network</a></li>
-<li class="chapter" data-level="4.1.2" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#average-degree-and-the-expected-number-of-links-in-a-random-network"><i class="fa fa-check"></i><b>4.1.2</b> Average degree, and the expected number of links in a random network</a></li>
-<li class="chapter" data-level="4.1.3" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#degree-distribution-1"><i class="fa fa-check"></i><b>4.1.3</b> Degree distribution</a></li>
-<li class="chapter" data-level="4.1.4" data-path="random-networks-barabási-ch-3.html"><a href="random-networks-barabási-ch-3.html#poisson-distribution-does-not-capture-reality"><i class="fa fa-check"></i><b>4.1.4</b> Poisson distribution does not capture reality</a></li>
+<li class="chapter" data-level="4.1.1" data-path="random-networks-barabási-ch.html"><a href="random-networks-barabási-ch.html#generating-a-random-network"><i class="fa fa-check"></i><b>4.1.1</b> Generating a random network</a></li>
+<li class="chapter" data-level="4.1.2" data-path="random-networks-barabási-ch.html"><a href="random-networks-barabási-ch.html#average-degree-and-the-expected-number-of-links-in-a-random-network"><i class="fa fa-check"></i><b>4.1.2</b> Average degree, and the expected number of links in a random network</a></li>
+<li class="chapter" data-level="4.1.3" data-path="random-networks-barabási-ch.html"><a href="random-networks-barabási-ch.html#degree-distribution-1"><i class="fa fa-check"></i><b>4.1.3</b> Degree distribution</a></li>
+<li class="chapter" data-level="4.1.4" data-path="random-networks-barabási-ch.html"><a href="random-networks-barabási-ch.html#poisson-distribution-does-not-capture-reality"><i class="fa fa-check"></i><b>4.1.4</b> Poisson distribution does not capture reality</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html"><i class="fa fa-check"></i><b>4.2</b> Reading two seminal papers</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#the-strength-of-weak-ties-by-granovetter1973strength"><i class="fa fa-check"></i><b>4.2.1</b> <em>The Strength of Weak Ties</em> by <span class="citation"><span>Granovetter</span> (<span>1973</span>)</span></a></li>
+<li class="chapter" data-level="4.2.1" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#the-strength-of-weak-ties-by-granovetter1973strength"><i class="fa fa-check"></i><b>4.2.1</b> <em>The Strength of Weak Ties</em> by <span class="citation">Granovetter (1973)</span></a></li>
 <li class="chapter" data-level="4.2.2" data-path="reading-two-seminal-papers.html"><a href="reading-two-seminal-papers.html#watts-strogatz-model-of-small-world"><i class="fa fa-check"></i><b>4.2.2</b> Watts-Strogatz model of small world</a></li>
 </ul></li>
 </ul></li>
@@ -239,20 +266,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="weight-paths-connectedness-and-clustering" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Weight, paths, connectedness, and clustering</h2>
-<div id="weighted-network" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Weighted network</h3>
+<div id="weight-paths-connectedness-and-clustering" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Weight, paths, connectedness, and clustering<a href="weight-paths-connectedness-and-clustering.html#weight-paths-connectedness-and-clustering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="weighted-network" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Weighted network<a href="weight-paths-connectedness-and-clustering.html#weighted-network" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>So far, we have assumed that the weight of all links in a network is the same. However, networks can be weighted. Take social network as an example. Although you are connected to many people, the weight of these connections is unequal. You probably talk to your family and your close friends more often than to your acquaintances. In an adjacency matrix, suppose you are represented by node <span class="math inline">\(i\)</span>, your mom node <span class="math inline">\(j\)</span> and one of your acquaintances node <span class="math inline">\(m\)</span>. Also suppose the weight of the link between you and your mom is <span class="math inline">\(10\)</span>, which is ten times the weight of the link between you and the acquaintance. Then we have <span class="math inline">\(A_{ij} = 10\)</span> and <span class="math inline">\(A_{im} = 1\)</span>.</p>
 </div>
-<div id="shortest-path-network-diameter-and-average-path-length" class="section level3" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Shortest path, network diameter, and average path length</h3>
-<div id="shortest-path" class="section level4" number="3.1.2.1">
-<h4><span class="header-section-number">3.1.2.1</span> Shortest path</h4>
+<div id="shortest-path-network-diameter-and-average-path-length" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Shortest path, network diameter, and average path length<a href="weight-paths-connectedness-and-clustering.html#shortest-path-network-diameter-and-average-path-length" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="shortest-path" class="section level4 hasAnchor" number="3.1.2.1">
+<h4><span class="header-section-number">3.1.2.1</span> Shortest path<a href="weight-paths-connectedness-and-clustering.html#shortest-path" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In the real world, objects have physical distances between each other, and that’s why we need to fly for three hours from New York to Florida. In networks, physical distances are replaced by <strong>path lengths</strong>: how many links does the path contain?</p>
 <p>For example, in <code>g1</code>, the path length between node <span class="math inline">\(1\)</span> and node <span class="math inline">\(4\)</span> can either be 2 (<span class="math inline">\(1 \to 3 \to 4\)</span>) or 3 (<span class="math inline">\(1 \to 2 \to 3 \to 4\)</span>):</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="weight-paths-connectedness-and-clustering.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb13-2"><a href="weight-paths-connectedness-and-clustering.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g1)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="weight-paths-connectedness-and-clustering.html#cb15-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb15-2"><a href="weight-paths-connectedness-and-clustering.html#cb15-2" tabindex="-1"></a><span class="fu">plot</span>(g1)</span></code></pre></div>
 <p><img src="netsci_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <p>Obviously, the path length of <span class="math inline">\(2\)</span> is smaller than <span class="math inline">\(3\)</span>. In this case, <span class="math inline">\(1 \to 3 \to 4\)</span> is the <strong>shortest path</strong> (denoted as <span class="math inline">\(d_{i,j}\)</span>), which is defined as the path with the fewest number of links. In the above example, <span class="math inline">\(d_{1,4}\)</span> = 2.</p>
 <p>In an undirected network, <span class="math inline">\(d_{i,j} = d_{j,k}\)</span>. This often does not hold true in a directed network because:</p>
@@ -261,10 +288,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Even if both <span class="math inline">\((i, j)\)</span> and <span class="math inline">\((j, i)\)</span>, the two often are unequal to each other.</p></li>
 </ol>
 <p>For example,</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="weight-paths-connectedness-and-clustering.html#cb14-1" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="at">edges=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">3</span>,<span class="dv">4</span>, <span class="dv">4</span>,<span class="dv">2</span>), <span class="at">n=</span><span class="dv">4</span>, <span class="at">directed=</span><span class="cn">TRUE</span>)</span>
-<span id="cb14-2"><a href="weight-paths-connectedness-and-clustering.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb14-3"><a href="weight-paths-connectedness-and-clustering.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g3)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:g3"></span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="weight-paths-connectedness-and-clustering.html#cb16-1" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="at">edges=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">3</span>,<span class="dv">4</span>, <span class="dv">4</span>,<span class="dv">2</span>), <span class="at">n=</span><span class="dv">4</span>, <span class="at">directed=</span><span class="cn">TRUE</span>)</span>
+<span id="cb16-2"><a href="weight-paths-connectedness-and-clustering.html#cb16-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb16-3"><a href="weight-paths-connectedness-and-clustering.html#cb16-3" tabindex="-1"></a><span class="fu">plot</span>(g3)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:g3"></span>
 <img src="netsci_files/figure-html/g3-1.png" alt="shortest paths in a directed network" width="672" />
 <p class="caption">
 FIGURE 3.1: shortest paths in a directed network
@@ -273,37 +300,47 @@ FIGURE 3.1: shortest paths in a directed network
 <p>There are paths (<span class="math inline">\(1 \to 2\)</span>, and <span class="math inline">\(1 \to 3 \to 4 \to 2\)</span>) from node <span class="math inline">\(1\)</span> to node <span class="math inline">\(2\)</span> but we don’t have on any from node <span class="math inline">\(2\)</span> to node <span class="math inline">\(1\)</span>. Furthermore, <span class="math inline">\(d_{2, 4} = 2\)</span> whereas <span class="math inline">\(d_{4,2} = 1\)</span>.</p>
 
 <div class="rmdimportant">
-Please note that all the above discussions on shortest path lenghts are based on the assumption that it is a simple contagion. In a complex contagion, things are very different because multiple reinforcements are necessary. Read <span class="citation"><a href="references.html#ref-centola2007complex" role="doc-biblioref">Centola and Macy</a> (<a href="references.html#ref-centola2007complex" role="doc-biblioref">2007</a>)</span> for more detailed explanations.
+Please note that all the above discussions on shortest path lenghts are based on the assumption that it is a simple contagion. In a complex contagion, things are very different because multiple reinforcements are necessary. Read <span class="citation">Centola and Macy (<a href="#ref-centola2007complex">2007</a>)</span> for more detailed explanations.
 </div>
 </div>
-<div id="network-diameter" class="section level4" number="3.1.2.2">
-<h4><span class="header-section-number">3.1.2.2</span> Network diameter</h4>
+<div id="network-diameter" class="section level4 hasAnchor" number="3.1.2.2">
+<h4><span class="header-section-number">3.1.2.2</span> Network diameter<a href="weight-paths-connectedness-and-clustering.html#network-diameter" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Among all the shortest paths in a network, the longest one is called the <strong>diameter</strong> of this network, denoted as <span class="math inline">\(d_{max}\)</span>. In the above Network <a href="weight-paths-connectedness-and-clustering.html#fig:g3">3.1</a>, <span class="math inline">\(d_{max} = 2\)</span>: <span class="math inline">\(d_{1,4} = d_{2,4} = 2\)</span>.</p>
 </div>
-<div id="average-path-length" class="section level4" number="3.1.2.3">
-<h4><span class="header-section-number">3.1.2.3</span> Average path length</h4>
+<div id="average-path-length" class="section level4 hasAnchor" number="3.1.2.3">
+<h4><span class="header-section-number">3.1.2.3</span> Average path length<a href="weight-paths-connectedness-and-clustering.html#average-path-length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Average path length is defined as the average length of shortest paths between any two nodes. For example, in Network <a href="weight-paths-connectedness-and-clustering.html#fig:g3">3.1</a>, <span class="math inline">\(d_{1,2} = d_{1,3} = d_{2,3} = d_{3,4} = d_{4,2} = 1\)</span>, <span class="math inline">\(d_{1,4} = d_{2,4} = d_{3,2} = d_{4,3} = 2\)</span>. Therefore, the average is <span class="math inline">\(\frac{(1 \cdot 5 + 2 \cdot 4)}{5 + 4} = 1.44\)</span>. Lets test it:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="weight-paths-connectedness-and-clustering.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">average.path.length</span>(g3)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="weight-paths-connectedness-and-clustering.html#cb17-1" tabindex="-1"></a><span class="fu">average.path.length</span>(g3)</span></code></pre></div>
+<pre><code>## Warning: `average.path.length()` was deprecated in igraph 2.0.0.
+## ℹ Please use `mean_distance()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning
+## was generated.</code></pre>
 <pre><code>## [1] 1.444444</code></pre>
 </div>
-<div id="breath-first-search-bfs-algorithm" class="section level4" number="3.1.2.4">
-<h4><span class="header-section-number">3.1.2.4</span> Breath-first search (BFS) algorithm</h4>
+<div id="breath-first-search-bfs-algorithm" class="section level4 hasAnchor" number="3.1.2.4">
+<h4><span class="header-section-number">3.1.2.4</span> Breath-first search (BFS) algorithm<a href="weight-paths-connectedness-and-clustering.html#breath-first-search-bfs-algorithm" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>As the size of a network gets larger, it will be more difficult to know what is the shortest path between a pair of nodes. For example, without using computers,</p>
 <p>For example, in the network @ref9fig:random3-10 below, what is the shortest path from node <span class="math inline">\(3\)</span> to node <span class="math inline">\(90\)</span>?</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="weight-paths-connectedness-and-clustering.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb17-2"><a href="weight-paths-connectedness-and-clustering.html#cb17-2" aria-hidden="true" tabindex="-1"></a>random3 <span class="ot">&lt;-</span> <span class="fu">erdos.renyi.game</span>(<span class="dv">100</span>, <span class="fl">0.1</span>, <span class="at">type =</span> <span class="st">&quot;gnp&quot;</span>)</span>
-<span id="cb17-3"><a href="weight-paths-connectedness-and-clustering.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(random3)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:random3-1"></span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="weight-paths-connectedness-and-clustering.html#cb20-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb20-2"><a href="weight-paths-connectedness-and-clustering.html#cb20-2" tabindex="-1"></a>random3 <span class="ot">&lt;-</span> <span class="fu">erdos.renyi.game</span>(<span class="dv">100</span>, <span class="fl">0.1</span>, <span class="at">type =</span> <span class="st">&quot;gnp&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: `erdos.renyi.game()` was deprecated in igraph 0.8.0.
+## ℹ Please use `sample_gnp()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning
+## was generated.</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="weight-paths-connectedness-and-clustering.html#cb22-1" tabindex="-1"></a><span class="fu">plot</span>(random3)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:random3-1"></span>
 <img src="netsci_files/figure-html/random3-1-1.png" alt="A random network to explain Breath-first search (BFS) algorithm" width="100%" />
 <p class="caption">
 FIGURE 3.2: A random network to explain Breath-first search (BFS) algorithm
 </p>
 </div>
 <p>We are not even sure whether the two nodes are connected or not, let alone knowing the shortest path. Of course, computers can do this very fast:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="weight-paths-connectedness-and-clustering.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shortest_paths</span>(random3, <span class="at">from =</span> <span class="dv">3</span>, <span class="at">to =</span> <span class="dv">90</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="weight-paths-connectedness-and-clustering.html#cb23-1" tabindex="-1"></a><span class="fu">shortest_paths</span>(random3, <span class="at">from =</span> <span class="dv">3</span>, <span class="at">to =</span> <span class="dv">90</span>)</span></code></pre></div>
 <pre><code>## $vpath
 ## $vpath[[1]]
-## + 4/100 vertices, from a45c575:
+## + 4/100 vertices, from 30e0e2c:
 ## [1]  3  8 28 90
 ## 
 ## 
@@ -316,16 +353,16 @@ FIGURE 3.2: A random network to explain Breath-first search (BFS) algorithm
 ## $inbound_edges
 ## NULL</code></pre>
 <p>From the result, we know that <span class="math inline">\(d_{3, 90} = 3\)</span>. The path is: <span class="math inline">\(3 \to 8 \to 28 \to 90\)</span>. But how did the computer find this path?</p>
-<p>The most frequently used algorithm to find the shortest path between two nodes is called “Breadth-First Search (BFS).” It starts from the “source” node, which is labeled as <span class="math inline">\(0\)</span>. Neighbors of the “source” node is then labeled as <span class="math inline">\(1\)</span>, then the neighbors’ neighbors, until it reaches the “target” node.</p>
+<p>The most frequently used algorithm to find the shortest path between two nodes is called “Breadth-First Search (BFS)”. It starts from the “source” node, which is labeled as <span class="math inline">\(0\)</span>. Neighbors of the “source” node is then labeled as <span class="math inline">\(1\)</span>, then the neighbors’ neighbors, until it reaches the “target” node.</p>
 <p>For example, we are interested in knowing the shortest path from the source node (“S”) to the target (“T”) in the following Network <a href="weight-paths-connectedness-and-clustering.html#fig:bfs01">3.3</a>:</p>
-<div class="figure" style="text-align: center"><span id="fig:bfs01"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bfs01"></span>
 <img src="images/bfs01.png" alt="Illustrating breadth-first search algorithm: source and target" width="55%" />
 <p class="caption">
 FIGURE 3.3: Illustrating breadth-first search algorithm: source and target
 </p>
 </div>
 <p>The breadth-first search algorithm is shown in Figure <a href="weight-paths-connectedness-and-clustering.html#fig:bfs">3.4</a> below:</p>
-<div class="figure" style="text-align: center"><span id="fig:bfs"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bfs"></span>
 <img src="images/bfs02.png" alt="Illustrating breadth-first search algorithm: steps" width="50%" /><img src="images/bfs03.png" alt="Illustrating breadth-first search algorithm: steps" width="50%" /><img src="images/bfs04.png" alt="Illustrating breadth-first search algorithm: steps" width="50%" />
 <p class="caption">
 FIGURE 3.4: Illustrating breadth-first search algorithm: steps
@@ -334,8 +371,8 @@ FIGURE 3.4: Illustrating breadth-first search algorithm: steps
 <p>We can see that the shortest path from the “source” to the “target” is <span class="math inline">\(3\)</span>.</p>
 </div>
 </div>
-<div id="connectedness" class="section level3" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> Connectedness</h3>
+<div id="connectedness" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Connectedness<a href="weight-paths-connectedness-and-clustering.html#connectedness" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In a disconnected network, subnetworks are called <em>components</em> or <em>clusters</em>. A <em>bridge</em> can connect two components.</p>
 <p>For a large network, there are two ways to find out whether it consists of <em>components</em>:</p>
 <ol style="list-style-type: decimal">
@@ -343,30 +380,30 @@ FIGURE 3.4: Illustrating breadth-first search algorithm: steps
 <li><p>Using BSF algorithm.</p></li>
 </ol>
 <p>For example, in Figure <a href="weight-paths-connectedness-and-clustering.html#fig:disconnected">3.5</a>, the network contains two components:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="weight-paths-connectedness-and-clustering.html#cb20-1" aria-hidden="true" tabindex="-1"></a>disconnectedG <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="at">edges=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">1</span>,<span class="dv">4</span>, <span class="dv">5</span>,<span class="dv">6</span>), </span>
-<span id="cb20-2"><a href="weight-paths-connectedness-and-clustering.html#cb20-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">n=</span><span class="dv">6</span>, </span>
-<span id="cb20-3"><a href="weight-paths-connectedness-and-clustering.html#cb20-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">directed=</span><span class="cn">FALSE</span>)</span>
-<span id="cb20-4"><a href="weight-paths-connectedness-and-clustering.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb20-5"><a href="weight-paths-connectedness-and-clustering.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(disconnectedG)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:disconnected"></span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="weight-paths-connectedness-and-clustering.html#cb25-1" tabindex="-1"></a>disconnectedG <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="at">edges=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">1</span>,<span class="dv">4</span>, <span class="dv">5</span>,<span class="dv">6</span>), </span>
+<span id="cb25-2"><a href="weight-paths-connectedness-and-clustering.html#cb25-2" tabindex="-1"></a>                        <span class="at">n=</span><span class="dv">6</span>, </span>
+<span id="cb25-3"><a href="weight-paths-connectedness-and-clustering.html#cb25-3" tabindex="-1"></a>                        <span class="at">directed=</span><span class="cn">FALSE</span>)</span>
+<span id="cb25-4"><a href="weight-paths-connectedness-and-clustering.html#cb25-4" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb25-5"><a href="weight-paths-connectedness-and-clustering.html#cb25-5" tabindex="-1"></a><span class="fu">plot</span>(disconnectedG)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:disconnected"></span>
 <img src="netsci_files/figure-html/disconnected-1.png" alt="An example of disconnected network" width="672" />
 <p class="caption">
 FIGURE 3.5: An example of disconnected network
 </p>
 </div>
 <p>In its adjacency matrix, nonzero elements are contained in square blocks along the diagonal and all the remaining elements are zeros:</p>
-<div class="figure" style="text-align: center"><span id="fig:BDmatrix"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:BDmatrix"></span>
 <img src="images/blockDiagonal.png" alt="Adjacency matrix of the disconnected network" width="45%" />
 <p class="caption">
 FIGURE 3.6: Adjacency matrix of the disconnected network
 </p>
 </div>
 <p>If the components are bridged:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="weight-paths-connectedness-and-clustering.html#cb21-1" aria-hidden="true" tabindex="-1"></a>connectedG <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="at">edges=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">1</span>,<span class="dv">4</span>, <span class="dv">3</span>,<span class="dv">5</span>, <span class="dv">5</span>,<span class="dv">6</span>), <span class="at">n=</span><span class="dv">6</span>, </span>
-<span id="cb21-2"><a href="weight-paths-connectedness-and-clustering.html#cb21-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">directed=</span><span class="cn">FALSE</span>)</span>
-<span id="cb21-3"><a href="weight-paths-connectedness-and-clustering.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb21-4"><a href="weight-paths-connectedness-and-clustering.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(connectedG)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:blockDiagonal02"></span>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="weight-paths-connectedness-and-clustering.html#cb26-1" tabindex="-1"></a>connectedG <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="at">edges=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">1</span>,<span class="dv">4</span>, <span class="dv">3</span>,<span class="dv">5</span>, <span class="dv">5</span>,<span class="dv">6</span>), <span class="at">n=</span><span class="dv">6</span>, </span>
+<span id="cb26-2"><a href="weight-paths-connectedness-and-clustering.html#cb26-2" tabindex="-1"></a>                     <span class="at">directed=</span><span class="cn">FALSE</span>)</span>
+<span id="cb26-3"><a href="weight-paths-connectedness-and-clustering.html#cb26-3" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb26-4"><a href="weight-paths-connectedness-and-clustering.html#cb26-4" tabindex="-1"></a><span class="fu">plot</span>(connectedG)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blockDiagonal02"></span>
 <img src="netsci_files/figure-html/blockDiagonal02-1.png" alt="An example of connected network" width="672" />
 <p class="caption">
 FIGURE 3.7: An example of connected network
@@ -382,23 +419,23 @@ FIGURE 3.7: An example of connected network
 ## [5,] . . 1 . . 1
 ## [6,] . . . . 1 .</code></pre>
 <p>Then how can we find whether a network is connected or disconnected using BFS algorithm?</p>
-<p>It’s very easy. In a connected network, we can reach all the nodes from the “source node.” Therefore, the number of labeled nodes is equal to the size of the network, <span class="math inline">\(N\)</span>. However, in a disconnected network, nodes in different components cannot be reached, so the number of labeled nodes is smaller than <span class="math inline">\(N\)</span>.</p>
+<p>It’s very easy. In a connected network, we can reach all the nodes from the “source node”. Therefore, the number of labeled nodes is equal to the size of the network, <span class="math inline">\(N\)</span>. However, in a disconnected network, nodes in different components cannot be reached, so the number of labeled nodes is smaller than <span class="math inline">\(N\)</span>.</p>
 <p>To illustrate, let’s go back to the network <a href="weight-paths-connectedness-and-clustering.html#fig:bfs01">3.3</a>. This time, we add a component consisting two nodes to it.</p>
-<div class="figure" style="text-align: center"><span id="fig:bfsD1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bfsD1"></span>
 <img src="images/bfsD1.png" alt="A disconnected network composed of two components" width="65%" />
 <p class="caption">
 FIGURE 3.8: A disconnected network composed of two components
 </p>
 </div>
 <p>We apply BFS algorithm to the network <a href="weight-paths-connectedness-and-clustering.html#fig:bfsD1">3.8</a>. The starting point is the same as above. You can see that the process ceased when the label reaches <span class="math inline">\(3\)</span>:</p>
-<div class="figure" style="text-align: center"><span id="fig:bfsD2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bfsD2"></span>
 <img src="images/bfsD2.png" alt="BFS stops in a disconnected network" width="65%" />
 <p class="caption">
 FIGURE 3.9: BFS stops in a disconnected network
 </p>
 </div>
 <p>How can we identify the remaining component(s)? In the example above, we assign label <span class="math inline">\(4\)</span> to a randomly unlabeled node <span class="math inline">\(j\)</span> and all the other nodes reachable from node <span class="math inline">\(j\)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:bfsD3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bfsD3"></span>
 <img src="images/bfsD3.png" alt="Identifying components in a disconnected network through BFS algorithm" width="65%" />
 <p class="caption">
 FIGURE 3.10: Identifying components in a disconnected network through BFS algorithm
@@ -406,8 +443,8 @@ FIGURE 3.10: Identifying components in a disconnected network through BFS algori
 </div>
 <p>What if there are multiple components? It’s the same as the above step. After labeling all reachable nodes, if the number of labeled nodes is still smaller than <span class="math inline">\(N\)</span>, then we assign label <span class="math inline">\(5\)</span> to a randomly unlabeled node <span class="math inline">\(m\)</span>, and all other nodes reachable from node <span class="math inline">\(m\)</span>. The process goes on until the number of labeled nodes is equal to <span class="math inline">\(N\)</span>.</p>
 </div>
-<div id="clustering-coefficient" class="section level3" number="3.1.4">
-<h3><span class="header-section-number">3.1.4</span> Clustering coefficient</h3>
+<div id="clustering-coefficient" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Clustering coefficient<a href="weight-paths-connectedness-and-clustering.html#clustering-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To what degree are a node’s neighbors connected with each other? That’s what clustering coefficient measures.</p>
 <p>If the degree of node <span class="math inline">\(i\)</span> is <span class="math inline">\(k_i\)</span>, then node <span class="math inline">\(i\)</span>’s <strong>local clustering coefficient</strong> is defined as</p>
 <p><span class="math display" id="eq:localClustering">\[\begin{equation}
@@ -426,6 +463,12 @@ FIGURE 3.10: Identifying components in a disconnected network through BFS algori
 \end{equation}\]</span></p>
 </div>
 </div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-centola2007complex" class="csl-entry">
+Centola, Damon, and Michael Macy. 2007. <span>“Complex Contagions and the Weakness of Long Ties.”</span> <em>American Journal of Sociology</em> 113 (3): 702–34.
+</div>
+</div>
             </section>
 
           </div>
@@ -436,7 +479,6 @@ FIGURE 3.10: Identifying components in a disconnected network through BFS algori
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -455,6 +497,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -474,7 +517,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["netsci.pdf", "netsci.epub"],
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -488,7 +535,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

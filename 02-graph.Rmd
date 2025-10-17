@@ -92,7 +92,7 @@ In the above network, $L = 4$.
 
 ### Average degree
 
-**Average degree**, denoted as $\langle k \rangle$ is simply the mean of all the node degrees in a network. For the network above (Figure \@ref(fig:nunit2-nodes)), $\langle k \rangle = \frac{1}{4} \cdot (k_1 + k_2 + k_3 + k_4) = \frac{1}{4} \cdot (2+2+3+2) = 2.25$. This means that on average, each node in the network has 2.25 links. 
+**Average degree**, denoted as $\langle k \rangle$ is simply the mean of all the node degrees in a network. For the network above (Figure \@ref(fig:nunit2-nodes)), $\langle k \rangle = \frac{1}{4} \cdot (k_1 + k_2 + k_3 + k_4) = \frac{1}{4} \cdot (2+2+3+1) = 2$. This means that on average, each node in the network has 2.25 links. 
 
 According to its definition, we know that $\langle k \rangle$ = $\frac{1}{N} \sum_{i=1}^N k_i$. Combined with Eq. \@ref(eq:TotalLink), we have:
 
