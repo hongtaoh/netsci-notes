@@ -78,9 +78,9 @@ nx.draw(G, with_labels=True, font_weight="bold")
 plt.show()
 ```
 
-For example, in the above network, nodes 1, 2, and 4 have a degree of two. Node 3 has a degree of three. 
+For example, in the above network, nodes 1 and 2have a degree of two. Node 3 has a degree of three and Node 4 has a degree of 1. 
 
-For the $i^{th}$ node in a network, we'll denote its degree as $k_i$. Therefore, for the above network, $k_1$=$k_2$=$k_4$=2, $k_3$=3. 
+For the $i^{th}$ node in a network, we'll denote its degree as $k_i$. Therefore, for the above network, $k_4=1$, $k_1 = k_2 = 2$, $k_3$=3. 
 
 As mentioned above, the **total number of links** is denoted as ***L***. In an undirected network, it is easy to understand that ***L*** should be half of the sum of all the node degrees. It should be halved because each link belongs to two nodes and therefore each is counted twice. We have:
 
